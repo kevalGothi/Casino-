@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" data-dpr="1" style="font-size: 40px">
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link
+      rel="shortcut icon"
+      href="/fav.png"
+      type="image/x-icon"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="google" content="notranslate" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Spinzo</title>
+    <link rel="stylesheet" href="./index_files/index-96409872.css" />
+    <link rel="stylesheet" href="./index_files/modules-96c1e775.css" />
+    <link rel="stylesheet" href="./index_files/page-activity-d48e62db.css" />
+    <link rel="stylesheet" href="./index_files/page-home-58543d87.css" />
+    <link rel="stylesheet" href="./index_files/page-login-ef3d1f88.css" />
+    <link rel="stylesheet" href="./index_files/page-main-ff2e7571.css" />
+    <link rel="stylesheet" href="./index_files/index-98687087.css" />
+    <!-- SweetAlert2 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        background-color: #090909;
+        padding: 0;
+        margin: 0;
+      }
+
+      .msg-content {
+        animation: zoom-in 0.45s ease reverse;
+      }
+
+      @keyframes zoom-in {
+        0% {
+          opacity: 1;
+          transform: scale(1, 1);
+        }
+
+        50% {
+          transform: scale(0.6, 0.6);
+        }
+
+        100% {
+          opacity: 0;
+          transform: scale(1, 1);
+        }
+      }
+      .btn {
+        border: 1px solid red;
+        background-color: white;
+        color: black;
+        padding: 14px 28px;
+        font-size: 20px;
+        height: 43px;
+        cursor: pointer;
+        box-shadow: 1px 1px 10px #888888;
+        width: 90%;
+        margin-left: 16px;
+      }
+
+      .success {
+        font-weight: 600;
+        color: red;
+      }
+      .footer {
+        margin-top: 1vw;
+        display: flex;
+        width: 100%;
+      }
+      .footer .footer_data {
+        width: 50%;
+      }
+      .footer .footer_data img {
+        width: 4vw;
+        margin-left: 4.2vw;
+      }
+      .footer .footer_data p {
+        text-align: center;
+      }
+      @media (max-width: 600px) {
+        .footer {
+          margin-top: 5vw;
+          display: flex;
+          width: 100%;
+        }
+        .footer .footer_data img {
+          width: 10vw;
+          margin-left: 15vw;
+        }
+      }
+
+      .vip-content-card .itemInfo.level2 {
+    background: url(/assets/png/bg2-ee7fbf5e.png) no-repeat center,-webkit-linear-gradient(332.71deg,#f8bd83 21.85%,#e2984e 67.02%);
+    background: url(/assets/png/bg2-ee7fbf5e.png) no-repeat center,#3b198d;
+    box-shadow: 0 .02667rem #de00fe,inset 0 .02667rem #5f34c5
+}
+
+.vip-content-card .itemInfo-right {
+    position: absolute;
+    right: .13333rem;
+    top: .13333rem
+}
+
+.vip-content-card .itemInfo-right img {
+    width: 1.50rem;
+    height: 1.50rem;
+    border-radius: 50%
+}
+
+.vip-content-card .itemInfo {
+    border-radius: .13333rem;
+    width: 94%;
+    margin-left: 3%;
+    min-height: 5.2rem;
+    color: #fff;
+    font-weight: 400;
+    font-size: .49333rem;
+    padding: .2rem .26667rem;
+    position: relative;
+    margin-bottom: 30px
+}
+
+.vip-content-card .itemInfo-head>div:nth-of-type(1) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+.vip-content-card .itemInfo-head>div:nth-of-type(1)>img:nth-of-type(1) {
+    width: 1rem;
+    height: 1rem;
+    margin-right: .13333rem
+}
+
+.vip-content-card .itemInfo-head>div:nth-of-type(1)>h1.level2 {
+    background: -webkit-linear-gradient(top,#fff9d6 39.98%,#ffe650 100%);
+    background: linear-gradient(180deg,#fff9d6 39.98%,#ffe650);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text
+}
+
+.vip-content-card .itemInfo-head>div:nth-of-type(1)>h1 {
+    font-weight: 900;
+    font-size: 0.5rem;
+    margin-right: .26667rem;
+    padding-top: 10px
+}
+
+.vip-content-card .itemInfo-head>div:nth-of-type(1)>img:nth-of-type(2) {
+    width: .4rem;
+    margin-right: .06667rem
+}
+
+.vip-content-card .mb30 {
+    margin-bottom: .4rem
+}
+
+.vip-content-card .itemInfo-head>div.border.level2 {
+    border: .01333rem solid #ffe2c5
+}
+
+.vip-content-card .itemInfo-head>div.border {
+    border-radius: .08rem;
+    padding-top: .02667rem;
+    padding-bottom: .02667rem;
+    display: inline-block;
+    padding: 0 .10667rem
+}
+
+.vip-content-card .itemInfo-bottom>p {
+    text-align: right;
+    margin-bottom: .13333rem
+}
+
+.vip-content-card .van-progress.level2 {
+    box-shadow: 0 .01333rem #fff,inset 0 .05333rem .05333rem #fff
+}
+
+.vip-content-card .itemInfo-bottom>div:last-of-type {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin-top: .6667rem
+}
+
+.vip-content-card .itemInfo-bottom span.level2 {
+    background: -webkit-linear-gradient(left,#ef9033 0%,#c97420 92.31%);
+    background: linear-gradient(90deg,#ef9033,#c97420 92.31%)
+}
+
+.vip-content-card .itemInfo-bottom span.level {
+    border-radius: .53333rem;
+    padding: 0 .13333rem
+}
+
+.totalDetail {
+    width: 80%;
+    height: 7rem;
+    margin-left: 10%;
+    margin-bottom: 20px
+}
+
+.innerDetailsbox {
+    width: 100%;
+    height: 100%;
+    background: #5bff0f;
+    border-radius: 20px;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #639
+}
+
+.textDetails {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center
+}
+
+.textDetails span {
+    margin-top: 10px;
+    width: 100%;
+    font-weight: 500;
+    height: 50px;
+    font-size: .8rem;
+    color: #639
+}
+
+.swal2-popup {
+    width: 90% !important; /* Adjust the popup width to 90% of the viewport width */
+    max-width: 400px; /* Maximum width of the popup */
+    padding: 20px;
+    font-size: 1rem;
+}
+
+.swal2-title {
+    font-size: 0.5rem;
+    color: #fff;
+}
+
+div:where(.swal2-container) input:where(.swal2-input):focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.swal2-confirm, .swal2-cancel {
+    padding: 10px 20px;
+    font-size: 0.4rem;
+}
+
+.swal2-input {
+    width: 100%;
+    font-size: 0.5rem;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0px ; 
+}
+
+div:where(.swal2-container) .swal2-input {
+    height: 2.025em;
+     padding: 0 .1em; 
+     text-align: center;
+}
+div:where(.swal2-container) .swal2-html-container {
+    z-index: 1;
+    justify-content: center;
+    margin: 0;
+    padding: 0em 0em 0em;
+    overflow: auto;
+    color: inherit;
+    font-size: 1.125em;
+    font-weight: normal;
+    line-height: normal;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+
+
+/* Adjust the buttons in the SweetAlert2 popup */
+.swal2-confirm,
+.swal2-cancel {
+    padding: 10px 20px;
+    font-size: 0.5rem;
+}
+
+div:where(.swal2-container).swal2-center>.swal2-popup{
+    background: #333332;
+    border-radius: 10px;
+}
+
+/* Ensure buttons are stacked vertically on small screens */
+.swal2-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.swal2-actions .swal2-confirm {
+    margin-bottom: 10px;
+}
+
+/* Responsive styles for smaller screens */
+
+    </style>
+  </head>
+
+  <body style="font-size: 12px">
+    <div id="app" data-v-app="" style="background: #242424">
+      <div
+        data-v-1690b988=""
+        class="ar-loading-view"
+        style="display: none; font-family: sans-serif"
+      >
+        <div data-v-1690b988="" class="loading-wrapper">
+          <div data-v-1690b988="" class="loading-animat">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 200 200"
+              width="200"
+              height="200"
+              preserveAspectRatio="xMidYMid meet"
+              style="
+                width: 100%;
+                height: 100%;
+                transform: translate3d(0px, 0px, 0px);
+                content-visibility: visible;
+              "
+            >
+              <defs>
+                <clippath id="__lottie_element_2">
+                  <rect width="200" height="200" x="0" y="0"></rect>
+                </clippath>
+                <image
+                  href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKgAAAAsBAMAAAADRO5JAAAAJHpUWHRDcmVhdG9yAAAImXNMyU9KVXBMK0ktUnBNS0tNLikGAEF6Bs5qehXFAAAACXBIWXMAAAABAAAAAQBPJcTWAAAAJFBMVEXzwwBHcEzzwgDzwwD0wwDzwwD0xADzwwDzwwDxwQDzwwD0wwDcY0swAAAADHRSTlP/AD+/In+jY9wQT49dhnwkAAADuUlEQVRIx+WXz08TQRTHh/4GLky7tAUutNaq4QKCJtxaKFh7ag2NopdWSJVwKYJoPLWxAY0XNiTG6EUuJN6oF/8934+Z2S22tCQ1MXEOzM7uzGfevPd9r4OQA7fT7KAzxaATZ0p3d/alPVTox0ih/TQvW8OEXmxUzsql2e3iwkDQG4t9W8kKHK/lWrcPlta/1lrRvvOXRF30bb7p3XZeri6/zJ4mnj3tv8AnVpJ9W0pOHb0Prm5vFUL3m7L/gsSAPn1gn21nUjs/CvZQJSW3X7Srw9apXN3Lnw0deo32r0Ffl8tljtvNcvkxd9Q2RbqG7QDqBer2wFkztXJ+5Gbkbn1QFeW8RN08SNI8haArGp0qLe/IDPXHGnkIA6+DnGvAWEEbHgNt4oMlekBDNkOFKhk0wYGu0jeGhkXAQAkf6wUVVQXllXnRAY25PsmIELaGjuNDtCfUo6E+dSA3tOiGZpQrEUr4k27Q0CLuqaEhWyr/Guik+xCyIsSogWI+1B1okHMf3gTxtAEABbZwXhtCgf2vcw2dxeG9VwzFUwQNdIF30VAf65SgYbAqg6/W6PzoQm9CWu8UFPfYlPKNrT3oNVC0WXSHTrGlPjqKX8bZXt0soWebGCY01C/ldA8omBZk6Ax+z/Ak6XLpnhnV9annldujLugY+pShOfjTZOgURrSuBKhapGOPhpYIQcHmCXEp+tJIKsFQXJO9EGJE7kPWsn1x1CNmcdVI1m+gbfm9J3RMKiiEMlFBaMWk9gRCMiopYQcv65OhozSxOzSgofMa+g12sjU0gNEKZFleniJtBzMb6KcG9t2P33Ydn8I4aRwbp3gITnlANU/IaHiCk3tBjqHin9DxJPzxMRRdxrpyoFE6LkNRXj/T9AmgczBah0gb6DjWUyUpAPgZmleeELYDjVE8GBoVJoMBmlLJXrxS/FYDYwYaEssOlBOTobpCgJSU97HCdYVanKaeQoVijDkSOnTEinF+ztCKhlYJyntku0I/s6XaBqUWA81ohdBJhJISQqPsii5Qb01wmhpdf+mExgw0Zi5MfoJS4Q3KzuiPGEm1NBQriTLI05HvCI071zB7XjkW/NULupdxDNW/SQY63VBQnP0omUzjAoLOUrHpAQ0qx3kTjHnbAZXrCqp+U7FuLRA0Qi+6Q4FF0E8JXUOfdEBlmqBhRlPvIWiYXlyG0nUzBUlu5XK5h66CB6/vuIYreE+16LYKBRL7w1oti/eUDbhe1HbxklHjVv0vLmhXQAf4R+K6zfdXoL8B/7cyv853sCEAAAAASUVORK5CYII="
+                ></image>
+                <image
+                  href="data:image/png;base64,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"
+                ></image>
+              </defs>
+              <g clip-path="url(#__lottie_element_2)">
+                <g
+                  class="ai"
+                  transform="matrix(0.21814323961734772,-0.9759167432785034,0.9759167432785034,0.21814323961734772,-19.40599822998047,175.77734375)"
+                  opacity="1"
+                  style="display: block"
+                >
+                  <image
+                    width="200px"
+                    height="200px"
+                    preserveAspectRatio="xMidYMid slice"
+                    href="data:image/png;base64,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"
+                  ></image>
+                </g>
+                <g
+                  class="png"
+                  transform="matrix(0.8859999775886536,0,0,0.8859999775886536,25.576004028320312,80.50800323486328)"
+                  opacity="1"
+                  style="display: block"
+                >
+                  <image
+                    width="168px"
+                    height="44px"
+                    preserveAspectRatio="xMidYMid slice"
+                    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKgAAAAsBAMAAAADRO5JAAAAJHpUWHRDcmVhdG9yAAAImXNMyU9KVXBMK0ktUnBNS0tNLikGAEF6Bs5qehXFAAAACXBIWXMAAAABAAAAAQBPJcTWAAAAJFBMVEXzwwBHcEzzwgDzwwD0wwDzwwD0xADzwwDzwwDxwQDzwwD0wwDcY0swAAAADHRSTlP/AD+/In+jY9wQT49dhnwkAAADuUlEQVRIx+WXz08TQRTHh/4GLky7tAUutNaq4QKCJtxaKFh7ag2NopdWSJVwKYJoPLWxAY0XNiTG6EUuJN6oF/8934+Z2S22tCQ1MXEOzM7uzGfevPd9r4OQA7fT7KAzxaATZ0p3d/alPVTox0ih/TQvW8OEXmxUzsql2e3iwkDQG4t9W8kKHK/lWrcPlta/1lrRvvOXRF30bb7p3XZeri6/zJ4mnj3tv8AnVpJ9W0pOHb0Prm5vFUL3m7L/gsSAPn1gn21nUjs/CvZQJSW3X7Srw9apXN3Lnw0deo32r0Ffl8tljtvNcvkxd9Q2RbqG7QDqBer2wFkztXJ+5Gbkbn1QFeW8RN08SNI8haArGp0qLe/IDPXHGnkIA6+DnGvAWEEbHgNt4oMlekBDNkOFKhk0wYGu0jeGhkXAQAkf6wUVVQXllXnRAY25PsmIELaGjuNDtCfUo6E+dSA3tOiGZpQrEUr4k27Q0CLuqaEhWyr/Guik+xCyIsSogWI+1B1okHMf3gTxtAEABbZwXhtCgf2vcw2dxeG9VwzFUwQNdIF30VAf65SgYbAqg6/W6PzoQm9CWu8UFPfYlPKNrT3oNVC0WXSHTrGlPjqKX8bZXt0soWebGCY01C/ldA8omBZk6Ax+z/Ak6XLpnhnV9annldujLugY+pShOfjTZOgURrSuBKhapGOPhpYIQcHmCXEp+tJIKsFQXJO9EGJE7kPWsn1x1CNmcdVI1m+gbfm9J3RMKiiEMlFBaMWk9gRCMiopYQcv65OhozSxOzSgofMa+g12sjU0gNEKZFleniJtBzMb6KcG9t2P33Ydn8I4aRwbp3gITnlANU/IaHiCk3tBjqHin9DxJPzxMRRdxrpyoFE6LkNRXj/T9AmgczBah0gb6DjWUyUpAPgZmleeELYDjVE8GBoVJoMBmlLJXrxS/FYDYwYaEssOlBOTobpCgJSU97HCdYVanKaeQoVijDkSOnTEinF+ztCKhlYJyntku0I/s6XaBqUWA81ohdBJhJISQqPsii5Qb01wmhpdf+mExgw0Zi5MfoJS4Q3KzuiPGEm1NBQriTLI05HvCI071zB7XjkW/NULupdxDNW/SQY63VBQnP0omUzjAoLOUrHpAQ0qx3kTjHnbAZXrCqp+U7FuLRA0Qi+6Q4FF0E8JXUOfdEBlmqBhRlPvIWiYXlyG0nUzBUlu5XK5h66CB6/vuIYreE+16LYKBRL7w1oti/eUDbhe1HbxklHjVv0vLmhXQAf4R+K6zfdXoL8B/7cyv853sCEAAAAASUVORK5CYII="
+                  ></image>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div data-v-1690b988="" class="com__box" style="display: none">
+            <div class="loading" data-v-1690b988="">
+              <div class="shape shape-1" data-v-1690b988=""></div>
+              <div class="shape shape-2" data-v-1690b988=""></div>
+              <div class="shape shape-3" data-v-1690b988=""></div>
+              <div class="shape shape-4" data-v-1690b988=""></div>
+            </div>
+          </div>
+        </div>
+        <div data-v-1690b988="" class="skeleton-wrapper" style="display: none">
+          <div data-v-1690b988="" class="van-skeleton van-skeleton--animate">
+            <div class="van-skeleton__content">
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 60%"></div>
+            </div>
+          </div>
+          <div data-v-1690b988="" class="van-skeleton van-skeleton--animate">
+            <div class="van-skeleton-avatar van-skeleton-avatar--round"></div>
+            <div class="van-skeleton__content">
+              <h3 class="van-skeleton-title"></h3>
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 60%"></div>
+            </div>
+          </div>
+          <div data-v-1690b988="" class="van-skeleton van-skeleton--animate">
+            <div class="van-skeleton__content">
+              <h3 class="van-skeleton-title"></h3>
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 100%"></div>
+              <div class="van-skeleton-paragraph" style="width: 60%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-v-8752c961=""
+        class="login__container"
+        style="font-family:  sans-serif;"
+      >
+        <div data-v-58c5e826="" data-v-8752c961="" class="navbar">
+          <div
+            data-v-58c5e826=""
+            class="navbar-fixed"
+            style="background: rgb(63, 63, 63)"
+          >
+            <div data-v-58c5e826="" class="navbar__content">
+              <div
+                data-v-58c5e826=""
+                class="navbar__content-left"
+                onclick="location.href='/home'"
+              >
+                <i
+                  data-v-58c5e826=""
+                  class="van-badge__wrapper van-icon van-icon-arrow-left"
+                ></i>
+              </div>
+
+              <div data-v-58c5e826="" class="navbar__content-center">
+               BOT AI
+                <div data-v-58c5e826="" class="navbar__content-title"></div>
+              </div>
+              <div data-v-58c5e826="" class="navbar__content-right">
+                <div data-v-187d09fa="" data-v-8752c961="">
+                  <div data-v-187d09fa="" class="right">
+                    <!-- <div data-v-187d09fa="" class="img">
+                      <img
+                        data-v-187d09fa=""
+                        class=""
+                        data-origin="https://www.bigdaddygame2.com/assets/png/en-4b649537.png"
+                        src="./index_files/en-4b649537.png"
+                      />
+                    </div> -->
+                    <!-- <span data-v-187d09fa="" class="lang-text">EN</span> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab" style="margin-top: 50px; width: 90%; margin-left: 5%;">
+            <ul class="c-row c-row-around" style="justify-content: space-around;">
+                <button 
+                    style="
+                        width: 45%;
+                        background:  linear-gradient(90deg, rgb(222, 0, 254) 0%, rgb(95, 52, 197) 100%);
+                        text-align: center;
+                        border: none;
+                        height: 1rem;
+                        color: #fff;
+                        font-size: 0.5rem;
+                        cursor: pointer;
+                        border-radius: 5px;">
+                    <li class="action block-click text-light">All Plan</li>
+                </button>
+                <button 
+                onclick="window.location='/user-roi'"
+                    style="
+                        width: 45%;
+                        background: linear-gradient(90deg, rgb(80, 78, 74) 0%, rgb(96, 94, 89) 100%);
+                        text-align: center;
+                        border: none;
+                        font-size: 0.5rem;
+                        height: 1rem;
+                        color: #fff;
+                        cursor: pointer;
+                        border-radius: 5px;">
+                    <li class="text-light">My Active Plan</li>
+                </button>
+            </ul>
+        </div>
+        
+        <script>
+            function handleClick(component) {
+                // Assuming `activeComponent` is being set in some way, possibly via a server-side variable or client-side logic
+                document.location.href = `/path-to-api-or-page?component=${component}`;
+            }
+        </script>
+        
+      
+        <div class="roi-container" style="margin-top: 50px;"></div> <!-- Isme cards inject honge -->
+
+        
+
+      <div
+        class="customer"
+        id="customerId"
+        style="font-family:  sans-serif; --17a7a9f6: bahnschrift;"
+        onclick="window.location='/keFuMenu'"
+      >
+        <img
+          class=""
+          data-origin="https://www.bigdaddygame2.com/assets/png/icon_sevice-1ca64bcf.png"
+          src="./assets/png/icon_sevice-f79b6ecd.png"
+        />
+      </div>
+    </div>
+
+    <div class="van-overlay" style="z-index: 2003; display: none">
+      <div
+        data-v-7692a079=""
+        data-v-42f27458=""
+        class="Loading c-row c-row-middle-center"
+        style="
+          position: fixed;
+          height: 100vh;
+          width: 100vw;
+          top: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.6);
+          z-index: 99999;
+        "
+      >
+        <div data-v-7692a079="" class="van-loading van-loading--circular">
+          <span
+            data-v-7692a079=""
+            class="van-loading__spinner van-loading__spinner--circular"
+            style="
+              width: auto;
+              height: auto;
+              -webkit-animation-duration: 1s;
+              animation-duration: 1s;
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 200 200"
+              width="200"
+              height="200"
+              preserveAspectRatio="xMidYMid meet"
+              style="
+                width: 100%;
+                height: 100%;
+                transform: translate3d(0px, 0px, 0px);
+                content-visibility: visible;
+              "
+            >
+              <g
+                transform="matrix(-0.5984085202217102,0.8011911511421204,-0.8011911511421204,-0.5984085202217102,239.9599609375,79.72173309326172)"
+                style="display: block"
+              >
+                <image
+                  width="200px"
+                  height="200px"
+                  preserveAspectRatio="xMidYMid slice"
+                  xlink:href="/assets/png/image.png"
+                ></image>
+              </g>
+            </svg>
+          </span>
+          <img
+            src="/logo.png"
+            style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 168px;
+              height: 44px;
+            "
+          />
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+    
+       function alertMess(text) {
+        let length = $(".alert-toast .msg").length;
+        if (length == 0) {
+          $(".alert-toast").append(
+            `
+                    <div data-v-1dcba851="" class="msg">
+                        <div data-v-1dcba851="" class="msg-content" style=""> ${text} </div>
+                    </div>
+                    `
+          );
+          setTimeout(() => {
+            $(".msg").fadeOut();
+            setTimeout(() => {
+              $(".alert-toast .msg").remove();
+            }, 100);
+          }, 1500);
+        }
+      }
+      $(document).ready(function () {
+        // Select the overlay element
+        $(".van-overlay").fadeIn(10);
+      });
+      $(window).on("load", function () {
+        // Select the overlay element
+        $(".van-overlay").fadeIn(10);
+        setTimeout(function () {
+          $(".van-overlay").fadeOut(300);
+        }, 600);
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        fetch('/api/webapi/roi-detail')
+  .then((response) => response.json())
+  .then((data) => {
+    // Loader ko fade out karein
+    $(".Loading").fadeOut(0);
+    // Agar status false hai, to cookie unset karein aur return karein
+    if (data.status === false) {
+        return false;
+    }
+    console.log(data)
+
+    // ROI data ko loop karein
+    const ROI = data.data;
+    console.log(ROI)
+    const container = document.querySelector('.roi-container'); // apne container ka selector
+
+    ROI.forEach((user) => {
+      const card = `
+        <div class="vip-content-card">
+          <div class="vip-content-card-item">
+            <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events my-swipe swiper-backface-hidden" style="justify-content: center;">
+              <div class="swiper-wrapper" style="">
+                <div class="swiper-slide swiper-slide-next itemInfo level2" style="margin-right: 20px;">
+                  <div class="itemInfo-right">
+                    <img src="./uploads/images/${user.image}" />
+                  </div>
+                  <div class="itemInfo-head">
+                    <div>
+                      <img src="./images/roistar.png" />
+                      <h1 class="level2">BOT AI</h1>
+                    </div>
+                    <div class="mb30">
+                      <p style="font-size: 0.6rem; margin-top: 20px ;font-weight: 700;">
+                        ${user.title ? user.title.toUpperCase() : ''}
+                      </p>
+                    </div>
+                    <p style="margin-bottom: 10px;"> Validity: ${user.validity} Days</p>
+                    <div class="border level2">Price: ₹${user.totalprice}</div>
+                  </div>
+                  <div class="itemInfo-bottom">
+                    <p>BOT AI 1</p>
+                    <div>
+                      <div class="van-progress level2" style="background: rgb(255, 255, 255); height: 8px;">
+                        <span class="van-progress__portion" style="width: 0%; background: linear-gradient(rgb(255, 252, 231) 0%, rgb(255, 200, 33) 100%);"></span>
+                      </div>
+                    </div>
+                    <div>
+                      <button onclick="showPasswordModal(${user.id})" class="level level2" style="border: none;     cursor: pointer; background: rgb(54, 185, 26); padding: 5px 15px; border-radius: 5px; color: white;">
+                        Purchase
+                      </button>
+                      <span style="font-size: 0.4rem">Return of Amount: ${user.roa}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      container.innerHTML += card; // Append each card to the container
+    });
+  })
+  .catch((error) => console.error('Error fetching ROI data:', error));
+  
+function showPasswordModal(id) {
+    Swal.fire({
+        title: 'Enter Password',
+        html: `<input type="text" id="passwordInput" class="swal2-input" placeholder="Enter your password">`,
+        showCancelButton: true,
+        confirmButtonText: 'Submit',
+        cancelButtonText: 'Cancel',
+        preConfirm: () => {
+            const password = Swal.getPopup().querySelector('#passwordInput').value;
+            if (!password) {
+                Swal.showValidationMessage('Please enter your password');
+            }
+            return password;
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const password = result.value;
+            console.log('Entered Password:', password);
+            // Yahan aap password ko verify karne ya handlePurchase(id) function ko call kar sakte hain
+            handlePurchase(id, password); // Aap apne handlePurchase function ko yahan call kar sakte hain
+        }
+    });
+}
+
+
+  function handlePurchase(id, password) {
+        fetch(`/api/webapi/purchase-plan/${id}`, {
+            method: 'POST', // or 'POST' if needed
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ password })
+        })
+        .then(response => response.json())
+        .then(result => {
+            alert(result.message);
+        })
+        .catch(error => {
+            console.error('Error processing purchase:', error);
+            alert('Error processing purchase: ' + error.message);
+        });
+    }
+
+    </script>
+  </body>
+</html>

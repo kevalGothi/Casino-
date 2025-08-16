@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 48.16px">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport" />
+    <title>Spinzo</title>
+    <link rel="stylesheet" href="./index_files/index-96409872.css">
+    <link rel="stylesheet" href="../index_files/index-96409872.css">
+    <link href="/css/wallet/main.css" rel="stylesheet" />
+    <link href="/css/wallet/chunk_2-1.css" rel="stylesheet" />
+    <link href="/css/wallet/chunk_2-2.css" rel="stylesheet" />
+    <link href="/css/wallet/chunk_2-3.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/fav.png" type="image/x-icon" />
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #090909;
+            padding: 0;
+            margin: 0;
+        }
+        .mian[data-v-7aa0f84a]{background-color:#ecedf7}
+        .mian .bank[data-v-7aa0f84a]{background:#ecedf7;padding:.4rem}
+        .mian .bank .box[data-v-7aa0f84a]{background:#FFF;color:#000;border-radius:.26667rem;padding:.4rem}
+        .mian .bank .box .item[data-v-7aa0f84a]{margin-bottom:.26667rem}
+        .mian .bank .box .item .lab[data-v-7aa0f84a]{font-size:.4rem;margin-bottom:.26667rem}
+        .mian .bank .box .item .input .ipt[data-v-7aa0f84a]{width:100%;padding:0 .4rem;height:.93333rem;line-height:.93333rem;border-radius:.13333rem;border:.05333rem solid #fff;color: #000; background: #f0f0f5;}
+        .mian .bank .bank-btn .btn[data-v-7aa0f84a]{width: 50%;height: 0.93333rem;color: #FFF;font-size: .4rem;font-weight: 700;letter-spacing: .01333rem;border: none;border-radius: 1.06667rem;background: -webkit-linear-gradient(top,#f95959 0%,#f95959 100%);background: linear-gradient(180deg,#f95959 0%,#f95959 100%)}
+    
+        .chooseBank__container-content{
+            background: #f95959;
+    position: relative;
+    height: 4rem;
+    border-radius: 10px;
+    padding: 10px;
+    top: 3px;
+    overflow-y: scroll;
+    color: #FFF;
+        }
+        .chooseBank__container-content::-webkit-scrollbar{
+            display: none;
+        }
+
+        .chooseBank__container-content-items__item{
+            height: 1rem;
+    font-size: 0.4rem;
+    display: flex;
+    justify-content: start;
+    align-items: center; 
+    margin-top: 3px;
+        }
+        .chooseBank__container-content-items__item:hover{
+            background: #FFF;
+            color: black;
+        }
+
+        .selectedBank::-webkit-input-placeholder{
+            color: #FFF;
+        }
+
+       #searchBank {
+    width: 100%;
+    padding: 0 .4rem;
+    height: .93333rem;
+    line-height: .93333rem;
+    border-radius: .13333rem;
+    border: .05333rem solid #fff;
+    color: #000;
+    background: #f0f0f5;
+}
+
+.chooseBank__container-content-items__title{
+    width: 100%;
+    padding: 0 .4rem;
+    height: .93333rem;
+    line-height: .93333rem;
+    border-radius: .13333rem;
+    /* border: .05333rem solid #fff; */
+    /* color: #000; */
+    /* background: #f0f0f5; */
+}
+    </style>
+</head>
+
+<body style="font-size: 12px">
+    <div id="app">
+        <div data-v-7aa0f84a="" class="mian">
+            <div data-v-106b99c8="" data-v-7aa0f84a="" class="navbar">
+                <div data-v-106b99c8="" class="navbar-left" onclick="location.href='/wallet/withdrawal'">
+                    <div data-v-106b99c8="" class="bank c-row c-row-middle-center">
+                        <img data-v-106b99c8="" src="/images/back.c3244ab0.png" class="navbar-back" />
+                    </div>
+                </div>
+                <div data-v-106b99c8="" class="navbar-title">Add a bank card</div>
+                <div data-v-106b99c8="" class="navbar-right"></div>
+            </div>
+            <div data-v-7aa0f84a="" class="bank">
+                <div data-v-7aa0f84a="" class="box" style="background-color:#21c234;">
+                    <div data-v-7aa0f84a="" class="c-row m-b-10 c-row-middle">
+                        <div data-v-7aa0f84a="" class="van-image" style="width: 40px; height: 40px">
+                            <img src="/images/pay_icon_debitcard_red.webp" class="van-image__img" />
+                        </div>
+                        <div data-v-7aa0f84a="" class="p-l-15">Add a bank card</div>
+                    </div>
+                    <div class="item">
+                        <div class="lab">Bank name</div>
+                        <div class="input" onclick="toggleBankList()" >
+                            <input data-v-7aa0f84a="" type="text" id="selectedBank" readonly placeholder="Choose Bank Name" id="selectedBank" class="ipt"  style="    background: #f95959;
+                            color: #FFF;
+                            cursor: pointer;"/>
+                            
+                        </div>
+                    </div>
+                    <div class="chooseBank__container-content" id="bankList" style="display: none;">
+                        <div class="search-container">
+                            <input type="text" id="searchBank" placeholder="Search for a bank..." onkeyup="filterBanks()" />
+                        </div>
+                        <div class="chooseBank__container-content-items__item" onclick="selectBank(this)">
+                            <div class="chooseBank__container-content-items__title">
+                                <img src="https://ossimg.51game-game.com/51game" alt="" />
+                                <span>Bank of Baroda</span>
+                            </div>
+                        </div>
+                        <div class="chooseBank__container-content-items__item" onclick="selectBank(this)">
+                            <div class="chooseBank__container-content-items__title">
+                                <img src="https://ossimg.51game-game.com/51game" alt="" />
+                                <span>Union Bank of India</span>
+                            </div>
+                        </div>
+                        <div class="chooseBank__container-content-items__item" onclick="selectBank(this)">
+                            <div class="chooseBank__container-content-items__title">
+                                <img src="https://ossimg.51game-game.com/51game" alt="" />
+                                <span>Central Bank of India</span>
+                            </div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)" >
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Yes Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">HDFC Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Karnataka Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Standard Chartered Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">IDBI Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Bank of India</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Punjab National Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">ICICI Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Canara Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Kotak Mahindra Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">State Bank of India</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Indian Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Axis Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">FEDERAL BANK</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Syndicate Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Citibank India</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Bandhan Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Indusind Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">India Post Payments Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Corporation Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">City Union Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Karur Vysya Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Tamilnad Mercantile Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Allahabad Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Meghalaya Rural Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">AU Small Finance Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Lakshmi Vilas Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">South Indian Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">State Bank of Hyderabad</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Gp parsik bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Kerala Gramin Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">RBL Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Dhanlaxmi Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">TJSB Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Punjab &amp; Sind Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Purvanchal bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Sarva Haryana Gramin Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Fino Payments Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Saraswat Cooperative Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Telangana Grameena Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">andhra pragathi grameena bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">rajasthan marudhara gramin bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Abhyudaya bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">ujjivan small finance bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">capital small finance bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Mizoram Rural Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Andhra Pradesh Grameena Vikas Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Karnataka Vikas Grameena Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Madhya Bihar Gramin Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">NSDL Payments Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">ESAF Small Finance Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Himachal Pradesh state cooperative bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Maharashtra state cooperative bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">ORIENTAL BANK OF COMMERCE</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">nainital bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Jharkhand Rajya Gramin Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">jio payments bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">MAHARASHTRA GRAMIN BANK</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Uttarakhand Gramin Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Himachal Pradesh Gramin Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">RAJKOT NAGARIK SAHAKARI BANK LTD</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">North East small financial bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Catholic syrian bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Fincare small finance bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Baroda Uttar Pradesh Gramin Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Dhanalakshmi bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Saurashtra gramin bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Baroda Rajasthan kshetriya gramin bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Jana small finance bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Dena Gujarat Gramin Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Chaitanya Godavari Grameena Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">SVC BANK</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Bharat cooperative bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">USDT</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Tripura Gramin Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Zila Sahakari Bank Ltd Bareilly</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">ARYAVART Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Development credit Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Sarva UP Gramin Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Vijaya Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">United Bank of India</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">State Bank of Bikaner And Jaipur</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Shri Janata Sahakari Bank LTD</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Rajgurunagar Sahakari Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">FEDERAL NEO BANK JUPITER</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">CHHATTISGARH RAJYA GRAMIN BANK</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Apna Sahakari Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Bangiya Gramin Vikash Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Assam Gramin Vikash Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Punjab Gramin Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Assam gramin bikash bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Karnataka Gramin Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">SURYODAY SMALL FINANCE BANK LIMITED</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Utkarsh Small Finance Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">UTTAR BIHAR GRAMIN BANK</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">STATE BANK OF TRAVANCORE</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">SHIVALIK SMALL FIHANCE BANK</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">DAKSHIN BIHIR GRAMIN BANK</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">manipur rural bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">State bank of patiala</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">BARODA GUJARAT GRAMIN BANK</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">vasai vikas sahakari</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">paschim banga gramin bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Samarth Sahakari Bank Ltd</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">uttarbanga kshetriya gramin bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">janata sahakari bank ltd</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">J&amp;K Grameen Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Post Office Savings Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">SBM Bank India</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Bank of maharashtra</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">PRATHAMA Up Gramin Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">State Bank of Mysore</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">BARODA U.P BANK</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">PURVANCHAL GRAMIN BANK</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">State Bank Of Mauritius Ltd</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Kallappanna Awade Janata Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">HIMACHAL PARDESH STATE COOPERATIVE BANK</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Pratham Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Oisha Gramya bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">KDCC BANK</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">The Hasti Coop Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">AIRTEL PAYMENTS BANK LIMITED</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">EQUITAS SMALL FINANCE BANK LIMITED</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">IDFC FIRST BANK LTD</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">JAMMU AND KASHMIR BANK LIMITED</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">DOMBIVLI NAGARI SAHAKARI BANK LIMITED</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Indian Overseas Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">ABHYUDAYA COOP. BANK LTD.</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Ahmedabad District CoOperative Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Cosmos Cooperative Bank Ltd</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">District CoOperative Central Bank Ltd</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">GS Mahanagar CoOp Bank Ltd</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Bassein catholic cooperative Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Jind central CoOP Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Kangra Central Cooperative Bank Ltd</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title">
+                                <img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Krishna District CoOperative Central Bank Ltd.</span>
+                            </div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">New India CoOperative Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">NKGSB Cooperative Bank Ltd.</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">Prime cooperative Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">The Ahmedabad merchantile coop bank Ltd</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">the gayatri cooperative urban bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">The Gujarat State Cooperative Bank Limited</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">The Kalupur Commercial Cooperative Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">The Meghalaya Cooperative Apex Bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">The Surat District CoOp. Bank Ltd.</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">The Varachha Cooperative Bank Ltd.,Surat</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">varachha cooperative bank</span></div>
+                        </div>
+                        <div data-v-c1c91417="" class="chooseBank__container-content-items__item " onclick="selectBank(this)">
+                            <div data-v-c1c91417="" class="chooseBank__container-content-items__title"><img data-v-c1c91417="" src="https://ossimg.51game-game.com/51game" alt="" /><span data-v-c1c91417="">VISHAPATNAM cooperative bank</span></div>
+                        </div>
+                      
+                    </div>
+                    
+
+                   
+                    <div data-v-7aa0f84a="" class="item">
+                        <div data-v-7aa0f84a="" class="lab">Your Full Name</div>
+                        <div data-v-7aa0f84a="" class="input">
+                            <input data-v-7aa0f84a="" type="text" placeholder="Enter Your Bank Name"
+                                oninput="value=value.replace(/[^a-zA-Z\s+$]/g,'').toUpperCase()" class="ipt" />
+                        </div>
+                    </div>
+                    <div data-v-7aa0f84a="" class="item">
+                        <div data-v-7aa0f84a="" class="lab">Bank Account number</div>
+                        <div data-v-7aa0f84a="" class="input">
+                            <input data-v-7aa0f84a="" type="number" placeholder="Enter Your Bank Account Number"
+                                oninput="value=value.replace(/[^\d]/g,'')" class="ipt" />
+                        </div>
+                    </div>
+                    <!---->
+                    <div data-v-7aa0f84a="" class="item">
+                        <div data-v-7aa0f84a="" class="lab">IFSC Code</div>
+                        <div data-v-7aa0f84a="" class="input">
+                            <input data-v-7aa0f84a="" type="text" placeholder="Enter Your IFSC Code" class="ipt" />
+                        </div>
+                    </div>
+                    <div data-v-7aa0f84a="" class="item">
+                        <div data-v-7aa0f84a="" class="lab">Phone Number</div>
+                        <div data-v-7aa0f84a="" class="input">
+                            <input data-v-7aa0f84a="" maxlength="10" type="mob" placeholder="It Is Required" class="ipt" />
+                        </div>
+                    </div>
+                    <!---->
+                </div>
+                <div data-v-7aa0f84a="" class="c-row c-row-center m-t-20 bank-btn">
+                    <button data-v-7aa0f84a=""
+                        class="btn van-button van-button--default van-button--normal van-button--block van-button--round">
+                        <div data-v-7aa0f84a="" class="van-button__content">
+                            <span data-v-7aa0f84a="" class="van-button__text">
+                                Add a bank card
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div data-v-7692a079="" data-v-7aa0f84a="" class="Loading c-row c-row-middle-center" style="display: none">
+                <div data-v-7692a079="" class="van-loading van-loading--circular">
+                    <span data-v-7692a079="" class="van-loading__spinner van-loading__spinner--circular" style="width: auto; height: auto; -webkit-animation-duration: 1s; animation-duration: 1s;">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" width="200" height="200" preserveAspectRatio="xMidYMid meet" style="width: 100%;height: 100%;transform: translate3d(0px, 0px, 0px);content-visibility: visible;">
+                            <g transform="matrix(-0.5984085202217102,0.8011911511421204,-0.8011911511421204,-0.5984085202217102,239.9599609375,79.72173309326172)" style="display: block;">
+                                <image width="200px" height="200px" preserveAspectRatio="xMidYMid slice" xlink:href="/assets/png/image.png"></image>
+                            </g>
+                            <g transform="matrix(0.9408400058746338,0,0,0.9408400058746338,20.969436645507812,79.30152130126953)" style="display: block;">
+                                <image width="168px" height="44px" preserveAspectRatio="xMidYMid slice" xlink:href="/logo.png"></image>
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <!---->
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/client.js"></script>
+    <script>
+        function alertMess(text, sic) {
+            $('body').append(
+                `
+                <div data-v-1dcba851="" class="msg">
+                    <div data-v-1dcba851="" class="msg-content v-enter-active v-enter-to" style=""> ${text} </div>
+                </div>
+                `
+            );
+            setTimeout(() => {
+                $('.msg .msg-content').removeClass('v-enter-active v-enter-to');
+                $('.msg .msg-content').addClass('v-leave-active v-leave-to');
+                setTimeout(() => {
+                    $('.msg').remove();
+                }, 100);
+                sic.removeClass('block-click');
+            }, 1000);
+        }
+        $('button').click(function (e) { 
+            e.preventDefault();
+            let name_bank = $('.ipt:eq(0)').val().trim();
+            let name_user = $('.ipt:eq(1)').val().trim();
+            let stk = $('.ipt:eq(2)').val().trim();
+            console.log(stk);
+            let email = $('.ipt:eq(3)').val().trim();
+            let tinh = $('.ipt:eq(4)').val().trim();
+            let type = 'bank';
+            if (name_bank && name_user && stk && email && tinh) {
+                $.ajax({
+                    type: "POST",
+                    url: "/api/webapi/addBank",
+                    data: {
+                        type: type,
+                        name_bank: name_bank,
+                        name_user: name_user,
+                        stk: stk,
+                        email: email,
+                        tinh: tinh,
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+                        alertMess(response.message, $(this));
+                        setTimeout(() => {
+                            if (response.message) {
+                                window.location.href = "/wallet/withdrawal";
+                            }
+                        }, 1200);
+                    }
+                });
+            } else {
+                alertMess('Please enter full information', $(this));
+            }
+        });
+        function toggleBankList() {
+    // Bank list ko toggle karne ke liye
+    const bankList = document.getElementById("bankList");
+    bankList.style.display = bankList.style.display === "none" ? "block" : "none";
+}
+
+function selectBank(element) {
+    // Bank name ko input field mein set karne aur list ko hide karne ke liye
+    const bankName = element.querySelector("span").textContent;
+    document.getElementById("selectedBank").value = bankName;
+    document.getElementById("bankList").style.display = "none";
+}
+
+function filterBanks() {
+    // Get the search query and convert it to lowercase
+    const searchQuery = document.getElementById("searchBank").value.toLowerCase();
+    const bankItems = document.querySelectorAll("#bankList .chooseBank__container-content-items__item");
+    
+    bankItems.forEach(item => {
+        const bankName = item.querySelector("span").textContent.toLowerCase();
+        // If bank name matches the search query, display it, else hide it
+        if (bankName.includes(searchQuery)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+}
+    </script>
+</body>
+
+</html>

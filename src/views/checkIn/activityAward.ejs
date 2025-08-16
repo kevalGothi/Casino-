@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 48.24px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex,nofollow">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <title>Spinzo</title>
+    <link rel="stylesheet" href="./index_files/index-96409872.css">
+    <link href="/css/checkIn/chunk-vendors.css" rel="stylesheet" />
+    <link href="/css/checkIn/app.css" rel="stylesheet" />
+    <link href="/css/checkIn/chunk.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/fav.png" type="image/x-icon">
+    <style>
+
+
+:root {
+    --main-color: #f95959;
+    --main_gradient-color: linear-gradient(90deg, #f95959 0%, #ff9a8e 100%);
+    --main_gradient-color2: linear-gradient(180deg, #f95959 0%, #ff9a8e 100%);
+    --light-main_gradient-color: var(--main_gradient-color);
+    --text_white: #fff;
+    --light-bg_white: #fff;
+    --light-main-color: var(--main-color);
+    --norm_red-color: #FB5B5B;
+    --norm_green-color: #18B660;
+    --norm_secondary-color: #FEAA57;
+    --norm_Purple-color: #C86EFF;
+    --norm_bule-color: #6EA8F4;
+    --button_dis_color: linear-gradient(90deg, #CCCEDC 15.38%, #CDCFDD 98.73%);
+    --text_color_L1: #001534;
+    --text_color_L2: #80849C;
+    --text_color_L3: #B6BCC8;
+    --text_color_L4: #FFF;
+    --bg_color_L1: #F2F2F1;
+    --bg_color_L2: #FFF;
+    --bg_color_L3: #F6F6F6;
+    --Dividing-line_color: #E1E1E1;
+    --sheet_nva_color: var(--main-color);
+    --sheet_detail_bg_color: #F6F6F6;
+    --pop_bg-color: linear-gradient(180deg, #f95959 0%, #ff9a8e 68.59%);
+    --iconSecondary: rgba(24, 182, 96, .3);
+    --van-sidebar-text-color: var(--main-color);
+    --van-picker-background: var(--bg_color_L2);
+    --van-picker-option-text-color: var(--text_color_L2);
+    --van-picker-confirm-action-color: var(--main-color);
+    --van-checkbox-checked-icon-color: var(--main-color);
+    --van-checkbox-label-color: var(--text_color_L2);
+    --van-field-input-text-color: var(--text_color_L1);
+    --van-radio-checked-icon-color: var(--main-color);
+    --van-grid-item-content-background: var(--bg_color_L1) --van-text-color: var(--text_color_L1);
+    --van-dialog-background: var(--bg_color_L2);
+    --van-circle-color: var(--main-color);
+    --van-circle-layer-color: var(--bg_color_L3);
+    --van-calendar-range-edge-background: var(--main-color);
+    --van-button-primary-background: var(--main-color);
+    --van-button-primary-border-color: var(--main-color);
+}
+        html,
+		body {
+			height: 100%;
+			width: 100%;
+			background-color: #090909;
+			padding: 0;
+			margin: 0;
+		}
+        .block-click {
+            pointer-events: none;
+        }
+        
+       
+
+        .task-banner[data-v-d7213382] {
+    width: 100%;
+    height: 4.46667rem;
+    padding: .13333rem .26667rem;
+    margin-bottom: .4rem;
+    background-image: url(/assets/png/award_bg-00eaec82.png),linear-gradient(94deg, #650e5a 2.72%, #7b0a83 43.54%, #a239ff 98.54%);
+    background-size: 100% 4.46667rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    position: relative;
+}
+
+ .task-banner div[data-v-d7213382] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: start;
+}
+
+ .task-banner .banner-title[data-v-d7213382] {
+    margin-top: .4rem;
+    margin-bottom: .13333rem;
+    font-size: .48rem;
+    color: #fff;
+    font-weight: 600
+}
+
+ .task-banner .banner-content[data-v-d7213382] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    color: #fff;
+    word-break: break-word;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    width: 5.6rem;
+    line-height: .32rem;
+    font-size: 0.3rem;
+}
+ .task-panel[data-v-d7213382] {
+    padding: 0 .26667rem
+}
+
+ .task-panel .task-item[data-v-d7213382] {
+    width: 100%;
+    background: #1f0029;
+    border-radius: .26667rem;
+    overflow: hidden;
+    padding: 0 0 .13333rem;
+    margin-bottom: .26667rem
+}
+
+ .task-panel .task-item img[data-v-d7213382] {
+    width: .53333rem;
+    height: .53333rem
+}
+
+ .task-panel .task-item-header[data-v-d7213382] {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    margin-top: -.06667rem;
+    padding-right: .26667rem
+}
+
+ .task-panel .task-item-header[data-v-d7213382]:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    inset-inline-end: 0;
+    width: 60%;
+    height: .01333rem;
+    border-radius: .26667rem 0 0 .26667rem;
+    background: var(--Dividing-line_color)
+}
+
+ .task-panel .task-item-header img[data-v-d7213382] {
+    width: .53333rem;
+    height: .53333rem
+}
+
+ .task-panel .task-item-header .hearder-status[data-v-d7213382] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    min-width: 3.46667rem;
+    padding: .2rem 0;
+    color: var(--text_white, var(--text_color_L1));
+    border-bottom-right-radius: .33333rem;
+    font-size: .37333rem;
+    font-weight: 700
+}
+
+ .task-panel .task-item-header .hearder-status.new[data-v-d7213382] {
+    background: var(--norm_secondary-color)
+}
+
+ .task-panel .task-item-header .hearder-status.week[data-v-d7213382] {
+    background: var(--norm_red-color)
+}
+
+ .task-panel .task-item-header .hearder-status.day[data-v-d7213382] {
+    background: var(--norm_green-color)
+}
+
+ .task-panel .task-item-header .headerR[data-v-d7213382] {
+    color: #FFC827;
+    font-size: .37333rem
+}
+
+ .task-panel .task-item-header .headerGray[data-v-d7213382] {
+    color: #fff;
+    font-size: .37333rem
+}
+
+ .task-panel .task-item-header .hearder-type[data-v-d7213382] {
+    min-width: 3.2rem;
+    height: .66667rem;
+    line-height: .66667rem;
+    border-radius: .66667rem;
+    text-align: center;
+    padding: 0 .13333rem;
+    color: var(--text_color_L4)
+}
+
+ .task-panel .task-item-header .hearder-type.n1[data-v-d7213382] {
+    border: .01333rem solid var(--main-color);
+    color: var(--main-color)
+}
+
+ .task-panel .task-item-header .hearder-type.n2[data-v-d7213382] {
+    background: var(--linearGradien-19)
+}
+
+ .task-panel .task-item-header .hearder-type.n3[data-v-d7213382] {
+    background: var(--linearGradien-17)
+}
+
+ .task-panel .task-item-header .uncomplete[data-v-d7213382] {
+    background: var(--linearGradien-17)!important
+}
+
+ .task-panel .task-item-header .completed[data-v-d7213382] {
+    background: var(--linearGradien-17)
+}
+
+ .task-panel .task-item-header .gocomplete[data-v-d7213382] {
+    color: var(--main-color);
+    border: .01333rem solid var(--main-color);
+    background: var(--bg_color_L2)
+}
+
+ .task-panel .task-item-type[data-v-d7213382] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin: .26667rem .26667rem 0
+}
+
+ .task-panel .task-item-type img[data-v-d7213382] {
+    width: .53333rem;
+    height: .53333rem
+}
+
+ .task-panel .task-item-type .type[data-v-d7213382] {
+    border: .01333rem solid red
+}
+
+ .task-panel .task-item-type .type-title[data-v-d7213382] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-column-gap: .18667rem;
+    column-gap: .18667rem;
+    height: .64rem;
+    color: #fff;
+}
+
+ .task-panel .task-item-type .type-title svg[data-v-d7213382] {
+    width: .64rem;
+    height: .64rem
+}
+
+html:lang(ar)  .task-panel .task-item-type .type-title[data-v-d7213382] {
+    background-position: right
+}
+
+ .task-panel .task-item-type .type-tip[data-v-d7213382] {
+    color: #FFC827;
+    font-size: .37333rem;
+    font-weight: 400;
+    margin-left: .26667rem
+}
+
+ .task-panel .task-item-description[data-v-d7213382] {
+    color: #000;
+    padding: .26667rem;
+    background: linear-gradient(0deg, #ff9c19 40%, #ffdd2d 110%);
+    box-shadow: -3.828px -3.828px 6px 0px rgba(255, 200, 39, 0.4), 3px 5px 8px 0px rgba(255, 82, 1, 0.2);
+    border-radius: .13333rem;
+    margin: .26667rem;
+    font-size: .29333rem
+}
+
+ .task-panel .task-item-bottom[data-v-d7213382] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding-bottom: .26667rem;
+    margin: 0 .26667rem;
+    color: #fff;
+    border-bottom: .01333rem solid var(--Dividing-line_color)
+}
+
+ .task-panel .task-item-bottom .bottom-title[data-v-d7213382] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    color: var(--DailyTaskTextColor-3);
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+ .task-panel .task-item-bottom svg[data-v-d7213382] {
+    margin-right: .13333rem;
+    width: .4rem;
+    height: .4rem
+}
+
+ .task-panel .task-item-bottom span[data-v-d7213382] {
+    color: var(--norm_secondary-color);
+    font-weight: 400;
+    font-size: .37333rem
+}
+
+ .task-panel .task-item .btn[data-v-d7213382] {
+    color: var(--darkTextW, var(--bg_color_L2));
+    font-size: .4rem;
+    font-weight: 700;
+    border-radius: .53333rem;
+    text-align: center;
+    padding: .16rem 0;
+    margin: .26667rem .2rem .13333rem
+}
+
+ .task-panel .task-item .btnOther.status1[data-v-d7213382] {
+    color: #FFC827;
+    border: .01333rem solid #ffa900;
+}
+
+ .task-panel .task-item .btnOther.status2[data-v-d7213382] {
+    background: var(--main_gradient-color);
+    color: var(--text_color_L4)
+}
+
+ .task-panel .task-item .btnOther.status3[data-v-d7213382] {
+    background: var(--button_dis_color, var(--bg_color_L3));
+    color: var(--text_white, var(--text_color_L1))
+}
+
+ .task-panel .task-item .btnNew.status0[data-v-d7213382] {
+    color: #FFC827;
+    border: .01333rem solid #ffa900
+}
+
+ .task-panel .task-item .btnNew.status1[data-v-d7213382] {
+    background: var(--main-color)
+}
+
+ .task-panel .task-item .btnNew.status2[data-v-d7213382], .task-panel .task-item .btnNew.status3[data-v-d7213382] {
+    background: var(--button_dis_color)
+}
+
+ .navi-record[data-v-d7213382] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    color: var(--text_color_L4)
+}
+
+ .navi-record svg[data-v-d7213382] {
+    width: .64rem;
+    height: .64rem;
+    margin-right: .13333rem
+}
+
+ .dialog-wrapper[data-v-d7213382] {
+    padding: .26667rem 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+ .dialog-wrapper img[data-v-d7213382] {
+    width: 3.73333rem;
+    height: 2.16rem;
+    position: relative;
+    margin-top: -.74667rem
+}
+
+ .dialog-wrapper .dialog-title[data-v-d7213382] {
+    color: var(--text_color_L1);
+    margin: .4rem 0 .26667rem;
+    font-size: .48rem;
+    font-weight: 700;
+    padding: 0 .13333rem
+}
+
+ .dialog-wrapper .dialog-tips[data-v-d7213382] {
+    color: var(--text_color_L2);
+    font-size: .32rem;
+    margin: 0 0 .32rem
+}
+
+ .dialog-wrapper .dialog-para[data-v-d7213382] {
+    color: var(--text_color_L2);
+    font-size: .32rem;
+    padding: 0 .26667rem
+}
+
+ .dialog-wrapper .dialog-btn[data-v-d7213382] {
+    width: 5.6rem;
+    height: 1.06667rem;
+    text-align: center;
+    line-height: 1.06667rem;
+    background: var(--GradiantBlue, var(--main_gradient-color));
+    border-radius: 1.06667rem;
+    font-weight: 700;
+    color: var(--text_color_L4);
+    font-size: .42667rem;
+    margin-top: .53333rem
+}
+
+ .dialog-wrapper .dialog-content[data-v-d7213382] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    color: var(--textBlueLight, var(--DailyTaskTextColor-3))
+}
+
+ .dialog-wrapper .dialog-content svg[data-v-d7213382] {
+    width: .53333rem;
+    height: .53333rem;
+    margin: 0 .13333rem 0 0
+}
+
+ .dialog-wrapper .dialog-content span[data-v-d7213382] {
+    color: var(--norm_secondary-color)
+}
+
+ .dialog-wrapper .dialog-footer[data-v-d7213382] {
+    position: relative;
+    bottom: -1.46667rem
+}
+
+ .dialog-wrapper .dialog-footer img[data-v-d7213382] {
+    width: .8rem;
+    height: .8rem
+}
+
+[data-v-d7213382] .van-dialog.noOverHidden {
+    overflow: inherit
+}
+
+.van-toast[data-v-b64fa971] {
+    word-break: break-word!important
+}
+
+.cg-default.van-button[data-v-b64fa971] {
+    font-weight: 700;
+    font-size: .4rem
+}
+
+.cg-default.van-button .van-button__icon[data-v-b64fa971] {
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+.cg-default.van-button .van-button__icon>img[data-v-b64fa971] {
+    height: 80%
+}
+
+.rule[data-v-b64fa971] {
+    width: calc(100% - .64rem);
+    border: .05333rem solid var(--bgDark-2, var(--borderColor-5));
+    border-top: none;
+    margin: auto;
+    padding: 0 .32rem .32rem;
+    background-color: var(--darkBg, var(--bg_color_L2));
+    border-radius: .26667rem
+}
+
+.rule .head[data-v-b64fa971] {
+    width: 100%;
+    position: relative;
+    height: .8rem;
+    line-height: .8rem;
+    color: #fff;
+    font-family: Inter;
+    font-size: .42667rem;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: .16rem;
+    z-index: 2
+}
+
+html:lang(ar) .rule .head[data-v-b64fa971] {
+    right: -.37333rem;
+    left: auto
+}
+
+    </style>
+</head>
+
+<body style="font-size: 12px;">
+    <div id="app">
+        <div data-v-11ffe290="" class="mian">
+            <div data-v-106b99c8="" data-v-11ffe290="" class="navbar action" style="">
+                <div data-v-106b99c8="" class="navbar-left" onclick="location.href='/activity'">
+                    <div data-v-a9660e98="" data-v-106b99c8="" class="c-row c-row-middle-center" style="color: #fff;">
+                        Activity Award
+                        <i class="fa-light fa-angle-left fa-fade fa-xl center" style="color: #fff"></i>
+                    </div>
+                </div>
+                <!-- <div data-v-106b99c8="" class="navbar-title"> Activity Award </div> -->
+                <div data-v-106b99c8="" class="navbar-right" onclick="location.href='/checkIn/receive-history'">
+                    <div data-v-11ffe290="" data-v-106b99c8="" class="c-row" style="color: #fff; justify-content: space-between; align-items: center;">
+                        <svg data-v-d7213382="" class="svg-icon icon-watchCollection" style="margin-right: 10px;"><use xlink:href="#icon-watchCollection"></use></svg> collection record
+                    </div>
+                </div>
+            </div>
+            <div data-v-d7213382="" class="task-banner">
+                <div data-v-d7213382="">
+                   <!--				<img v-lazy="getIconsPublic('activity/DailyTask', 'present')" />-->
+                   <p data-v-d7213382="">
+                   <div data-v-d7213382="" class="banner-title">Activity Award</div>
+                   <div data-v-d7213382="" class="banner-content">
+                      <div data-v-d7213382="">Complete weekly/daily tasks to receive rich rewards</div>
+                      <div data-v-d7213382="">Weekly rewards cannot be accumulated to the next week, and daily rewards cannot be accumulated to the next day.</div>
+                   </div>
+                   </p>
+                </div>
+             </div>
+  
+             <div data-v-d7213382="" class="task-panel">
+                <div data-v-d7213382="" class="task-item">
+                   <div data-v-d7213382="" class="task-item-header">
+                      <div data-v-d7213382="" class="hearder-status new">Newbie gift pack</div>
+                      <span data-v-d7213382="" class="headerR">Unfinished</span>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-type">
+                      <div data-v-d7213382="" class="type-title new">
+                         <svg data-v-d7213382="" class="svg-icon icon-actNewGift">
+                            <use xlink:href="#icon-actNewGift"></use>
+                         </svg>
+                         <div data-v-d7213382="">Newbie gift pack</div>
+                      </div>
+                      <div data-v-d7213382="" class="type-tip">0/77</div>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-description">Newbie Gift Pack</div>
+                   <div data-v-d7213382="" class="task-item-bottom">
+                      <div data-v-d7213382="">Award amount</div>
+                      <div data-v-d7213382="" class="bottom-title">
+                         <!-- <img v-lazy="getIcons('wallet', 'balance')" /> -->
+                         <svg data-v-d7213382="" class="svg-icon icon-activityWallet">
+                            <use xlink:href="#icon-activityWallet"></use>
+                         </svg>
+                         <span data-v-d7213382="">₹60.00</span>
+                      </div>
+                   </div>
+                   <div data-v-d7213382="" class="btn btnNew status0">to complete</div>
+                </div>
+                <div data-v-d7213382="" class="task-item">
+                   <div data-v-d7213382="" class="task-item-header">
+                      <div data-v-d7213382="" class="hearder-status week">weekly tasks</div>
+                      <span data-v-d7213382="" class="headerGray">Unfinished</span>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-type">
+                      <div data-v-d7213382="" class="type-title weeklyType1">
+                         <svg data-v-d7213382="" class="svg-icon icon-weeklyType1">
+                            <use xlink:href="#icon-weeklyType1"></use>
+                         </svg>
+                         <div data-v-d7213382="">Weekly deposit task</div>
+                      </div>
+                      <div data-v-d7213382="" class="type-tip">0/3000</div>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-description"></div>
+                   <div data-v-d7213382="" class="task-item-bottom">
+                      <div data-v-d7213382="">Award amount</div>
+                      <div data-v-d7213382="" class="bottom-title">
+                         <svg data-v-d7213382="" class="svg-icon icon-activityWallet">
+                            <use xlink:href="#icon-activityWallet"></use>
+                         </svg>
+                         <!-- <img v-lazy="getIcons('wallet', 'balance')" /> --><span data-v-d7213382="">₹300.00</span>
+                      </div>
+                   </div>
+                   <div data-v-d7213382="" class="btn btnOther status1">to complete</div>
+                </div>
+                <div data-v-d7213382="" class="task-item">
+                   <div data-v-d7213382="" class="task-item-header">
+                      <div data-v-d7213382="" class="hearder-status week">weekly tasks</div>
+                      <span data-v-d7213382="" class="headerGray">Unfinished</span>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-type">
+                      <div data-v-d7213382="" class="type-title weeklyType1">
+                         <svg data-v-d7213382="" class="svg-icon icon-weeklyType1">
+                            <use xlink:href="#icon-weeklyType1"></use>
+                         </svg>
+                         <div data-v-d7213382="">Weekly deposit task</div>
+                      </div>
+                      <div data-v-d7213382="" class="type-tip">0/10000</div>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-description"></div>
+                   <div data-v-d7213382="" class="task-item-bottom">
+                      <div data-v-d7213382="">Award amount</div>
+                      <div data-v-d7213382="" class="bottom-title">
+                         <svg data-v-d7213382="" class="svg-icon icon-activityWallet">
+                            <use xlink:href="#icon-activityWallet"></use>
+                         </svg>
+                         <!-- <img v-lazy="getIcons('wallet', 'balance')" /> --><span data-v-d7213382="">₹1000.00</span>
+                      </div>
+                   </div>
+                   <div data-v-d7213382="" class="btn btnOther status1">to complete</div>
+                </div>
+                <div data-v-d7213382="" class="task-item">
+                   <div data-v-d7213382="" class="task-item-header">
+                      <div data-v-d7213382="" class="hearder-status week">weekly tasks</div>
+                      <span data-v-d7213382="" class="headerGray">Unfinished</span>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-type">
+                      <div data-v-d7213382="" class="type-title weeklyType1">
+                         <svg data-v-d7213382="" class="svg-icon icon-weeklyType1">
+                            <use xlink:href="#icon-weeklyType1"></use>
+                         </svg>
+                         <div data-v-d7213382="">Weekly deposit task</div>
+                      </div>
+                      <div data-v-d7213382="" class="type-tip">0/60000</div>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-description"></div>
+                   <div data-v-d7213382="" class="task-item-bottom">
+                      <div data-v-d7213382="">Award amount</div>
+                      <div data-v-d7213382="" class="bottom-title">
+                         <svg data-v-d7213382="" class="svg-icon icon-activityWallet">
+                            <use xlink:href="#icon-activityWallet"></use>
+                         </svg>
+                         <!-- <img v-lazy="getIcons('wallet', 'balance')" /> --><span data-v-d7213382="">₹6000.00</span>
+                      </div>
+                   </div>
+                   <div data-v-d7213382="" class="btn btnOther status1">to complete</div>
+                </div>
+                <div data-v-d7213382="" class="task-item">
+                   <div data-v-d7213382="" class="task-item-header">
+                      <div data-v-d7213382="" class="hearder-status week">weekly tasks</div>
+                      <span data-v-d7213382="" class="headerGray">Unfinished</span>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-type">
+                      <div data-v-d7213382="" class="type-title weeklyType1">
+                         <svg data-v-d7213382="" class="svg-icon icon-weeklyType1">
+                            <use xlink:href="#icon-weeklyType1"></use>
+                         </svg>
+                         <div data-v-d7213382="">Weekly deposit task</div>
+                      </div>
+                      <div data-v-d7213382="" class="type-tip">0/100000</div>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-description"></div>
+                   <div data-v-d7213382="" class="task-item-bottom">
+                      <div data-v-d7213382="">Award amount</div>
+                      <div data-v-d7213382="" class="bottom-title">
+                         <svg data-v-d7213382="" class="svg-icon icon-activityWallet">
+                            <use xlink:href="#icon-activityWallet"></use>
+                         </svg>
+                         <!-- <img v-lazy="getIcons('wallet', 'balance')" /> --><span data-v-d7213382="">₹1,0000.00</span>
+                      </div>
+                   </div>
+                   <div data-v-d7213382="" class="btn btnOther status1">to complete</div>
+                </div>
+                <div data-v-d7213382="" class="task-item">
+                   <div data-v-d7213382="" class="task-item-header">
+                      <div data-v-d7213382="" class="hearder-status week">weekly tasks</div>
+                      <span data-v-d7213382="" class="headerGray">Unfinished</span>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-type">
+                      <div data-v-d7213382="" class="type-title weeklyType1">
+                         <svg data-v-d7213382="" class="svg-icon icon-weeklyType1">
+                            <use xlink:href="#icon-weeklyType1"></use>
+                         </svg>
+                         <div data-v-d7213382="">Weekly deposit task</div>
+                      </div>
+                      <div data-v-d7213382="" class="type-tip">0/1000000</div>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-description"></div>
+                   <div data-v-d7213382="" class="task-item-bottom">
+                      <div data-v-d7213382="">Award amount</div>
+                      <div data-v-d7213382="" class="bottom-title">
+                         <svg data-v-d7213382="" class="svg-icon icon-activityWallet">
+                            <use xlink:href="#icon-activityWallet"></use>
+                         </svg>
+                         <!-- <img v-lazy="getIcons('wallet', 'balance')" /> --><span data-v-d7213382="">₹1,00,000.00</span>
+                      </div>
+                   </div>
+                   <div data-v-d7213382="" class="btn btnOther status1">to complete</div>
+                </div>
+                <div data-v-d7213382="" class="task-item">
+                   <div data-v-d7213382="" class="task-item-header">
+                      <div data-v-d7213382="" class="hearder-status day">Daily mission</div>
+                      <span data-v-d7213382="" class="headerGray">Unfinished</span>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-type">
+                      <div data-v-d7213382="" class="type-title weeklyType4">
+                         <svg data-v-d7213382="" class="svg-icon icon-weeklyType4">
+                            <use xlink:href="#icon-weeklyType4"></use>
+                         </svg>
+                         <div data-v-d7213382="">Slot Daily Spin</div>
+                      </div>
+                      <div data-v-d7213382="" class="type-tip">0/5000</div>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-description"></div>
+                   <div data-v-d7213382="" class="task-item-bottom">
+                      <div data-v-d7213382="">Award amount</div>
+                      <div data-v-d7213382="" class="bottom-title">
+                         <svg data-v-d7213382="" class="svg-icon icon-activityWallet">
+                            <use xlink:href="#icon-activityWallet"></use>
+                         </svg>
+                         <!-- <img v-lazy="getIcons('wallet', 'balance')" /> --><span data-v-d7213382="">₹100.00</span>
+                      </div>
+                   </div>
+                   <div data-v-d7213382="" class="btn btnOther status1">to complete</div>
+                </div>
+                <div data-v-d7213382="" class="task-item">
+                   <div data-v-d7213382="" class="task-item-header">
+                      <div data-v-d7213382="" class="hearder-status day">Daily mission</div>
+                      <span data-v-d7213382="" class="headerGray">Unfinished</span>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-type">
+                      <div data-v-d7213382="" class="type-title weeklyType4">
+                         <svg data-v-d7213382="" class="svg-icon icon-weeklyType4">
+                            <use xlink:href="#icon-weeklyType4"></use>
+                         </svg>
+                         <div data-v-d7213382="">Slot Daily Spin</div>
+                      </div>
+                      <div data-v-d7213382="" class="type-tip">0/10000</div>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-description"></div>
+                   <div data-v-d7213382="" class="task-item-bottom">
+                      <div data-v-d7213382="">Award amount</div>
+                      <div data-v-d7213382="" class="bottom-title">
+                         <svg data-v-d7213382="" class="svg-icon icon-activityWallet">
+                            <use xlink:href="#icon-activityWallet"></use>
+                         </svg>
+                         <!-- <img v-lazy="getIcons('wallet', 'balance')" /> --><span data-v-d7213382="">₹200.00</span>
+                      </div>
+                   </div>
+                   <div data-v-d7213382="" class="btn btnOther status1">to complete</div>
+                </div>
+                <div data-v-d7213382="" class="task-item">
+                   <div data-v-d7213382="" class="task-item-header">
+                      <div data-v-d7213382="" class="hearder-status day">Daily mission</div>
+                      <span data-v-d7213382="" class="headerGray">Unfinished</span>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-type">
+                      <div data-v-d7213382="" class="type-title weeklyType4">
+                         <svg data-v-d7213382="" class="svg-icon icon-weeklyType4">
+                            <use xlink:href="#icon-weeklyType4"></use>
+                         </svg>
+                         <div data-v-d7213382="">Slot Daily Spin</div>
+                      </div>
+                      <div data-v-d7213382="" class="type-tip">0/100000</div>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-description"></div>
+                   <div data-v-d7213382="" class="task-item-bottom">
+                      <div data-v-d7213382="">Award amount</div>
+                      <div data-v-d7213382="" class="bottom-title">
+                         <svg data-v-d7213382="" class="svg-icon icon-activityWallet">
+                            <use xlink:href="#icon-activityWallet"></use>
+                         </svg>
+                         <!-- <img v-lazy="getIcons('wallet', 'balance')" /> --><span data-v-d7213382="">₹2000.00</span>
+                      </div>
+                   </div>
+                   <div data-v-d7213382="" class="btn btnOther status1">to complete</div>
+                </div>
+                <div data-v-d7213382="" class="task-item">
+                   <div data-v-d7213382="" class="task-item-header">
+                      <div data-v-d7213382="" class="hearder-status day">Daily mission</div>
+                      <span data-v-d7213382="" class="headerGray">Unfinished</span>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-type">
+                      <div data-v-d7213382="" class="type-title weeklyType3">
+                         <svg data-v-d7213382="" class="svg-icon icon-weeklyType3">
+                            <use xlink:href="#icon-weeklyType3"></use>
+                         </svg>
+                         <div data-v-d7213382="">Lottery Daily Bets</div>
+                      </div>
+                      <div data-v-d7213382="" class="type-tip">0/5000</div>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-description"></div>
+                   <div data-v-d7213382="" class="task-item-bottom">
+                      <div data-v-d7213382="">Award amount</div>
+                      <div data-v-d7213382="" class="bottom-title">
+                         <svg data-v-d7213382="" class="svg-icon icon-activityWallet">
+                            <use xlink:href="#icon-activityWallet"></use>
+                         </svg>
+                         <!-- <img v-lazy="getIcons('wallet', 'balance')" /> --><span data-v-d7213382="">₹100.00</span>
+                      </div>
+                   </div>
+                   <div data-v-d7213382="" class="btn btnOther status1">to complete</div>
+                </div>
+                <div data-v-d7213382="" class="task-item">
+                   <div data-v-d7213382="" class="task-item-header">
+                      <div data-v-d7213382="" class="hearder-status day">Daily mission</div>
+                      <span data-v-d7213382="" class="headerGray">Unfinished</span>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-type">
+                      <div data-v-d7213382="" class="type-title weeklyType3">
+                         <svg data-v-d7213382="" class="svg-icon icon-weeklyType3">
+                            <use xlink:href="#icon-weeklyType3"></use>
+                         </svg>
+                         <div data-v-d7213382="">Lottery Daily Bets</div>
+                      </div>
+                      <div data-v-d7213382="" class="type-tip">0/10000</div>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-description"></div>
+                   <div data-v-d7213382="" class="task-item-bottom">
+                      <div data-v-d7213382="">Award amount</div>
+                      <div data-v-d7213382="" class="bottom-title">
+                         <svg data-v-d7213382="" class="svg-icon icon-activityWallet">
+                            <use xlink:href="#icon-activityWallet"></use>
+                         </svg>
+                         <!-- <img v-lazy="getIcons('wallet', 'balance')" /> --><span data-v-d7213382="">₹200.00</span>
+                      </div>
+                   </div>
+                   <div data-v-d7213382="" class="btn btnOther status1">to complete</div>
+                </div>
+                <div data-v-d7213382="" class="task-item">
+                   <div data-v-d7213382="" class="task-item-header">
+                      <div data-v-d7213382="" class="hearder-status day">Daily mission</div>
+                      <span data-v-d7213382="" class="headerGray">Unfinished</span>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-type">
+                      <div data-v-d7213382="" class="type-title weeklyType3">
+                         <svg data-v-d7213382="" class="svg-icon icon-weeklyType3">
+                            <use xlink:href="#icon-weeklyType3"></use>
+                         </svg>
+                         <div data-v-d7213382="">Lottery Daily Bets</div>
+                      </div>
+                      <div data-v-d7213382="" class="type-tip">0/100000</div>
+                   </div>
+                   <div data-v-d7213382="" class="task-item-description"></div>
+                   <div data-v-d7213382="" class="task-item-bottom">
+                      <div data-v-d7213382="">Award amount</div>
+                      <div data-v-d7213382="" class="bottom-title">
+                         <svg data-v-d7213382="" class="svg-icon icon-activityWallet">
+                            <use xlink:href="#icon-activityWallet"></use>
+                         </svg>
+                         <!-- <img v-lazy="getIcons('wallet', 'balance')" /> --><span data-v-d7213382="">₹2000.00</span>
+                      </div>
+                   </div>
+                   <div data-v-d7213382="" class="btn btnOther status1">to complete</div>
+                </div>
+             </div>
+
+            <div data-v-7692a079="" data-v-432e6ed0="" class="Loading c-row c-row-middle-center">
+				<div data-v-7692a079="" class="van-loading van-loading--circular">
+					<span data-v-7692a079="" class="van-loading__spinner van-loading__spinner--circular" style="width: auto; height: auto; -webkit-animation-duration: 1s; animation-duration: 1s;">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" width="200" height="200" preserveAspectRatio="xMidYMid meet" style="width: 100%;height: 100%;transform: translate3d(0px, 0px, 0px);content-visibility: visible;">
+                            <g transform="matrix(-0.5984085202217102,0.8011911511421204,-0.8011911511421204,-0.5984085202217102,239.9599609375,79.72173309326172)" style="display: block;">
+                                <image width="200px" height="200px" preserveAspectRatio="xMidYMid slice" xlink:href="/assets/png/image.png"></image>
+                            </g>
+                            <g transform="matrix(0.9408400058746338,0,0,0.9408400058746338,20.969436645507812,79.30152130126953)" style="display: block;">
+                                <image width="168px" height="44px" preserveAspectRatio="xMidYMid slice" xlink:href="/logo.png"></image>
+                            </g>
+                        </svg>
+                    </span>
+				</div>
+			</div>
+            <%- include('../nav') -%>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/client.js"></script>
+    <script>
+        function alertMess(text, sic) {
+            $('body').append(
+                `
+                <div data-v-1dcba851="" class="msg">
+                    <div data-v-1dcba851="" class="msg-content v-enter-active v-enter-to" style=""> ${text} </div>
+                </div>
+                `
+            );
+            setTimeout(() => {
+                $('.msg .msg-content').removeClass('v-enter-active v-enter-to');
+                $('.msg .msg-content').addClass('v-leave-active v-leave-to');
+                setTimeout(() => {
+                    $('.msg').remove();
+                }, 100);
+                sic.removeClass('block-click');
+            }, 1000);
+        }
+    
+      </script>
+    <script>
+        $(window).on('load', function() {
+			$('.Loading').fadeOut(0);
+		});
+    </script>
+</body>
+
+</html>

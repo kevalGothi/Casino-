@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Withdrawal list</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    <%- include('nav') %>
+    <div class="content-wrapper">
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Withdrawal list</h1>
+            </div>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+      </section>
+
+     <div class="form-group"
+          style="text-align: center; display: flex;gap:0.5rem;align-items: center;padding: 0 0.5rem;flex-wrap: wrap;">
+          <input type="text" id="search" placeholder="Enter The Account You Want To Search">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;">
+            <input type="date" id="startDate">
+            <input type="date" id="endDate">
+            <button id="filterBtn" class="btn btn-success btn-sm lock-btn"
+              style="display: flex;align-items: center;gap: 0.23rem;">Filter</button>
+            <button id="clearBtn" class="btn btn-secondary btn-sm lock-btn"
+              style="display: flex; align-items: center; gap: 0.23rem;">Clear</button>
+          </div>
+        </div>
+
+      <section class="content">
+        <div class="container-fluid">
+         
+
+            <!-- =========================================================== -->
+            <!-- <h5 class="mb-2">Info Box</h5> -->
+            <div class="row">
+                <!-- /.col -->
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="info-box shadow-sm">
+                      <span class="info-box-icon bg-warning"><i class="fa fa-university" aria-hidden="true"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text"> Total Withdraw</span>
+                            <span class="info-box-number" id="totalRecharge">0</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="info-box shadow-sm">
+                    <span class="info-box-icon bg-warning"><i class="fa fa-university" aria-hidden="true"></i></span>
+
+                      <div class="info-box-content">
+                          <span class="info-box-text">Today Withdraw </span>
+                          <span class="info-box-number" id="totalRechargeToday">0</span>
+                      </div>
+                      <!-- /.info-box-content -->
+                  </div>
+                  <!-- /.info-box -->
+              </div>
+
+              <div class="col-md-3 col-sm-6 col-12">
+                <div class="info-box shadow-sm">
+                  <span class="info-box-icon bg-warning"><i class="fa fa-university" aria-hidden="true"></i></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">Weekly Total Withdraw</span>
+                        <span class="info-box-number" id="totalRechargeWeek">0</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="info-box shadow-sm">
+                <span class="info-box-icon bg-warning"><i class="fa fa-university" aria-hidden="true"></i></span>
+
+                  <div class="info-box-content">
+                      <span class="info-box-text">Monthly Total Withdraw</span>
+                      <span class="info-box-number" id="totalRechargeMonth">0</span>
+                  </div>
+                  <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+          </div>
+                <!-- /.col -->
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <!-- Default box -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Withdrawal list</h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body p-0" style="overflow-y: hidden;">
+            <table class="table table-striped projects" id="table1">
+              <thead>
+                <tr>
+                  <th class="text-center">ID</th>
+                  <th class="text-center">UID</th>
+                  <th class="text-center">Account</th>
+                  <th class="text-center">Bank</th>
+                   <th class="text-center">UPI ID</th>
+                  <th class="text-center">Amount</th>
+                  <th class="text-center">Transaction Id</th>
+                  <th class="text-center">Time</th>
+                  <th class="text-center">Status</th>
+                  <!-- <th class="text-center"></th> -->
+                </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            </table>
+          </div>
+          <nav aria-label="Page navigation example" style="margin-top: 20px;display: flex;justify-content: center;">
+            <ul class="pagination table1">
+              <li class="page-item previous">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+              </li>
+              <div id="numbers" style="display: flex;"></div>
+              <li class="page-item next">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+      </section>
+    </div>
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/dist/js/adminlte.min.js"></script>
+  <script src="/js/admin/admin.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script src="/js/admin/tables.js"></script>
+    <script>
+        $(document).ready(function () {
+            let allData = [];
+    
+            function formateT(params) {
+                return params < 10 ? "0" + params : params;
+            }
+    
+            function timerJoin(timestamp = '') {
+                let date = timestamp ? new Date(Number(timestamp)) : new Date();
+                let years = formateT(date.getFullYear());
+                let months = formateT(date.getMonth() + 1);
+                let days = formateT(date.getDate());
+                let hours = date.getHours() % 12 || 12;
+                let ampm = date.getHours() < 12 ? "AM" : "PM";
+                let minutes = formateT(date.getMinutes());
+                let seconds = formateT(date.getSeconds());
+                return `${years}-${months}-${days} ${hours}:${minutes}:${seconds} ${ampm}`;
+            }
+    
+            function show(dataList) {
+                if (dataList.length == 0) {
+                    $('tbody').html(`
+                        <tr class="text-center">
+                            <td colspan="9">No More Data...</td>
+                        </tr>
+                    `);
+                    return;
+                }
+                let html = '';
+                let serial = 1;
+                dataList.forEach((data) => {
+                    html += `<tr class="text-center">
+                        <td>${serial}</td>
+                        <td><b>${data.uid}</b></td>
+                        <td><b>${data.phone}</b></td>
+                        <td><b style="color: #3498db">${data.name_bank}</b></td>
+                        <td><b>${data.sdt}</b></td>
+                        <td><b>${data.money}</b></td>
+                        <td><b>${data.id_order}</b></td>
+                        <td><b>${timerJoin(data.time)}</b></td>
+                        <td class="project-state">
+                            <span class="badge badge-${data.status == 1 ? 'success' : 'danger'}">${data.status == 1 ? 'Success' : 'Closed'}</span>
+                        </td>
+                    </tr>`;
+                    serial++;
+                });
+                $('tbody').html(html);
+            }
+    
+            function fetchData() {
+                $.ajax({
+                    type: "POST",
+                    url: "/api/webapi/admin/recharge",
+                    dataType: "json",
+                    success: function (response) {
+                        allData = response.datas4 || [];
+                        show(allData);
+                    }
+                });
+            }
+    
+            function filterData() {
+                let startDate = $('#startDate').val();
+                let endDate = $('#endDate').val();
+    
+                if (!startDate && !endDate) {
+                    show(allData);
+                    return;
+                }
+    
+                let startTimestamp = startDate ? new Date(startDate).setHours(0, 0, 0, 0) : null;
+                let endTimestamp = endDate ? new Date(endDate).setHours(23, 59, 59, 999) : null;
+    
+                let filteredData = allData.filter((item) => {
+                    let itemTimestamp = Number(item.time);
+                    return (!startTimestamp || itemTimestamp >= startTimestamp) &&
+                           (!endTimestamp || itemTimestamp <= endTimestamp);
+                });
+    
+                show(filteredData);
+            }
+    
+            // Set today's date as default for endDate
+            let today = new Date().toISOString().split('T')[0]; 
+            $('#endDate').val(today);
+    
+            // Fetch all data on page load
+            fetchData();
+    
+            // Filter button click event
+            $('#filterBtn').click(function () {
+                filterData();
+            });
+    
+            // Clear button click event
+            $('#clearBtn').click(function () {
+                $('#startDate').val('');
+                $('#endDate').val(today);
+                show(allData);
+            });
+        });
+    </script>
+</body>
+
+</html>

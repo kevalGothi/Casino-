@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bonus</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css" />
+  <link rel="stylesheet" href="/css/admin.css" />
+  <style>
+    .block-click {
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    <%- include('nav') %>
+      <div class="content-wrapper">
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1>Play and Earn Bonus</h1>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+
+        <div class="form-group" style="text-align: center">
+          <input type="text" id="search" placeholder="Enter the phone number/id you are looking for" />
+        </div>
+
+        <!-- Main content -->
+        <section class="content">
+          <!-- Default box -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Bonus</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body p-0" style="overflow-y: hidden">
+              <table class="table table-striped projects" id="table1">
+                <thead>
+                  <tr>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Phone</th>
+                    <th class="text-center">Amount</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- #region -->
+                </tbody>
+              </table>
+            </div>
+            <nav aria-label="Page navigation example" style="margin-top: 20px; display: flex; justify-content: center">
+              <ul class="pagination table1">
+                <li class="page-item previous" id="previous">
+                  <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <div id="numbers" style="display: flex">
+                  <li class="page-item">
+                    <a class="page-link active text-white" id="text-page">1/1</a>
+                  </li>
+                </div>
+                <li class="page-item next" id="next">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+      </div>
+  </div>
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/dist/js/adminlte.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script src="/js/admin/admin.js"></script>
+  <script>
+    $("#search").on("keyup", function () {
+      var value = $(this).val().toLowerCase();
+      $("tbody tr").filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      });
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      let pageno = 0;
+      let limit = 50;
+      let page = 1;
+      let totalPages = 1;
+      let searchValue = '';
+  
+      const statusDetails = (status) => {
+        const statusMap = {
+          1: "Bonus",
+          2: "Salary",
+          3: "Commission",
+        };
+        return statusMap[status] || "Unknown Bonus";
+      };
+  
+      const renderData = (datas) => {
+        $("tbody").html(
+          datas
+            .map(
+              (data) => `
+              <tr class="text-center">
+                <td>${data.id}</td>
+                <td><b style="color: #2003db">${data.phone}</b></td>
+                <td><b style="color: #2003db">${new Intl.NumberFormat('en-IN', {
+                  maximumFractionDigits:3,
+                style: 'currency',
+                currency: 'INR'
+              }).format(data.amount || 0)}</b></td>
+                <td>${statusDetails(data.status)}</td>
+                <td><b style="color: #2003db">${new Date(data.time).toLocaleString()}</b></td>
+              </tr>`
+            )
+            .join("")
+        );
+      };
+  
+      const fetchData = async (params) => {
+        try {
+          const response = await $.ajax({
+            type: "POST",
+            url: "/api/webapi/admin/bet-commission",
+            data: params,
+            dataType: "json",
+          });
+  
+          if (response.status) {
+            totalPages = response.pagination.totalPages;
+            $("#text-page").text(`${page} / ${totalPages}`);
+            renderData(response.data);
+          }
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+  
+      const loadPage = () => {
+        fetchData({ pageno, limit, search: searchValue });
+      };
+  
+      loadPage();
+  
+      // Debounce function to optimize search API calls
+      const debounce = (func, delay) => {
+        let timer;
+        return (...args) => {
+          clearTimeout(timer);
+          timer = setTimeout(() => func(...args), delay);
+        };
+      };
+  
+      const handleSearch = debounce(() => {
+        searchValue = $("#search").val().trim();
+        pageno = 0;
+        page = 1;
+        loadPage();
+      }, 300);
+  
+      $("#search").on("input", handleSearch);
+  
+      // Next Page
+      $("#next").click((e) => {
+        e.preventDefault();
+        if (page >= totalPages) return;
+        pageno++;
+        page++;
+        loadPage();
+      });
+  
+      // Previous Page
+      $("#previous").click((e) => {
+        e.preventDefault();
+        if (pageno <= 0) return;
+        pageno--;
+        page--;
+        loadPage();
+      });
+    });
+  </script>
+</body>
+
+</html>

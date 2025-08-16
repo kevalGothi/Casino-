@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 48.16px">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport" />
+    <title>Spinzo</title>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    <link href="/css/wallet/main.css" rel="stylesheet" />
+    <link href="/css/wallet/chunk_2-1.css" rel="stylesheet" />
+    <link href="/css/wallet/chunk_2-2.css" rel="stylesheet" />
+    <link href="/css/wallet/chunk_2-3.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/fav.png" type="image/x-icon" />
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #090909;
+            padding: 0;
+            margin: 0;
+        }
+        .mian[data-v-439e6f58]{background-color:#242424}
+        
+        .StrongBox__container-dailyRate[data-v-6455ca11] {
+            margin: auto;
+            width: 4.16rem;
+            height: 0.53333rem;
+            line-height: .53333rem;
+            text-align: center;
+            color: #fff;
+            background: #2a2a2a;
+            border-radius: 0.53333rem;
+            font-weight: 400;
+            font-size: .32rem;
+            font-style: normal;
+            box-shadow: 0 0.05333rem 0.21333rem #d0d0ed5c;
+            margin-bottom: 0.26667rem;
+            margin-top: 0.4rem;
+        }
+
+        .TotalAssets__container[data-v-ffd9d03e] {
+            width: 97%;
+    height: 4.6667rem;
+    background: #333332;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    border-radius: 0.26667rem;
+    color: #fff;
+    padding: 0.38667rem 0.33333rem 0;
+    margin: 6px;
+        }
+
+        .TotalAssets__container-header[data-v-ffd9d03e] {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            height: 0.53333rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .TotalAssets__container-header__left[data-v-ffd9d03e],
+        .TotalAssets__container-header__right[data-v-ffd9d03e] {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .TotalAssets__container-header__left[data-v-ffd9d03e] {
+            font-weight: 400;
+            font-size: .34667rem;
+        }
+
+        .TotalAssets__container-header__left img[data-v-ffd9d03e],
+        .TotalAssets__container-header__right img[data-v-ffd9d03e] {
+            width: 0.4rem;
+            height: 0.4rem;
+            margin-right: 0.21333rem;
+        }
+
+        .TotalAssets__container-header__left[data-v-ffd9d03e],
+        .TotalAssets__container-header__right[data-v-ffd9d03e] {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .TotalAssets__container-header__right[data-v-ffd9d03e] {
+            height: 0.53333rem;
+            border: 0.01333rem solid #ffffff;
+            border-radius: 0.08rem;
+            font-weight: 400;
+            font-size: .29333rem;
+            padding: 0 0.36rem;
+        }
+
+        .TotalAssets__container-header__left img[data-v-ffd9d03e],
+        .TotalAssets__container-header__right img[data-v-ffd9d03e] {
+            width: 0.4rem;
+            height: 0.4rem;
+            margin-right: 0.21333rem;
+        }
+
+        .TotalAssets__container-main[data-v-ffd9d03e] {
+            height: 0.73333rem;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            margin: 0.21333rem 0.37333rem 0.37333rem 0;
+            font-weight: 700;
+            font-size: .64rem;
+            text-shadow: 0 0.01333rem 0 rgba(0, 0, 0, .12);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .TotalAssets__container-tip[data-v-ffd9d03e] {
+            font-size: .29333rem;
+        }
+        .StrongBox__container-income[data-v-6455ca11] {
+    margin-top: 0.26667rem;
+    min-height: 5.13333rem;
+    background: #ffffff;
+    box-shadow: 0 0.05333rem 0.21333rem #d0d0ed5c;
+    border-radius: 0.13333rem;
+    padding: 0.4rem 0.18667rem 0.10667rem;
+}
+
+.StrongBox__container-income-header[data-v-6455ca11] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.StrongBox__container-income-header-left[data-v-6455ca11], .StrongBox__container-income-header-right[data-v-6455ca11] {
+    text-align: center;
+    padding-top: 0.12rem;
+    width: 50%;
+    padding: 0.12rem 0.26667rem 0;
+}
+.StrongBox__container-income-header-left-num[data-v-6455ca11] {
+    color: #f13f39;
+    height: 0.48rem;
+    line-height: .48rem;
+    font-size: .48rem;
+}
+.StrongBox__container-income-header-left-text[data-v-6455ca11], .StrongBox__container-income-header-right-text[data-v-6455ca11] {
+    height: 0.37333rem;
+    font-size: .32rem;
+    color: #2f2f34;
+    margin: 0.16rem 0;
+}
+.StrongBox__container-income-header-left-myrale[data-v-6455ca11], .StrongBox__container-income-header-right-myrale[data-v-6455ca11] {
+    height: 0.48rem;
+    border: 0.01333rem solid #dbdbdb;
+    border-radius: 0.53333rem;
+    min-width: 2.93333rem;
+    font-size: .29333rem;
+    color: #a8abc0;
+    margin: auto;
+}.StrongBox__container-income-header-right[data-v-6455ca11] {
+    border-left: 0.01333rem solid #daddf0;
+}
+
+.StrongBox__container-income-header-left[data-v-6455ca11], .StrongBox__container-income-header-right[data-v-6455ca11] {
+    text-align: center;
+    padding-top: 0.12rem;
+    width: 50%;
+    padding: 0.12rem 0.26667rem 0;
+}
+.StrongBox__container-income-header-right-num[data-v-6455ca11] {
+    color: #333;
+    height: 0.48rem;
+    line-height: .48rem;
+    font-size: .4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.StrongBox__container-income-buttom>div[data-v-6455ca11] {
+    width: 4.34667rem;
+    height: 0.93333rem;
+    line-height: .93333rem;
+    border: 0.01333rem solid #f13f39;
+    border-radius: 0.13333rem;
+    font-size: .37333rem;
+    font-weight: 400;
+    color: #f13f39;
+    text-align: center;
+}
+.StrongBox__container-income-buttom>div+div[data-v-6455ca11] {
+    background: #f13f39;
+    color: #fff;
+}
+
+.StrongBox__container-income-buttom>div[data-v-6455ca11] {
+    width: 4.34667rem;
+    height: 0.93333rem;
+    line-height: .93333rem;
+    border: 0.01333rem solid #f13f39;
+    border-radius: 0.13333rem;
+    font-size: .37333rem;
+    font-weight: 400;
+    color: #f13f39;
+    text-align: center;
+}
+
+
+.StrongBox__container-income-tip[data-v-6455ca11] {
+    font-size: .29333rem;
+    color: #f13f39;
+    margin-top: 0.33333rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    text-align: left;
+}
+.StrongBox__container-errorTip[data-v-6455ca11] {
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-right: 0.12rem;
+}
+.StrongBox__container-income-godetail[data-v-6455ca11] {
+    text-align: center;
+    height: 0.4rem;
+    line-height: .4rem;
+    font-size: .32rem;
+    color: #888;
+    margin-top: 0.46667rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.StrongBox__container-income-godetail img[data-v-6455ca11] {
+    width: 0.42667rem;
+    height: 0.42667rem;
+}
+
+.StrongBox__container-income-buttom[data-v-6455ca11] {
+    margin-top: 0.33333rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.StrongBox__container-income-buttom>div[data-v-6455ca11] {
+    width: 9.34667rem;
+    height: 0.93333rem;
+    line-height: .93333rem;
+    border: 0.01333rem solid #ffffff;
+    border-radius: 0.13333rem;
+    font-size: .37333rem;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    background: radial-gradient(ellipse at top left, #EEBD54 0%,rgb(215 130 7) 57%);
+}
+
+/* 
+.color-box {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+        }
+        .big {
+            background-image: url('/images/big.png');
+            background-size: contain;
+        }
+        .small {
+            background-image: url('/images/small.png');
+            background-size: contain;
+        }
+        .violet { background-color: violet;border-radius: 1px; }
+        .red { background-color: red;border-radius: 1px; }
+        .green { background-color: green;border-radius: 1px; }
+        .red-violet { background-color: #D02090;border-radius: 1px; }
+        .green-violet { background-color: #ADFF2F; border-radius: 1px;} */
+
+
+       
+
+
+.p-b-5 {
+    padding-bottom: .13333rem !important;
+}
+.p-t-5 {
+    padding-top: .13333rem !important;
+}
+ .hb[data-v-a9660e98] {
+    background-color: #3b3b3b;
+    border-bottom: .02667rem solid #e2e2e2;
+    color: #fff;
+    font-size: .37333rem;
+}
+ .hb .item[data-v-a9660e98] {
+    padding: .53333rem .4rem;
+}
+ .hb .item .result .select.select-big[data-v-a9660e98] {
+    background: #ffc511;
+    
+    padding: 0;
+    overflow: hidden;
+}
+
+ .hb .item .result .select[data-v-a9660e98] {
+    height: .8rem;
+    line-height: .8rem;
+    min-width: .8rem;
+    padding: 0 .13333rem;
+    border-radius: .13333rem;
+    text-align: center;
+    font-size: .42667rem;
+    color: #fff;
+}
+.van-image {
+    position: relative;
+    display: inline-block;
+}
+.van-image__error, .van-image__img, .van-image__loading {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+ .hb .item .info[data-v-a9660e98] {
+    padding-left: .4rem;
+    width: 100%;
+}
+[data-v-a9660e98] {
+    touch-action: pan-y;
+}
+.c-row-between {
+    justify-content: space-between;
+}
+.c-row {
+    display: flex;
+}
+ .hb .item .info .issueName .state.green[data-v-a9660e98] {
+    color: #1a530d;
+    font-weight: bold;
+}
+ .hb .item .info .issueName .state[data-v-a9660e98] {
+    background-color: #f3f1f1;
+    padding: .10667rem .26667rem;
+    margin-left: .26667rem;
+    border-radius: .53333rem;
+    font-size: .32rem;
+}
+ .hb .green[data-v-a9660e98] {
+    color: #4eaf56;
+}
+ .hb .item .info .money[data-v-a9660e98] {
+    font-weight: 600;
+    font-size: .42667rem;
+}
+ .hb .item .info .tiem[data-v-a9660e98] {
+    font-size: .32rem;
+    color: #d0b6b6;
+    margin-top: .13333rem;
+}
+ .hb .item .info .money .success[data-v-a9660e98] {
+    color: #5cba47;
+}
+
+ .hb .item .result .select.select-green[data-v-a9660e98] {
+    background-color: #5cba47;
+}
+
+ .hb .item .result .select[data-v-a9660e98] {
+    height: .8rem;
+    line-height: .8rem;
+    min-width: .8rem;
+    padding: 0 .13333rem;
+    border-radius: .13333rem;
+    text-align: center;
+    font-size: .42667rem;
+    color: #fff;
+}
+
+ .page-nav[data-v-a9660e98] {
+    margin-top: .53333rem;
+    padding-bottom: .53333rem;
+    height: 1.06667rem;
+}
+
+.game .page-nav[data-v-a9660e98] {
+    margin-top: .53333rem;
+    padding-bottom: .53333rem;
+    height: 1.06667rem;
+}
+[data-v-a9660e98] {
+    touch-action: pan-y;
+}
+.c-tc {
+    text-align: center;
+}
+.c-row-center, .c-row-middle-center {
+    justify-content: center;
+}
+.c-row {
+    display: flex;
+}
+:not(input,textarea) {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+ .page-nav .arr[data-v-a9660e98] {
+    height: 1.06667rem;
+    width: 1.06667rem;
+    background-color: #d8820a;
+    border-radius: .13333rem;
+}
+
+.game .page-nav .arr[data-v-a9660e98] {
+    height: 1.06667rem;
+    width: 1.06667rem;
+    background-color: #d8820a;
+    border-radius: .13333rem;
+}
+.block-click {
+    pointer-events: none;
+}
+.title[data-v-2605efec] {
+    height: 0.66667rem;
+    line-height: .66667rem;
+    padding-left: 0.26667rem;
+    font-weight: 700;
+    font-size: .48rem;
+    position: relative;
+    margin-bottom: 0.26667rem;
+    color: white;
+}
+
+.title[data-v-2605efec]:before {
+    display: block;
+    content: "";
+    height: 0.4rem;
+    width: 0.08rem;
+    background: #f13f39;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translateY(-50%);
+}
+
+.page-nav[data-v-a9660e98] {
+    margin-top: .53333rem;
+    padding-bottom: .53333rem;
+    height: 1.06667rem;
+}
+
+.page-nav .arr[data-v-a9660e98] {
+    height: 1.06667rem;
+    width: 1.06667rem;
+    background-color: #d8820a;
+    border-radius: .13333rem;
+}
+
+.page-nav .arr .icon.action[data-v-a9660e98] {
+    color: #fff;
+}
+
+.page-nav .number[data-v-a9660e98] {
+    width: 2.66667rem;
+    height: 1.06667rem;
+    line-height: 1.06667rem;
+    color: white;
+}
+
+        </style>
+</head>
+
+<body style="font-size: 12px">
+    <div id="app">
+        <div data-v-439e6f58="" class="mian">
+            <div data-v-106b99c8="" data-v-439e6f58="" class="navbar">
+                <div data-v-106b99c8="" class="navbar-left" onclick="location.href='/user-roi'">
+                    <div data-v-106b99c8="" class="bank c-row c-row-middle-center">
+                        <i class="fa-light fa-angle-left fa-fade fa-xl center" style="color: #FFF"></i>
+                    </div>
+                </div>
+                <div data-v-106b99c8="" class="navbar-title">BOT AI </div>
+                <div data-v-106b99c8="" class="navbar-right">
+                    <div data-v-11ffe290="" data-v-106b99c8="" class="c-row">
+                        <i class="fa-fade fa center" style="color: #FFF">
+                            <img data-v-11ffe290="" data-v-106b99c8="" src="/images/audio.webp" style="width:.66667rem;height:.66667rem">
+                        </i>
+                    </div>
+                </div>
+            </div>
+           <div data-v-11ffe290="" class="check-box">
+   <br>
+   <!--<div data-v-6455ca11="" class="StrongBox__container-dailyRate">Interest rate 10% monthly.</div>-->
+   <div data-v-ffd9d03e="" data-v-6455ca11="" class="TotalAssets__container">
+      <div data-v-ffd9d03e="" class="TotalAssets__container-header">
+         <div data-v-ffd9d03e="" class="TotalAssets__container-header__left">
+            <img data-v-ffd9d03e="" alt="" class="vault-icon" data-origin="images/tu.webp" src="/images/tu.webp">
+            <span style="
+               color: #fff;
+               font-weight: 600;
+               ">Total Return amount</span>
+         </div>
+      </div>
+      <div data-v-ffd9d03e="" class="TotalAssets__container-main">
+         <div class="amount-container" style="
+            color: #fff;
+            ">
+            ₹<span class="num-total">0</span>
+         </div>
+      </div>
+      <div data-v-ffd9d03e="" class="TotalAssets__container-bottom">
+         <div class="ai-income">Total AI income: ₹<span class="ai-income-value">0</span></div>
+         <div class="ai-level-return">AI level return: ₹<span class="ai-level-return-value">0</span></div>
+      </div>
+       <div data-v-ffd9d03e="" class="TotalAssets__container-header">
+         <div data-v-ffd9d03e="" class="TotalAssets__container-header__left">
+            <img data-v-ffd9d03e="" alt="" class="vault-icon" data-origin="images/tu.webp" src="/images/tu.webp">
+            <span style="
+               color: #fff;
+               font-weight: 600;
+               ">Total Invest amount</span>
+         </div>
+      </div>
+      <div data-v-ffd9d03e="" class="TotalAssets__container-main">
+         <div class="amount-container" style="
+            color: #fff;
+            ">
+            ₹<span class="num-total_inviest">0</span>
+         </div>
+      </div>
+   </div>
+   <style>
+      .TotalAssets__container-bottom {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      
+      }
+      .ai-income, .ai-level-return {
+      font-size: 14px;
+      color: #fff;
+      font-weight: bolder;
+      }
+   </style>
+   <div data-v-2605efec="" class="laundry-page_container">
+      <div data-v-2605efec="" class="laundry-page_list">
+         <div data-v-2605efec="" class="title">AI Bonus</div>
+         <div data-v-14912091="" class="box">
+            <div data-v-14912091="" class="table">
+               <div data-v-14912091="" class="list" id="ai-bonus-list">
+                  <!--<div data-v-a9660e98="" issuenumber="undefined" addtime="undefined" colour="undefined" number="undefined" rowid="undefined" class="hb">-->
+                  <!--   <div data-v-a9660e98="" class="item c-row">-->
+                  <!--      <div data-v-a9660e98="" class="result">-->
+                  <!--         <div data-v-a9660e98="" class="select select-d">-->
+                  <!--            <div class="li" style="background-color: red; width: 30px; height: 30px;border-radius:3px"></div>-->
+                  <!--         </div>-->
+                  <!--      </div>-->
+                  <!--      <div data-v-a9660e98="" class="c-row c-row-between info">-->
+                  <!--         <div data-v-a9660e98="">-->
+                  <!--            <div data-v-a9660e98="" class="issueName">-->
+                  <!--               2024803196732-->
+                  <!--               <span data-v-a9660e98="" class="state green">Success</span>-->
+                  <!--            </div>-->
+                  <!--            <div data-v-a9660e98="" class="tiem">2024-08-03T02:30:00.000Z</div>-->
+                  <!--         </div>-->
+                  <!--         <div data-v-a9660e98="" class="money">-->
+                  <!--            <span data-v-a9660e98="" class="success"> + ₹6.60</span>-->
+                  <!--         </div>-->
+                  <!--      </div>-->
+                  <!--   </div>-->
+                  <!--   <div data-v-a9660e98="" class="details" style="display: none">-->
+                  <!--      <div data-v-a9660e98="" class="tit">Details</div>-->
+                  <!--      <div data-v-a9660e98="" class="li c-row c-row-between c-row-middle">-->
+                  <!--         <div data-v-a9660e98="">Order ID</div>-->
+                  <!--         <div data-v-a9660e98="" data-clipboard-text="undefined" class="tag-read c-row c-row-between c-row-middle">-->
+                  <!--            undefined-->
+                  <!--            <img data-v-a9660e98="" width="18px" height="15px" src="/images/copy.png" class="m-l-5">-->
+                  <!--         </div>-->
+                  <!--      </div>-->
+                  <!--      <div data-v-a9660e98="" class="li c-row c-row-between c-row-middle">-->
+                  <!--         <div data-v-a9660e98="">Result</div>-->
+                  <!--         <div data-v-a9660e98="">-->
+                  <!--            <div data-v-a9660e98="" style="display: inline-block; margin-left: 8px;">undefined</div>-->
+                  <!--            <div data-v-a9660e98="" style="display: inline-block; margin-left: 8px;">undefined</div>-->
+                  <!--            <div data-v-a9660e98="" style="display: inline-block; margin-left: 8px;">undefined</div>-->
+                  <!--         </div>-->
+                  <!--      </div>-->
+                  <!--      <div data-v-a9660e98="" class="li c-row c-row-between c-row-middle">-->
+                  <!--         <div data-v-a9660e98="">Select</div>-->
+                  <!--         <div data-v-a9660e98="">-->
+                  <!--            <div data-v-a9660e98="">undefined</div>-->
+                  <!--         </div>-->
+                  <!--      </div>-->
+                  <!--      <div data-v-a9660e98="" class="li c-row c-row-between c-row-middle">-->
+                  <!--         <div data-v-a9660e98="">Status</div>-->
+                  <!--         <div data-v-a9660e98="" class="red">undefined</div>-->
+                  <!--      </div>-->
+                  <!--      <div data-v-a9660e98="" class="li c-row c-row-between c-row-middle">-->
+                  <!--         <div data-v-a9660e98="">Win Or Loss</div>-->
+                  <!--         <div data-v-a9660e98="" class="red"> - undefined</div>-->
+                  <!--      </div>-->
+                  <!--      <div data-v-a9660e98="" class="li c-row c-row-between c-row-middle">-->
+                  <!--         <div data-v-a9660e98="">Time</div>-->
+                  <!--         <div data-v-a9660e98="">undefined</div>-->
+                  <!--      </div>-->
+                  <!--   </div>-->
+                  <!--</div>-->
+               </div>
+            </div>
+             <div data-v-a9660e98="" class="page-nav c-row c-row-center c-tc" id="pagination-controls" style="
+               padding-bottom: 0.5333rem;
+               padding-bottom: .53333rem;
+               height: 1.06667rem;
+               ">
+               <div data-v-a9660e98="" class="arr c-row c-row-middle-center disabled" id="prev-page">
+                  <i data-v-a9660e98="" class="van-icon van-icon-arrow-left icon action" style="font-size: 20px;">
+                     <!---->
+                  </i>
+               </div>
+               <div data-v-a9660e98="" class="number" id="page-info">0/0</div>
+               <div data-v-a9660e98="" class="arr c-row c-row-middle-center action" id="next-page">
+                  <i data-v-a9660e98="" class="van-icon van-icon-arrow icon action" style="font-size: 20px">
+                     <!---->
+                  </i>
+               </div>
+            </div>
+         </div>
+         </div>
+      </div>
+     
+                     
+   </div>
+</div>
+            <div data-v-7692a079="" data-v-439e6f58="" class="Loading c-row c-row-middle-center" style="display: none">
+                <div data-v-7692a079="" class="van-loading van-loading--circular">
+                    <span data-v-7692a079="" class="van-loading__spinner van-loading__spinner--circular" style="width: auto; height: auto; -webkit-animation-duration: 1s; animation-duration: 1s;">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" width="200" height="200" preserveAspectRatio="xMidYMid meet" style="width: 100%;height: 100%;transform: translate3d(0px, 0px, 0px);content-visibility: visible;">
+                            <g transform="matrix(-0.5984085202217102,0.8011911511421204,-0.8011911511421204,-0.5984085202217102,239.9599609375,79.72173309326172)" style="display: block;">
+                                <image width="200px" height="200px" preserveAspectRatio="xMidYMid slice" xlink:href="/assets/png/image.png"></image>
+                            </g>
+                            <g transform="matrix(0.9408400058746338,0,0,0.9408400058746338,20.969436645507812,79.30152130126953)" style="display: block;">
+                                <image width="168px" height="44px" preserveAspectRatio="xMidYMid slice" xlink:href="/logo.png"></image>
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/client.js"></script>
+    
+     <script>
+  let currentPage = 1;
+  const itemsPerPage = 5;
+  let ROI = [];
+
+  fetch('/api/webapi/users-income-list')
+    .then((response) => response.json())
+    .then((data) => {
+      $(".Loading").fadeOut(0);
+
+      if (data.status === false) {
+        return false;
+      }
+
+      console.log(data);
+    const totalAimoney = document.querySelector('.ai-income-value');
+    const totalLevelmoney = document.querySelector('.ai-level-return-value');
+    const totalmoney = document.querySelector('.num-total');
+    const totalInvestmoney = document.querySelector('.num-total_inviest');
+    
+      ROI = data.data.list2;
+      
+      totalAimoney.innerHTML =  parseFloat(data.data.sumMoney2 || 0);
+      totalInvestmoney.innerHTML = data.data.total;
+      totalLevelmoney.innerHTML = parseFloat(data.data.sumMoney3 || 0);
+      totalmoney.innerHTML = (parseFloat(data.data.sumMoney2 || 0) + parseFloat(data.data.sumMoney3 || 0));
+      
+      displayItems(currentPage);
+      updatePageInfo();
+    })
+    .catch((error) => console.error('Error fetching ROI data:', error));
+
+  function displayItems(page) {
+    const container = document.querySelector('.list');
+    container.innerHTML = ""; // Purani items ko clear karein
+
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const paginatedItems = ROI.slice(start, end);
+    
+    
+    if (ROI.length === 0) {
+      // Agar data nahi hai, toh "No More DATA" show karein
+      container.innerHTML = `<div>No Data</div>`;
+      return; // Return yaha pe taaki niche ka code execute na ho
+    }
+    
+    const colors = ['#5cba47', '#c92c2c', '#e0d612', '#5cba47'];
+    let serial = 293334423
+    paginatedItems.forEach((user, index) => {
+        const color = colors[index % colors.length];
+      const card = `
+         <div data-v-a9660e98="" issuenumber="undefined" addtime="undefined" colour="undefined" number="undefined" rowid="undefined" class="hb" data-id="${index}">
+                     <div data-v-a9660e98="" class="item c-row">
+                        <div data-v-a9660e98="" class="result">
+                           <div data-v-a9660e98="" class="select select-d">
+                              <div class="li" style="background-color: ${color}; width: 30px; height: 30px;border-radius:3px"></div>
+                           </div>
+                        </div>
+                        <div data-v-a9660e98="" class="c-row c-row-between info">
+                           <div data-v-a9660e98="">
+                              <div data-v-a9660e98="" class="issueName">
+                                 ${serial}
+                                 <span data-v-a9660e98="" class="state green">Success</span>
+                              </div>
+                              <div data-v-a9660e98="" class="tiem">${new Date(user.time).toLocaleString()}</div>
+                           </div>
+                           <div data-v-a9660e98="" class="money">
+                              <span data-v-a9660e98="" class="success"> + ₹  ${user.amount}</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div data-v-a9660e98="" class="details" style="display: none">
+                        <div data-v-a9660e98="" class="tit">Details</div>
+                        <div data-v-a9660e98="" class="li c-row c-row-between c-row-middle">
+                           <div data-v-a9660e98="">Order ID</div>
+                           <div data-v-a9660e98="" data-clipboard-text="undefined" class="tag-read c-row c-row-between c-row-middle">
+                              undefined
+                              <img data-v-a9660e98="" width="18px" height="15px" src="/images/copy.png" class="m-l-5">
+                           </div>
+                        </div>
+                        <div data-v-a9660e98="" class="li c-row c-row-between c-row-middle">
+                           <div data-v-a9660e98="">Result</div>
+                           <div data-v-a9660e98="">
+                              <div data-v-a9660e98="" style="display: inline-block; margin-left: 8px;">undefined</div>
+                              <div data-v-a9660e98="" style="display: inline-block; margin-left: 8px;">undefined</div>
+                              <div data-v-a9660e98="" style="display: inline-block; margin-left: 8px;">undefined</div>
+                           </div>
+                        </div>
+                        <div data-v-a9660e98="" class="li c-row c-row-between c-row-middle">
+                           <div data-v-a9660e98="">Select</div>
+                           <div data-v-a9660e98="">
+                              <div data-v-a9660e98="">undefined</div>
+                           </div>
+                        </div>
+                        <div data-v-a9660e98="" class="li c-row c-row-between c-row-middle">
+                           <div data-v-a9660e98="">Status</div>
+                           <div data-v-a9660e98="" class="red">undefined</div>
+                        </div>
+                        <div data-v-a9660e98="" class="li c-row c-row-between c-row-middle">
+                           <div data-v-a9660e98="">Win Or Loss</div>
+                           <div data-v-a9660e98="" class="red"> - undefined</div>
+                        </div>
+                        <div data-v-a9660e98="" class="li c-row c-row-between c-row-middle">
+                           <div data-v-a9660e98="">Time</div>
+                           <div data-v-a9660e98="">undefined</div>
+                        </div>
+                     </div>
+                  </div>
+      `;
+      serial++
+      container.innerHTML += card;
+    });
+  }
+
+  function updatePageInfo() {
+    const totalPages = Math.ceil(ROI.length / itemsPerPage);
+    document.getElementById("page-info").textContent = `${currentPage}/${totalPages}`;
+    document.getElementById("prev-page").classList.toggle("disabled", currentPage === 1);
+    document.getElementById("next-page").classList.toggle("disabled", currentPage === totalPages);
+  }
+
+  document.getElementById("next-page").addEventListener("click", () => {
+    const totalPages = Math.ceil(ROI.length / itemsPerPage);
+    if (currentPage < totalPages) {
+      currentPage++;
+      displayItems(currentPage);
+      updatePageInfo();
+    }
+  });
+
+  document.getElementById("prev-page").addEventListener("click", () => {
+    if (currentPage > 1) {
+      currentPage--;
+      displayItems(currentPage);
+      updatePageInfo();
+    }
+  });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Settings</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .form-group {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #2ecc71;
+        }
+        
+        .form-group button {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <%- include('nav') %>
+            <div class="content-wrapper">
+                <section class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1>Settings</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </section>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div style="padding: 10px 20px;margin-bottom: 200px;">
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <label for="quantity">Increase | Drecrease For Members</label>
+                                    </div>
+                                    <input type="text" class="form-control" oninput="value=value.replace(/\D/g,'')" id="buff-id" placeholder="Enter account ID"><br>
+                                    <select class="form-select mb-4" id="buff-acc" aria-label="Default select example">
+                                        <option selected value="">----------- Select Function ----------</option>
+                                        <option value="1">Increase (+)</option>
+                                        <option value="2">Drecrease (-)</option>
+                                    </select>
+
+                                    <input type="text" class="form-control" oninput="value=value.replace(/\D/g,'')" id="buff-money" placeholder="Enter Amount">
+                                    <button type="submit" class="btn btn-primary" id="buff-username" style="width: 100%;">Submit</button>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <label for="quantity">Change Deposit Information</label>
+                                    </div>
+                                    <label for="quantity" style="color: #3498db;">BANKING</label>
+                                    <input type="text" class="form-control" placeholder="Enter Bank Name" id="edit-banking-name_bank" value=""><br>
+                                    <input type="text" class="form-control" placeholder="Enter Account Name" id="edit-banking-name" value=""><br>
+                                    <input type="text" class="form-control" placeholder="Enter Account Number" id="edit-banking-info" value=""><br>
+                                    <button type="submit" class="btn btn-primary edit-banking" style="width: 100%;margin-bottom: 20px;">Submit</button>
+                                    <!---------------------------------------------------------------->
+                                    <label for="quantity" style="color: #a50064;">UPI</label>
+                                    <input type="text" class="form-control" placeholder="Bank Name" id="edit-momo-name_bank" value=""><br>
+                                    <input type="text" class="form-control" placeholder="Wallet Owner Name" id="edit-momo-name" value=""><br>
+                                    <input type="text" class="form-control" placeholder="Upi id" id="edit-momo-info" value=""><br>
+                                     <input type="text" class="form-control" placeholder="qr link" id="edit-momo-qr" value=""><br>
+                                    <button type="submit" class="btn btn-primary edit-momo" style="width: 100%;">Submit</button>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <label for="telegram">Support</label>
+                                        <p>links full past like https://google.com</p>
+                                    </div>
+                                    <label for="telegram" style="color: #3498db;">Telegram</label>
+                                    <input type="text" class="form-control" id="telegram" placeholder="Enter Telegram Link" value=""><br>
+                                    <label for="cskh" style="color: #3498db;">Online Services</label>
+                                    <input type="text" class="form-control" id="cskh" placeholder="Online Services link" value=""><br>
+                                    <label for="myapp_web" style="color: #3498db;">Whatsapp Link</label>
+                                    <input type="text" class="form-control" id="myapp_web" placeholder="Enter Whatsapp Link" value=""><br>
+                                    <button type="submit" class="btn btn-primary telegram" style="width: 100%;">Submit</button>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <label for="banner and Notice">Banner</label>
+                                    </div>
+                                    <input id="bannerInput" type="file" name="banners" multiple>
+                                  
+                                    <button type="submit" class="btn btn-primary banner" style="width: 100%;">Upload</button>
+
+                                    <h1>Banner Management</h1>
+                                    <table id="bannerTable">
+                                        <thead>
+                                            <tr>
+                                                <th>File</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Banners will be dynamically added here -->
+                                        </tbody>
+                                    </table>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <label for="notice">NOTICE Home Page</label>
+                                    </div>
+                                    
+                                    <label for="notice" style="color: #3498db;">NOTICE</label>
+                                    <input type="text" class="form-control" id="notice" placeholder="Enter text" value=""><br>
+                                    <button type="submit" class="btn btn-primary notice" style="width: 100%;">Submit</button>
+                                </div>
+                                
+                           
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <label for="notice">Bonus</label>
+                                    </div>
+                                    
+                                    <label for="welcome" style="color: #3498db;">Enter Welcome Bonus</label>
+                                    <input type="number" class="form-control" id="welcome" placeholder="Enter text" value=""><br>
+                                    <label for="first" style="color: #3498db;">Enter First Recharge Bonus in %</label>
+                                    <input type="number" class="form-control" id="first" placeholder="Enter text" value=""><br>
+                                    <label for="invite" style="color: #3498db;">Enter Invite Bonus in %</label>
+                                    <input type="number" class="form-control" id="invite" placeholder="Enter text" value=""><br>
+                                    <label for="game_wallet" style="color: #3498db;">Enter Game Wallet Amount</label>
+                                    <input type="number" class="form-control" id="game_wallet" placeholder="Enter amount" value=""><br>
+                                    <label for="admin_commission" style="color: #3498db;">Enter Admin Commission in %</label>
+                                    <input type="number" class="form-control" id="admin_commission" placeholder="Enter text" value=""><br>
+                                    <div class="d-flex">
+                                      <div class="col-3">
+                                        <label for="wallet" style="color: #3498db;">Wallet Status</label><br>
+                                        <span class="btn btn-success" type="wallet" style="cursor: pointer;" onclick="toggleStatus(this)" id="wallet">Active</span>
+                                      </div>
+                                      <div class="col-3">
+                                        <label for="max" style="color: #3498db;">Max Winning Status</label><br>
+                                        <span class="btn btn-success" type="max"  style="cursor: pointer;" onclick="toggleStatus(this)"  id="max"> Active</span>
+                                      </div>
+                                      <div class="col-3">
+                                        <label for="min" style="color: #3498db;">Min Winning Status</label><br>
+                                        <span class="btn btn-success" type="min"  style="cursor: pointer;" onclick="toggleStatus(this)"  id="min">Active</span>
+                                      </div>
+                                      <div class="col-3">
+                                        <label for="random" style="color: #3498db;">Random Winning Status</label><br>
+                                        <span class="btn btn-success" type="random"  style="cursor: pointer;" onclick="toggleStatus(this)"  id="random">Active</span>
+                                      </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary welcome" style="width: 100%;">Submit</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script src="/plugins/jquery/jquery.min.js"></script>
+    <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/dist/js/adminlte.min.js"></script>
+    <script src="/js/admin/admin.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script>
+        $.ajax({
+            type: "POST",
+            url: "/admin/manager/settings/get",
+            data: "data",
+            dataType: "json",
+            success: function (response) {
+                let bank = response.datas[0];
+                let momo = response.datas[1];
+                $('#edit-momo-name_bank').val(momo.name_bank);
+                $('#edit-momo-name').val(momo.name_user);
+                $('#edit-momo-info').val(momo.stk);
+                $('#edit-momo-qr').val(momo.qr_code_image);
+
+                $('#edit-banking-name_bank').val(bank.name_bank);
+                $('#edit-banking-name').val(bank.name_user);
+                $('#edit-banking-info').val(bank.stk);
+                $('#edit-momo-qr').val(momo.qr_code_image);
+
+                $('#telegram').val(response.settings[0].telegram);
+                $('#cskh').val(response.settings[0].cskh);
+                $('#myapp_web').val(response.settings[0].app);
+                $('#notice').val(response.settings[0].notice);
+                $('#welcome').val(response.settings[0].bonus);
+                $('#first').val(response.settings[0].first_recharge);
+                $('#invite').val(response.settings[0].invite_bonus);
+                $('#admin_commission').val(response.settings[0].admin_commission);
+                $('#game_wallet').val(response.settings[0].game_wallet);
+            }
+        });
+    </script>
+    <script>
+        // Fetch banner data from the server
+        fetch('/admin/manager/getBanner')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                // Clear previous table content
+                document.querySelector('#bannerTable tbody').innerHTML = '';
+    
+                // Populate the table with banner data
+                data.filename.forEach(banner => {
+                    const row = document.createElement('tr');
+    
+                    // Create table cells for banner image and filename
+                    const imageCell = document.createElement('td');
+                    const image = document.createElement('img');
+                    image.src = `/uploads/banners/${banner.filename}`; // Set the image source
+                    image.alt = 'Banner Image'; // Set alt text for accessibility
+                    image.style.width = '20%';
+                    imageCell.appendChild(image); // Append image to cell
+    
+                    const filenameCell = document.createElement('td');
+                    filenameCell.textContent = banner.filename;
+    
+                    // Create delete button cell
+                    const deleteCell = document.createElement('td');
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = 'Delete';
+                    deleteButton.addEventListener('click', () => deleteBanner(banner.filename)); // Add click event listener for delete button
+                    deleteCell.appendChild(deleteButton);
+    
+                    // Append cells to the table row
+                    row.appendChild(imageCell);
+                    row.appendChild(filenameCell);
+                    row.appendChild(deleteCell);
+    
+                    // Append row to the table body
+                    document.querySelector('#bannerTable tbody').appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching banners:', error));
+    
+        // Function to delete a banner
+//         function deleteBanner(filename) {
+//     if (confirm(`Are you sure you want to delete ${filename}?`)) {
+//         fetch(`/admin/manager/deleteBanner/${filename}`, {
+//             method: 'DELETE'
+//         })
+//         .then(response => {
+//             console.log(response,'...')
+//             if (!response.ok) {
+//                 throw new Error('Network response was not ok');
+//             }
+//             return response.json();
+//         })
+//         .then(data => {
+            
+//             window.location.reload(true); // Refresh the page
+//         })
+//         .catch(error => console.error('Error deleting banner:', error));
+//     }
+// }
+function deleteBanner(filename) {
+    if (confirm(`Are you sure you want to delete ${filename}?`)) {
+        $.ajax({
+            url: `/admin/manager/deleteBanner`,
+            type: 'POST', // Change the type to POST
+            dataType: 'json',
+            data : {filename:filename},
+            success: function() {
+                console.log('as');
+                // Refresh the page or update the banner list after successful deletion
+                window.location.reload(true); // Refresh the page
+            },
+            error: function(xhr, status, error) {
+                console.error('Error deleting banner:', error);
+            }
+        });
+    }
+}
+
+
+
+    </script>
+    
+    <script>
+        function sendRequest(params1, params2, typer) {
+            $.ajax({
+                type: "POST",
+                url: "/manage/admin/settings",
+                data: {
+                    params1: params1,
+                    params2: params2,
+                    typer: typer,
+                },
+                dataType: "json",
+                success: function(response) {
+                    if (response.message == 1) {
+                        Swal.fire(
+                            'Good job!',
+                            'You clicked the button!',
+                            'success'
+                        )
+                    } else if (response.message == 2) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Phone number does not exist',
+                        })
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'An unknown error !',
+                        })
+                    }
+                }
+            });
+        }
+
+        function sendRequestBank(name_bank = '', name = '', info = '', qr = '', typer = '') {
+            $.ajax({
+                type: "POST",
+                url: "/admin/manager/settings/bank",
+                data: {
+                    name_bank: name_bank,
+                    name: name,
+                    info: info,
+                    qr: qr,
+                    typer: typer
+                },
+                dataType: "json",
+                success: function(response) {
+                    Swal.fire(
+                        'Good job!',
+                        'Updated Successfully!',
+                        'success'
+                    )
+                }
+            });
+        }
+        $('.buff-money').click(function(e) {
+            e.preventDefault();
+            const phone = $('#buff-phone').val();
+            const money = $('#buff-money').val();
+            const checkMoney = $.isNumeric(money);
+            if (phone && checkMoney) {
+                sendRequest(phone, money, "buff");
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Empty or Wrong Details',
+                })
+            }
+        });
+        $('.edit-momo').click(function(e) {
+            e.preventDefault();
+            const name_bank = $('#edit-momo-name_bank').val();
+            const name = $('#edit-momo-name').val();
+            const info = $('#edit-momo-info').val();
+            const qr = $('#edit-momo-qr').val();
+            sendRequestBank(name_bank, name, info, qr, "momo");
+        });
+        $('.edit-banking').click(function(e) {
+            e.preventDefault();
+            const name_bank = $('#edit-banking-name_bank').val();
+            const name = $('#edit-banking-name').val();
+            const info = $('#edit-banking-info').val();
+            sendRequestBank(name_bank, name, info, "bank");
+        });
+        $('.telegram').click(function(e) {
+            e.preventDefault();
+            const telegram = $('#telegram').val();
+            const cskh = $('#cskh').val();
+            const myapp_web = $('#myapp_web').val();
+            $.ajax({
+                type: "POST",
+                url: "/admin/manager/settings/cskh",
+                data: {
+                    telegram: telegram,
+                    cskh: cskh,
+                    myapp_web: myapp_web,
+                },
+                dataType: "json",
+                success: function (response) {
+                    if (response.status == true) {
+                        Swal.fire(
+                            'Good job!',
+                            'Your Links Updated Successfully!',
+                            'success'
+                        )
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Empty or Wrong',
+                        })
+                    }
+                }
+            });
+        });
+
+
+$('.banner').click(function(e) {
+    e.preventDefault();
+   
+    const formData = new FormData(); // Create a FormData object to handle file uploads
+    const banners = $('#bannerInput')[0].files; // Get the files from the input element (assuming it has the id 'bannerInput')
+
+    // Append the files to the FormData object
+    for (let i = 0; i < banners.length; i++) {
+        formData.append('banners', banners[i]);
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "/admin/manager/uploadBbanner", // Update the URL to your endpoint for uploading banners
+        data: formData, // Use FormData instead of an object for file uploads
+        contentType: false, // Set contentType to false to prevent jQuery from automatically setting the Content-Type header
+        processData: false, // Set processData to false to prevent jQuery from processing the FormData object
+        dataType: "json",
+        success: function (response) {
+            if (response.status == true) {
+                Swal.fire(
+                    'Good job!',
+                    'Your Banner(s) Uploaded Successfully!',
+                    'success'
+                );
+                window.location.reload(true);
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Upload Failed',
+                    text: 'Please try again later.',
+                });
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('Error uploading banners:', error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Upload Failed',
+                text: 'An error occurred while uploading the banner(s). Please try again later.',
+            });
+        }
+    });
+});
+$('.notice').click(function(e) {
+            e.preventDefault();
+            const notice = $('#notice').val();
+           
+            $.ajax({
+                type: "POST",
+                url: "/admin/manager/settings/notice",
+                data: {
+                    notice: notice,                   
+                },
+                dataType: "json",
+                success: function (response) {
+                    if (response.status == true) {
+                        Swal.fire(
+                            'Good job!',
+                            'Your Links Updated Successfully!',
+                            'success'
+                        )
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Empty or Wrong',
+                        })
+                    }
+                }
+            });
+        });
+$('.welcome').click(function(e) {
+            e.preventDefault();
+            const bonus = $('#welcome').val();
+            const first = $('#first').val();
+            const invite = $('#invite').val();
+            const game_wallet = $('#game_wallet').val();
+            const admin_commission = $('#admin_commission').val();
+           
+            $.ajax({
+                type: "POST",
+                url: "/admin/manager/settings/welcomeBonus",
+                data: {
+                    bonus: bonus, 
+                    fr : first,
+                    ib: invite,
+                    game: game_wallet,
+                    admin: admin_commission,
+
+                },
+                dataType: "json",
+                success: function (response) {
+                    if (response.status == true) {
+                        Swal.fire(
+                            'Good job!',
+                            'Bonus Updated Successfully!',
+                            'success'
+                        )
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Empty or Wrong',
+                        })
+                    }
+                }
+            });
+        });
+
+
+        $('#buff-username').click(function (e) { 
+            e.preventDefault();
+            let id_user = $('#buff-id').val().trim();
+            let buff_acc = $('#buff-acc').val().trim();
+            let money_value = $('#buff-money').val().trim();
+            if (id_user && buff_acc && money_value) {
+                $.ajax({
+                    type: "POST",
+                    url: "/admin/manager/settings/buff",
+                    data: {
+                        id_user: id_user,
+                        buff_acc: buff_acc,
+                        money_value: money_value,
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.status == true) {
+                            Swal.fire(
+                                'Good job!',
+                                'Data Added Successfully!',
+                                'success'
+                            )
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'User ID does not exist',
+                            })
+                        }
+                    }
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Please enter complete information',
+                })
+            }
+        });
+        function toggleStatus(element) {
+    const type = element.getAttribute('type');
+
+    fetch('/admin/manager/settings/status-update', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ type }),
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status) {
+                // Update the button text and class dynamically
+                const newStatus = data.newStatus; // Assuming this is returned from the backend
+                element.innerText = newStatus === 1 ? 'Active' : 'Deactive';
+                element.className = newStatus === 1 ? 'btn btn-success' : 'btn btn-danger';
+
+                Swal.fire({
+                    icon: 'success',
+                    title: `${type} status is now ${newStatus === 1 ? 'Active' : 'Deactive'}`,
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Failed to update status',
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            Swal.fire({
+                icon: 'error',
+                title: 'An error occurred while updating the status',
+            });
+        });
+}
+
+$.ajax({
+    type: "GET",
+    url: "/admin/manager/settings/status-details",
+    success: function (response) {
+        console.log(JSON.stringify(response))
+        const data = response.data[0]; // Access the first object in the array
+        console.log(JSON.stringify(data));
+
+        // Helper function to update status dynamically
+        const updateStatus = (elementId, status) => {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.className = status === 1 ? "btn btn-success" : "btn btn-danger";
+                element.innerText = status === 1 ? "Active" : "Deactive";
+            } else {
+                console.warn(`Element with ID "${elementId}" not found.`);
+            }
+        };
+
+        // Update statuses dynamically
+        updateStatus("wallet", data.wallet_active);
+        updateStatus("max", data.max_wise);
+        updateStatus("min", data.min_wise);
+        updateStatus("random", data.random_wise);
+    },
+    error: function (error) {
+        console.error("Error fetching status details:", error);
+    }
+});
+
+
+    </script>
+</body>
+
+</html>

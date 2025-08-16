@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Withdraw money</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/css/admin.css">
+ 
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    <%- include('nav') %>
+    <div class="content-wrapper">
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>ROI Managment <img data-v-7b283485="" width="35px" height="35px" src="/images/withdraw.png" class="chackImg"></h1>
+            </div>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">ROI Managment</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body p-0" style="overflow-y: hidden;">
+            <table class="table table-striped projects">
+              <thead>
+                <tr>
+                  <th class="text-center">#</th>
+                  <th class="text-center">ROI Name</th>
+                  <th class="text-center">ROI Price</th>
+                  <th class="text-center">Validity</th>
+                  <th class="text-center">Giving Price</th>
+                  <th class="text-center">Return of Amount</th>
+                  <th class="text-center">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/dist/js/adminlte.min.js"></script>
+  <script src="/js/admin/admin.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script>
+function formateT(params) {
+    let result = (params < 10) ? "0" + params : params;
+    return result;
+}
+
+function timerJoin(params = '', addHours = 0) {
+    let date = '';
+    let inputDate = new Date(params); // Convert input date string to Date object
+
+    if (params && !isNaN(inputDate.getTime())) { // Check if input is a valid date string
+        date = inputDate;
+    } else {
+        date = new Date();
+    }
+
+    date.setHours(date.getHours() + addHours);
+
+    let years = formateT(date.getFullYear());
+    let months = formateT(date.getMonth() + 1);
+    let days = formateT(date.getDate());
+
+    let hours = date.getHours() % 12;
+    hours = hours === 0 ? 12 : hours;
+    let ampm = date.getHours() < 12 ? "AM" : "PM";
+
+    let minutes = formateT(date.getMinutes());
+    let seconds = formateT(date.getSeconds());
+
+    return years + '-' + months + '-' + days + ' ' + hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+}
+
+// Example usage
+const params = '2024-03-23T06:31:59.288Z';
+const formattedDate = timerJoin(params);
+console.log(formattedDate);
+
+    function show(params) {
+        console.log("tnmfkd : " + params)
+      if (params.length == 0) {
+        $('tbody').html(`
+            <tr class="text-center">
+              <td colspan="7">No more data...</td>
+            </tr>
+          `);
+        return;
+      }
+      let html = '';
+      let show = params.map((data) => {
+        html += `<tr class="text-center">
+                  <td id="${data.id}">
+                    ${data.id}
+                  </td>
+                  <td>
+                    <b>${data.title}</b>
+                  </td>
+                  <td>
+                    <b>${data.totalprice}</b>
+                  </td>
+                  <td style="min-width: 190px;">
+                    <b>${data.validity}</b>
+                  </td>
+                  <td style="min-width: 190px;">
+                    <b>${data.dgp}</b>
+                  </td>
+                  <td style="min-width: 190px;">
+                    <b>${data.roa}</b>
+                  </td>
+               <td class="project-state">
+                <span  style="cursor: pointer;" data-id="${data.id}" data-status="${data.status}" class="statusBtn badge ${data.status === 1 ? 'badge-success' : 'badge-danger'}">
+                  ${data.status === 1 ? 'Active' : 'Blocked'}
+                </span>
+              </td>
+                </tr>`;
+              })
+          $('tbody').html(html);
+
+          $('.statusBtn').click(function (e) {
+    e.preventDefault();
+    
+    // Get the current status and ID from the data attributes
+    let currentStatus = parseInt($(this).attr('data-status')); // Current status
+    let id = $(this).attr('data-id'); // Item ID
+    
+    // Toggle status: If the current status is 1 (Active), make it 0 (Blocked), and vice-versa
+    let newStatus = currentStatus === 1 ? 0 : 1;
+
+    // Update the status via an AJAX request
+    $.ajax({
+        type: "POST",
+        url: `/api/webapi/update-roi-status/${id}`,  // Dynamically send the ID in the URL
+        data: {
+            status: newStatus
+        },
+        dataType: "json",
+        success: function (response) {
+            if (response.status) {
+                Swal.fire('Good job!', 'Status updated successfully!', 'success');
+
+                // Update the badge UI based on the new status
+                let updatedStatusText = newStatus === 1 ? 'Active' : 'Blocked';
+                let updatedClass = newStatus === 1 ? 'badge-success' : 'badge-danger';
+
+                // Update the status text and class dynamically
+                $(e.target)
+                  .text(updatedStatusText)
+                  .removeClass(currentStatus === 1 ? 'badge-success' : 'badge-danger')
+                  .addClass(updatedClass)
+                  .attr('data-status', newStatus); // Update the data-status attribute
+
+                setTimeout(() => {
+                    location.reload();
+                }, 1000); // Optional: Reload the page after 1 second
+            } else {
+                Swal.fire('Oops!', response.message, 'error');
+            }
+        },
+        error: function (xhr, status, error) {
+            Swal.fire('Failed', 'Something went wrong', 'error');
+        }
+    });
+});
+
+        //   $('.btn-danger').click(function (e) { 
+        //     e.preventDefault();
+        //     let id = $(this).attr('data');
+        //     $.ajax({
+        //       type: "POST",
+        //       url: "/api/webapi/admin/withdraw",
+        //       data: {
+        //         id: id,
+        //         type: 'delete'
+        //       },
+        //       dataType: "json",
+        //       success: function (response) {
+        //         setTimeout(() => {
+        //           location.reload();
+        //         }, 100);
+        //         Swal.fire(
+        //           'Good job!',
+        //           'Withdrawal Rejected Successfully!',
+        //           'success'
+        //         )
+        //       }
+        //     });
+        //   });
+    }
+    $.ajax({
+      type: "GET",
+      url: "/api/webapi/roi-plan-details",
+      data: {
+        
+      },
+      dataType: "json",
+      success: function (response) {
+        show(response.data)
+      }
+      
+    });
+  </script>
+</body>
+
+</html>

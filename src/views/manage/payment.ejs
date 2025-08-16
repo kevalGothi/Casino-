@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment Details</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    <!-- Include navigation -->
+    <%- include('nav') %>
+      <div class="content-wrapper">
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1> Payment Managment</h1>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+         <!-- Main content -->
+         <section class="content">
+               <!-- Default box -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Browse Recharge</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body p-0" style="overflow-y: hidden;">
+            <table class="table table-striped projects" id="tableget">
+              <thead>
+                <tr>
+                  <th class="text-center">#</th> 
+                 <th class="text-center">USDT </th>
+                 <th class="text-center">UPI Address</th>
+                 <th class="text-center">BEP20 Address</th>
+                 <th class="text-center">Paytm Address</th>
+                 <th class="text-center">BankName</th>
+                 <th class="text-center">Account</th>
+                 <th class="text-center">IFSC Code</th>
+                 <th class="text-center">HolderName</th>
+                 <th class="text-center">Phonepe</th>
+                 <th class="text-center">Googlepay</th>
+                 <th class="text-center">Paytm</th>
+                 <th class="text-center">BEP20Scanner</th>
+                 <th class="text-center">time</th>
+               </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+   
+    
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          <div class="card">
+            <div class="card-body">
+              <form id="roiCreateForm" method="POST">
+                <div class="mb-3">
+                  <label for="title" class="form-label"> USDT Price Value</label>
+                  <input type="text" class="form-control" id="usdt" name="usdt" >
+                </div> 
+                <div class="mb-3">
+                  <label for="title" class="form-label">Bank Name</label>
+                  <input type="text" class="form-control" id="bankname" name="bankname" >
+                </div>
+
+                <div class="mb-3">
+                  <label for="amount" class="form-label">Account Number</label>
+                  <input type="text" class="form-control" id="account" name="account" >
+                </div>
+                  <div class="mb-3">
+                  <label for="validity" class="form-label">IFSC Code</label>
+                  <input type="text" class="form-control" id="ifsc" name="ifsc" >
+                </div>
+                <div class="mb-3">
+                  <label for="ROA" class="form-label">Bank Holder Name</label>
+                  <input type="text" class="form-control" id="holdername" name="holdername"  >
+                </div>
+                <div class="mb-3">
+                  <label for="ROA" class="form-label">UPI Address</label>
+                  <input type="text" class="form-control" id="upi" name="upi"  >
+                </div>
+                <div class="mb-3">
+                  <label for="DGP" class="form-label">Paytm Address</label>
+                  <input type="text" class="form-control" id="trc" name="trc"  >
+                </div>
+               <!-- <div class="mb-3">
+                  <label for="FBP" class="form-label">BEP20 Address</label>
+                  <input type="text" class="form-control" id="bep" name="bep" >
+                </div>
+                <div class="mb-3">
+                  <label for="FBP" class="form-label">Nagad Address</label>
+                  <input type="text" class="form-control" id="nagadAddress" name="nagadAddress">
+                </div>
+                <div class="mb-3">
+                  <label for="FBP" class="form-label">Bkash Address</label>
+                  <input type="text" class="form-control" id="bkashAddress" name="bkashAddress">
+                </div>
+                <div class="mb-3">
+                  <label for="FBP" class="form-label">Nagad2 Address</label>
+                  <input type="text" class="form-control" id="nagadAddress2" name="nagadAddress2">
+                </div> -->
+                <div class="mb-3">
+                  <label for="FBP" class="form-label">Bkash2 Address</label>
+                  <input type="text" class="form-control" id="bkashAddress2" name="bkashAddress2">
+                </div>
+                <div class="mb-3">
+                  <label for="logo" class="form-label">Phonepe Scanner Image</label>
+                  <input type="file" class="form-control" id="phonepe" name="phonepe" >
+                </div> 
+                <div class="mb-3">
+                  <label for="logo" class="form-label">GooglePay Scanner Image</label>
+                  <input type="file" class="form-control" id="gpay" name="gpay" >
+                </div>
+                <div class="mb-3">
+                  <label for="logo" class="form-label">Paytm Scanner Image</label>
+                  <input type="file" class="form-control" id="trcscanner" name="trcscanner" >
+                </div>
+                <!-- <div class="mb-3">
+                  <label for="logo" class="form-label">BEP20 Scanner Image</label>
+                  <input type="file" class="form-control" id="bepscanner" name="bepscanner" >
+                </div> -->
+                <!--<div class="mb-3">
+                  <label for="logo" class="form-label">Nagad Scanner Image</label>
+                  <input type="file" class="form-control" id="nagad" name="nagad" >
+                </div>
+                <div class="mb-3">
+                  <label for="logo" class="form-label">Bkash Scanner Image</label>
+                  <input type="file" class="form-control" id="bkash" name="bkash" >
+                </div>
+                 <div class="mb-3">
+                  <label for="logo" class="form-label">Nagad2 Scanner Image</label>
+                  <input type="file" class="form-control" id="nagad2" name="nagad2">
+                </div>
+                <div class="mb-3">
+                  <label for="logo" class="form-label">Bkash2 Scanner Image</label>
+                  <input type="file" class="form-control" id="bkash2" name="bkash2">
+                </div> -->
+
+                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+
+         
+        </section>
+      </div>
+  </div>
+
+  <!-- Include scripts -->
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/dist/js/adminlte.min.js"></script>
+  <script src="/js/admin/admin.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script>
+      function fetchAndUpdateTable() {
+    $.ajax({
+      type: "GET",
+      url: "/api/webapi/payment-details",
+      dataType: "json",
+      success: function (response) {
+        // Update the table with the new data
+        updateTable(response);
+        
+      },
+      error: function (xhr, status, error) {
+        console.log('Error fetching data:', error);
+        
+      }
+    });
+  }
+
+  // Function to update the table with new data
+  function updateTable(data) {
+    if (Array.isArray(data.data) && data.data.length > 0) {
+      var tableBody = $('#tableget').find('tbody');
+      tableBody.empty();
+
+      data.data.forEach(function (item) {
+           const isoDate = item.time;
+           const date = new Date(isoDate);
+            const formattedDate = date.toLocaleString('en-IN', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true
+            });
+        let serial = 1;    
+        var row = '<tr style="font-size: 1rem; font-weight: 700;">' +
+          '<td class="text-center">' + serial + '</td>' +
+          '<td class="text-center">' + item.usdt + '</td>' +
+          '<td class="text-center">' + item.upi + '</td>' +
+          '<td class="text-center">' + item.bep + '</td>' +
+          '<td class="text-center">' + item.trc + '</td>' +
+          '<td class="text-center">' + item.bank_name + '</td>' +
+          '<td class="text-center">' + item.account_number + '</td>' +
+          '<td class="text-center">' + item.ifsc_code + '</td>' +
+          '<td class="text-center">' + item.holder_name + '</td>' +
+          '<td class="text-center"> <img src="/uploads/images/'+ item.phonepe +'" alt="" style="width: 50px;"> </td>' +
+          '<td class="text-center"> <img src="/uploads/images/'+ item.gpay +'" alt="" style="width: 50px;"></td>' +
+          '<td class="text-center"> <img src="/uploads/images/'+ item.trcscanner +'" alt="" style="width: 50px;"></td>' +
+          '<td class="text-center"> <img src="/uploads/images/'+ item.bepscanner +'" alt="" style="width: 50px;"></td>' +
+          '<td class="text-center">' + formattedDate + '</td>' +
+          '</tr>';
+          serial++
+        tableBody.append(row);
+      });
+    } else {
+      console.log('No data found or invalid response format');
+    }
+  }
+
+  // Initial load of table data
+  fetchAndUpdateTable();
+
+
+
+  $(document).ready(function () {
+    $("#roiCreateForm").on("submit", function (e) {
+        e.preventDefault();
+
+        // Create a new FormData object to include both text fields and file upload
+        let formData = new FormData();
+        formData.append('bank_name', $("#bankname").val().trim());
+        formData.append('account_number', $("#account").val().trim());
+        formData.append('ifsc_code', $("#ifsc").val().trim());
+        formData.append('holder_name', $("#holdername").val().trim());
+        formData.append('usdt', $("#usdt").val().trim());
+        formData.append('upi', $("#upi").val().trim());
+        formData.append('bep', $("#bep").val().trim());
+        formData.append('trc', $("#trc").val().trim());
+        formData.append('nagadAddress', $("#nagadAddress").val().trim());
+        formData.append('bkashAddress', $("#bkashAddress").val().trim());
+        formData.append('nagadAddress2', $("#nagadAddress2").val().trim());
+        formData.append('bkashAddress2', $("#bkashAddress2").val().trim());
+        formData.append('phonepe', $("#phonepe")[0].files[0]); // Append the file to FormData
+        formData.append('gpay', $("#gpay")[0].files[0]); // Append the file to FormData
+        formData.append('trcscanner', $("#trcscanner")[0].files[0]); // Append the file to FormData
+        formData.append('bepscanner', $("#bepscanner")[0].files[0]); // Append the file to FormData
+       // formData.append('nagad', $("#nagad")[0].files[0]); 
+      //  formData.append('bkash', $("#bkash")[0].files[0]);
+     //   formData.append('nagad2', $("#nagad2")[0].files[0]);
+     //   formData.append('bkash2', $("#bkash2")[0].files[0]);
+
+        $.ajax({
+            type: "POST",
+            url: "/admin/manager/payment-update", // Ensure this URL matches your backend route
+            data: formData,
+            contentType: false, // Required to handle FormData
+            processData: false, // Required to handle FormData
+            success: function (response) {
+                console.log('Response data success:', response.message);
+                fetchAndUpdateTable();
+                Swal.fire(
+                    'UPDATED SUCCESSFULLY',
+                    'success'
+                );
+                $("#roiCreateForm")[0].reset(); // Reset form after successful submission
+            },
+            error: function (error) {
+                console.log('Response data error:', JSON.stringify(error));
+                Swal.fire({
+                    title: "Something went wrong!",
+                });
+            }
+        });
+    });
+});
+</script>
+</body>
+
+</html>

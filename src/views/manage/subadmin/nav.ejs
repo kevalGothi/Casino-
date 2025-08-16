@@ -1,0 +1,119 @@
+<div id="preloader">
+    <div class="loadingPlaceholder"></div>
+</div>
+<nav class="main-header navbar navbar-expand navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <div class="sidebar" style="margin-top: 0;">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="/images/avatar.svg" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">Welcome Back Sub Admin</a>
+            </div>
+        </div>
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="/sub-admin/index" class="nav-link">
+                        <i class="nav-icon fa fa-user-circle"></i>
+                        <p>Members</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/sub-admin/recharge" class="nav-link">
+                        <i class="nav-icon fa fa-credit-card-alt"></i>
+                        <p>Browse Recharge</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/sub-admin/crpto-recharge-details" class="nav-link">
+                        <i class="nav-icon fa fa-credit-card-alt"></i>
+                        <p>Browse Recharge(Crpto)</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/sub-admin/withdraw" class="nav-link">
+                        <i class="nav-icon fa fa-bank"></i>
+                        <p>Browse Withdrawal</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/sub-admin/crpto-withdraw-details" class="nav-link">
+                        <i class="nav-icon fa fa-bank"></i>
+                        <p>Browse Withdrawal (Crpto)</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/sub-admin/rechargeRecord" class="nav-link">
+                        <i class="nav-icon fa fa-list"></i>
+                        <p>Recharge (Approved)</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/sub-admin/withdrawRecord" class="nav-link">
+                        <i class="nav-icon fa fa-list"></i>
+                        <p>Withdrawal (Approved)</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/home" class="nav-link">
+                        <i class="nav-icon fa fa-sign-out" aria-hidden="true"></i>
+                        <p>Go To Website</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var currentUrl = window.location.pathname;
+    var bonusMenu = document.getElementById("bonusMenu");
+    var bonusToggle = document.getElementById("bonusToggle");
+    var bonusIcon = document.getElementById("bonusIcon");
+    var bonusLinks = document.querySelectorAll(".bonus-link");
+
+    var isActive = false;
+
+    // Check if any bonus link matches the current URL
+    bonusLinks.forEach(function (link) {
+        if (link.getAttribute("href") === currentUrl) {
+            link.classList.add("active");
+            link.style.color = "white";
+            isActive = true;
+        }
+    });
+
+    // If a link is active, show the menu and update icon
+    if (isActive) {
+        bonusMenu.style.display = "block";
+        bonusIcon.classList.replace("fa-angle-down", "fa-angle-up");
+    }
+
+    // Toggle bonus dropdown on click
+    bonusToggle.addEventListener("click", function (event) {
+        event.preventDefault();
+        var isVisible = bonusMenu.style.display === "block";
+        
+        bonusMenu.style.display = isVisible ? "none" : "block";
+        bonusIcon.classList.toggle("fa-angle-down", isVisible);
+        bonusIcon.classList.toggle("fa-angle-up", !isVisible);
+    });
+});
+</script>

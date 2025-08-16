@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recharge Records</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    <%- include('nav') %>
+    <div class="content-wrapper">
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Recharge List</h1>
+            </div>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+      </section>
+
+       <div class="form-group"
+          style="text-align: center; display: flex;gap:0.5rem;align-items: center;padding: 0 0.5rem;flex-wrap: wrap;">
+          <input type="text" id="search" placeholder="Enter The Account You Want To Search">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;">
+            <input type="date" id="fromDate">
+            <input type="date" id="toDate">
+            <button id="filterBtn" class="btn btn-success btn-sm lock-btn"
+              style="display: flex;align-items: center;gap: 0.23rem;">Filter</button>
+              <button id="clearBtn" class="btn btn-secondary btn-sm lock-btn"
+              style="display: flex; align-items: center; gap: 0.23rem;">Clear</button>
+          </div>
+        </div>
+      <section class="content">
+        <div class="container-fluid">
+         
+
+            <!-- =========================================================== -->
+            <!-- <h5 class="mb-2">Info Box</h5> -->
+            <div class="row">
+                <!-- /.col -->
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="info-box shadow-sm">
+                        <span class="info-box-icon bg-success"><i class="fa fa-check" aria-hidden="true"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text"> Total Recharge</span>
+                            <span class="info-box-number" id="totalRecharge">0</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="info-box shadow-sm">
+                      <span class="info-box-icon bg-success"><i class="fa fa-check" aria-hidden="true"></i></span>
+
+                      <div class="info-box-content">
+                          <span class="info-box-text">Today Recharge </span>
+                          <span class="info-box-number" id="totalRechargeToday">0</span>
+                      </div>
+                      <!-- /.info-box-content -->
+                  </div>
+                  <!-- /.info-box -->
+              </div>
+
+              <div class="col-md-3 col-sm-6 col-12">
+                <div class="info-box shadow-sm">
+                    <span class="info-box-icon bg-success"><i class="fa fa-check" aria-hidden="true"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Weekly Total Recharge</span>
+                        <span class="info-box-number" id="totalRechargeWeek">0</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="info-box shadow-sm">
+                  <span class="info-box-icon bg-success"><i class="fa fa-check" aria-hidden="true"></i></span>
+
+                  <div class="info-box-content">
+                      <span class="info-box-text">Monthly Total Recharge</span>
+                      <span class="info-box-number" id="totalRechargeMonth">0</span>
+                  </div>
+                  <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+          </div>
+                <!-- /.col -->
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <!-- Default box -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Recharge List</h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="card-body p-0" style="overflow-y: hidden;">
+            <table class="table table-striped projects" id="table1">
+              <thead>
+                <tr>
+                  <th class="text-center">#</th>
+                  <th class="text-center">UID</th>
+                  <th class="text-center">Account</th>
+                  <th class="text-center">Type</th>
+                  <th class="text-center">Amount</th>
+                  <th class="text-center">Code</th>
+                  <th class="text-center">UTR</th>
+                  <th class="text-center">Time</th>
+                  <th class="text-center">Status</th>
+                  <!-- <th class="text-center"></th> -->
+                </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            </table>
+          </div>
+          <nav aria-label="Page navigation example" style="margin-top: 20px;display: flex;justify-content: center;">
+            <ul class="pagination table1">
+              <li class="page-item previous">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+              </li>
+              <div id="numbers" style="display: flex;"></div>
+              <li class="page-item next">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+      </section>
+    </div>
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/dist/js/adminlte.min.js"></script>
+  <script src="/js/admin/admin.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script src="/js/admin/tables.js"></script>
+   <script>
+        const apiUrls = {
+            getData: "/api/webapi/admin/recharge",
+            getStats: "/api/webapi/admin/recharge-details",
+            updateStatus: "/api/webapi/admin/rechargeDuyet"
+        };
+    
+        let globalData = [];
+    
+        // Set #toDate to today's date
+        const setDefaultDate = () => {
+            const today = new Date().toISOString().split('T')[0];
+            $('#toDate').val(today);
+        };
+    
+        // Convert timestamp to YYYY-MM-DD format
+        const formatDate = timestamp => new Date(Number(timestamp)).toISOString().split('T')[0];
+    
+        // Fetch and display initial data
+        const fetchData = async () => {
+            try {
+                const response = await $.ajax({ type: "POST", url: apiUrls.getData, dataType: "json" });
+                globalData = response.datas2 || [];
+                renderTable(globalData);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+    
+        // Render table with filtered data
+        const renderTable = (data) => {
+            const fromDate = $('#fromDate').val();
+            const toDate = $('#toDate').val();
+    
+            let filteredData = data.filter(({ time }) => {
+                if (!fromDate || !toDate) return true;
+    
+                const entryDate = new Date(Number(time)).setHours(0, 0, 0, 0);
+                return entryDate >= new Date(fromDate).setHours(0, 0, 0, 0) &&
+                       entryDate <= new Date(toDate).setHours(23, 59, 59, 999);
+            });
+    
+            const html = filteredData.length
+                ? filteredData.map(data => `
+                    <tr class="text-center">
+                        <td>${data.id}</td>
+                        <td><b>${data.uid}</b></td>
+                        <td><b>${data.phone}</b></td>
+                        <td><b style="color: #3498db">BANKING</b></td>
+                        <td><b>${data.money}</b></td>
+                        <td><b>${data.id_order}</b></td>
+                        <td><b>${data.utr}</b></td>
+                        <td><b>${formatDate(data.time)}</b></td>
+                        <td>
+                            <span class="badge badge-${data.status == 1 ? 'success' : 'danger'}">
+                                ${data.status == 1 ? 'Success' : 'Closed'}
+                            </span> 
+                        </td>
+                    </tr>`).join('')
+                : `<tr class="text-center"><td colspan="9">No data...</td></tr>`;
+    
+            $('tbody').html(html);
+        };
+    
+        // Fetch recharge details
+        const fetchStats = async () => {
+            try {
+                const response = await $.ajax({ type: "GET", url: apiUrls.getStats, dataType: "json" });
+                const { total, today, week, month } = response.data || {};
+                $('#totalRecharge').text(total || 0);
+                $('#totalRechargeToday').text(today || 0);
+                $('#totalRechargeWeek').text(week || 0);
+                $('#totalRechargeMonth').text(month || 0);
+            } catch (error) {
+                console.error("Error fetching stats:", error);
+            }
+        };
+    
+        // Debounce function to optimize filtering
+        const debounce = (func, delay) => {
+            let timeout;
+            return (...args) => {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func(...args), delay);
+            };
+        };
+    
+        // Apply filter with debounce
+        $('#filterBtn').click(debounce(() => renderTable(globalData), 300));
+    
+        // Clear filter and reset to default
+        $('#clearBtn').click(() => {
+            $('#fromDate').val('');
+            setDefaultDate();  
+            renderTable(globalData);
+        });
+    
+        // Set today's date for #toDate and fetch data on load
+        $(document).ready(() => {
+            setDefaultDate();
+            fetchData();
+            fetchStats();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game Issues</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/css/admin.css">
+    <style>
+      /* Responsive Modal CSS code */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+  
+      .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+      }
+  
+      /* #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+      } */
+  
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+  
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+  
+      .modal-close-btn {
+        display: block;
+        background-color: #ff4444;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 15px auto;
+        text-align: center;
+        border-radius: 5px;
+      }
+  
+      .modal-close-btn:hover {
+        background-color: #ff6666;
+      }
+  
+      @media only screen and (max-width: 768px) {
+        .modal-content {
+          width: 90%;
+        }
+  
+        .close {
+          font-size: 35px;
+          right: 25px;
+        }
+  
+        #caption {
+          font-size: 14px;
+          padding: 5px 0;
+        }
+      }
+  
+      @media only screen and (max-width: 480px) {
+        .modal-content {
+          width: 95%;
+        }
+  
+        .close {
+          font-size: 30px;
+        }
+  
+        #caption {
+          font-size: 12px;
+        }
+      }
+    </style>
+    </head>
+
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    <%- include('nav') %>
+    <div class="content-wrapper">
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Browse Recharge</h1>
+            </div>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Browse Recharge</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body p-0" style="overflow-y: hidden;">
+            <table class="table table-striped projects">
+              <thead>
+                <tr>
+                  <th class="text-center">Sr.</th>
+                  <th class="text-center">Phone</th>
+                  <th class="text-center">issue</th>
+                  <th class="text-center">Image</th>
+                  <th class="text-center">Time</th>
+                  <th class="text-center">Status</th>
+                  <th class="text-center">Accept/Reject</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="myModal" class="modal">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <img class="modal-content" id="imgInModal">
+          <!-- <div id="caption"></div> -->
+          
+          <!-- Close button inside the modal -->
+          <button class="modal-close-btn" onclick="closeModal()">Close</button>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/dist/js/adminlte.min.js"></script>
+  <script src="/js/admin/admin.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script>
+  
+      function formateT(params) {
+    let result = (params < 10) ? "0" + params : params;
+    return result;
+    }
+    
+    function timerJoin(params = '', addHours = 0) {
+        let date = '';
+        if (params) {
+            date = new Date(Number(params));
+        } else {
+            date = new Date();
+        }
+    
+        date.setHours(date.getHours() + addHours);
+    
+        let years = formateT(date.getFullYear());
+        let months = formateT(date.getMonth() + 1);
+        let days = formateT(date.getDate());
+    
+        let hours = date.getHours() % 12;
+        hours = hours === 0 ? 12 : hours;
+        let ampm = date.getHours() < 12 ? "AM" : "PM";
+    
+        let minutes = formateT(date.getMinutes());
+        let seconds = formateT(date.getSeconds());
+    
+        return years + '-' + months + '-' + days + ' ' + hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+    }
+  
+  </script>
+  <script>
+    function show(params) {
+      console.log(params)
+      if (params.length == 0) {
+        $('tbody').html(`
+            <tr class="text-center">
+              <td colspan="7">No More...</td>
+            </tr>
+          `);
+        return;
+      }
+      let rup = 92;
+      let html = '';
+      let serial = 1;
+      let show = params.map((data) => {
+        console.log(JSON.stringify(data))
+       let imageHtml = data.image ? 
+    `<img src="/uploads/images/${data.image}" alt="Image" width="50px" onclick="openModal('/uploads/images/${data.image}')" style="cursor: pointer;">`
+    : '<b>No Image</b>';
+        html += `<tr class="text-center">
+                  <td id="${data.id}">
+                    ${serial}
+                  </td>
+                  <td>
+                    <b>${data.phone}</b>
+                  </td>
+                  <td style="min-width: 190px;">
+                    <b>${data.problam}</b>
+                  </td>
+                  <td style="min-width: 190px;">
+                   ${imageHtml}
+                  </td>
+                  <td style="min-width: 190px;">
+                    <b>${data.time}</b>
+                  </td>
+                  <td class="project-state">
+                    <span class="badge badge-warning">padding...</span>
+                  </td>
+                  <td class="project-actions text-center" style="min-width: 160px;">
+                    <a class="btn btn-success btn-sm confirm-btn" href="" data="${data.id}"><i class="fa fa-check"></i></a>
+                
+                    <a class="btn btn-danger btn-sm delete-btn" href="#" data="${data.id}"><i class="fas fa-trash"></i></a>
+                  </td>
+                </tr>`;
+                serial++
+              })
+          $('tbody').html(html);
+          $('.btn-success').click(function (e) { 
+            e.preventDefault();
+            let id = $(this).attr('data');
+            $.ajax({
+              type: "POST",
+              url: "/api/webapi/admin/game-issue-Duyet",
+              data: {
+                id: id,
+                type: 'confirm'
+              },
+              dataType: "json",
+              success: function (response) {
+                Swal.fire(
+                  'Good job!',
+                  'You Accepted The Recharge!',
+                  'success'
+                )
+                setTimeout(() => {
+                  location.reload();
+                }, 100);
+              }
+            });
+          });
+          $('.btn-danger').click(function (e) { 
+            e.preventDefault();
+            let id = $(this).attr('data');
+            $.ajax({
+              type: "POST",
+              url: "/api/webapi/admin/game-issue-Duyet",
+              data: {
+                id: id,
+                type: 'delete'
+              },
+              dataType: "json",
+              success: function (response) {
+                setTimeout(() => {
+                  location.reload();
+                }, 100);
+                Swal.fire(
+                  'Good job!',
+                  'You Rejected The Recharge!',
+                  'success'
+                )
+              }
+            });
+          });
+    }
+    $.ajax({
+      type: "POST",
+      url: "/api/webapi/admin/game-problam-info",
+      data: {
+        
+      },
+      dataType: "json",
+      success: function (response) {
+        console.log(JSON.stringify(response))
+        show(response.data)
+      }
+    });
+    function openModal(imageSrc) {
+      var modal = document.getElementById("myModal");
+      var modalImg = document.getElementById("imgInModal");
+
+      modal.style.display = "block";
+      modalImg.src = imageSrc;
+    }
+
+    function closeModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 48.24px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex,nofollow">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <title>Spinzo</title>
+    <link href="/css/promotion/app.css" rel="stylesheet" />
+    <link href="/css/promotion/chunk-0_1.css" rel="stylesheet" />
+    <link href="/css/promotion/chunk-0_2.css" rel="stylesheet" />
+    <link href="/css/promotion/chunk-0_3.css" rel="stylesheet" />
+    <link href="/css/promotion/chunk-0_4.css" rel="stylesheet" />
+    <link href="/css/promotion/chunk-0_5.css" rel="stylesheet" />
+    <link href="/css/promotion/chunk-0_6.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/fav.png" type="image/x-icon">
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #090909;
+            padding: 0;
+            margin: 0;
+        }
+        #nav_checkUrl{
+            left: 35vw;
+        }
+
+        :root {
+    --main-color: #f95959;
+    --main_gradient-color: linear-gradient(90deg, #f95959 0%, #ff9a8e 100%);
+    --main_gradient-color2: linear-gradient(180deg, #f95959 0%, #ff9a8e 100%);
+    --light-main_gradient-color: var(--main_gradient-color);
+    --text_white: #fff;
+    --light-bg_white: #fff;
+    --light-main-color: var(--main-color);
+    --norm_red-color: #FB5B5B;
+    --norm_green-color: #18B660;
+    --norm_secondary-color: #FEAA57;
+    --norm_Purple-color: #C86EFF;
+    --norm_bule-color: #6EA8F4;
+    --button_dis_color: linear-gradient(90deg, #CCCEDC 15.38%, #CDCFDD 98.73%);
+    --text_color_L1: #001534;
+    --text_color_L2: #80849C;
+    --text_color_L3: #B6BCC8;
+    --text_color_L4: #FFF;
+    --bg_color_L1: #F2F2F1;
+    --bg_color_L2: #FFF;
+    --bg_color_L3: #F6F6F6;
+    --Dividing-line_color: #E1E1E1;
+    --sheet_nva_color: var(--main-color);
+    --sheet_detail_bg_color: #F6F6F6;
+    --pop_bg-color: linear-gradient(180deg, #f95959 0%, #ff9a8e 68.59%);
+    --iconSecondary: rgba(24, 182, 96, .3);
+    --van-sidebar-text-color: var(--main-color);
+    --van-picker-background: var(--bg_color_L2);
+    --van-picker-option-text-color: var(--text_color_L2);
+    --van-picker-confirm-action-color: var(--main-color);
+    --van-checkbox-checked-icon-color: var(--main-color);
+    --van-checkbox-label-color: var(--text_color_L2);
+    --van-field-input-text-color: var(--text_color_L1);
+    --van-radio-checked-icon-color: var(--main-color);
+    --van-grid-item-content-background: var(--bg_color_L1) --van-text-color: var(--text_color_L1);
+    --van-dialog-background: var(--bg_color_L2);
+    --van-circle-color: var(--main-color);
+    --van-circle-layer-color: var(--bg_color_L3);
+    --van-calendar-range-edge-background: var(--main-color);
+    --van-button-primary-background: var(--main-color);
+    --van-button-primary-border-color: var(--main-color);
+}
+
+.fun-tab-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+ .tab_item[data-v-a6a0c110]{
+   width: 2.53333rem;
+    height: 1.33333rem;
+    margin-inline: .06667rem;
+    padding: 0;
+    color: var(--text_color_L2);
+    border-radius: .21333rem;
+    background: var(--bg_color_L2);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+
+}
+.fun-tab-item__wrap {
+  position: relative;
+}
+.fun-tab-item__badge {
+  position: absolute;
+  top: 0.05333rem;
+  right: -0.13333rem;
+  padding: 0 0.05333rem;
+  min-width: 0.10667rem;
+  height: 0.18667rem;
+  font-size: 0.12rem;
+  line-height: 0.18667rem;
+  color: #fff;
+  background: #ff411c;
+  white-space: nowrap;
+  border-radius: 1.33333rem;
+  -webkit-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+  text-align: center;
+}
+.fun-tab-bar-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  min-height: 0.66667rem;
+  background: var(--bg_color_L2);
+}
+.fun-tab-bar .fun-tab-item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1;
+  flex: 1 1;
+  font-size: 0.16rem;
+}
+.fun-tab-bar .fun-tab-item__badge {
+  top: 0.02667rem;
+  right: 0;
+}
+.fun-tabs {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background: var(--bg_color_L1);
+}
+.fun-tabs__tab-list {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  min-width: 100%;
+  width: -webkit-min-content;
+  width: min-content;
+}
+.fun-tabs__active-line {
+  position: absolute;
+  bottom: 0.04rem;
+  left: 0;
+  width: 0.4rem;
+  height: 0.04rem;
+  border-radius: 0.05333rem;
+}
+.fun-tabs .fun-tab-item {
+  padding: 0.13333rem 0.05333rem;
+  font-size: 0.18667rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.van-toast[data-v-0a9bf0c5] {
+  word-break: break-word !important;
+}
+
+.x-page[data-v-a6a0c110] {
+    overflow: hidden;
+    padding: 0 .32rem
+}
+
+ .tabs[data-v-a6a0c110] {
+    background: transparent !important;
+    margin-left: -.13333rem;
+    width: 94%;
+    margin-left: 3%;
+}
+
+.x-page .tab_item[data-v-a6a0c110] {
+    width: 2.53333rem;
+    height: 1.33333rem;
+    margin-inline:.06667rem;padding: 0;
+    color: var(--text_color_L2);
+    border-radius: .21333rem;
+    background: var(--bg_color_L2);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center
+}
+
+ .tab_item svg[data-v-a6a0c110] {
+    height: .66667rem;
+    width: .66667rem
+}
+
+ .tab_item span[data-v-a6a0c110] {
+    font-size: .32rem
+}
+
+ .tab_item.tab_active[data-v-a6a0c110] {
+    color: var(--text_color_L4);
+    background: var(--main_gradient-color)
+}
+
+
+
+.promotion-mian svg{
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0px;
+}
+
+.fun-tabs::-webkit-scrollbar{
+   display: none;
+}
+.onlineGames__container-list[data-v-0ffc3892] {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: .13333rem .24rem;
+    padding-bottom: .26667rem;
+}
+
+.onlineGames__container-list__item[data-v-0ffc3892] {
+    width: 100%;
+    height: auto;
+    border-radius: .06667rem;
+}
+
+.onlineGames__container-list__item img[data-v-0ffc3892] {
+    width: 100%;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: .08rem;
+    background-color: var(--bg_color_L2);
+}
+
+.tab-content {
+        display: none; /* Hide all tabs by default */
+    }
+    .game-item {
+            flex: 1 1 calc(33.333% - 10px); /* 3 items per row with gap */
+            box-sizing: border-box;
+            text-align: center;
+            max-width: calc(33.333% - 10px);
+        }
+        .game-link {
+            display: block;
+            text-decoration: none;
+            color: #000;
+        }
+        .game-image {
+            width: 115px;
+            border-radius: 10px;
+            height: 130px;
+            object-fit: cover;
+        }
+        
+    
+
+    </style>
+</head>
+
+<body style="font-size: 12px;">
+    <div id="app">
+        <div data-v-7c8bbbf4="" class="mian">
+            <div data-v-106b99c8="" data-v-7c8bbbf4="" class="navbar">
+                <div data-v-106b99c8="" class="navbar-left" onclick="location.href='/home'">
+                    <div data-v-a9660e98="" data-v-106b99c8="" class="c-row c-row-middle-center">
+                        <i class="fa-light fa-angle-left fa-fade fa-xl center" style="color: #FFF"></i>
+                    </div>
+                </div>
+                <div data-v-106b99c8="" class="navbar-title"> All Games </div>
+                <div data-v-106b99c8="" class="navbar-right" onclick="location.href='/home'">
+                    <div data-v-7c8bbbf4="" data-v-106b99c8="" class="c-row">
+                        <i class="fa-duotone fa-calendar-lines fa-fade fa-lg" style="--fa-primary-color: #fff; --fa-secondary-color: #fff;"></i>
+                    </div>
+                </div>
+            </div>
+            <div data-v-a6a0c110="" class="bet-container-sticky" style="">
+                <div class="van-sticky">
+                   <div data-v-a6a0c110="">
+                      <div data-v-a6a0c110="" class="fun-tabs tabs" activeclassname="" style="overflow: scroll;">
+                        <div class="fun-tabs__tab-list" style="overflow-x: auto; display: flex; white-space: nowrap; scroll-behavior: smooth; transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);">
+                           <!-- <div class="fun-tab-item funtab_item" style="color: rgb(22, 119, 255);" onclick="handleTabClick(event, this, 'lottery-All')">
+                               <div class="fun-tab-item__wrap">
+                                   <div class="fun-tab-item__label">
+                                       <div data-v-a6a0c110="" class="tab_item tab_active">
+                                           <svg data-v-a6a0c110="" class="svg-icon icon-lottery">
+                                               <use xlink:href="#icon-lottery"></use>
+                                           </svg>
+                                           <span data-v-a6a0c110="">Lottery</span>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div> -->
+                           <div class="fun-tab-item funtab_item" style="" onclick="handleTabClick(event, this, 'allJiliGames')">
+                               <div class="fun-tab-item__wrap">
+                                   <div class="fun-tab-item__label">
+                                       <div data-v-a6a0c110="" class="tab_item tab_active">
+                                        <svg data-v-0ffc3892="" class="svg-icon icon-JILI gameIcon gameIcon" style="width: 1rem;
+                                        height: 0.8rem;"><use xlink:href="#icon-JILI"></use></svg>
+                                           <span data-v-a6a0c110="">JILI</span>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                         <!--  <div class="fun-tab-item funtab_item" style="" onclick="handleTabClick(event, this, 'allJDBGames')">
+                               <div class="fun-tab-item__wrap">
+                                   <div class="fun-tab-item__label">
+                                       <div data-v-a6a0c110="" class="tab_item">
+                                        <svg data-v-0ffc3892="" class="svg-icon icon-JDB gameIcon gameIcon" style="width: 1rem;
+                                        height: 0.8rem;"><use xlink:href="#icon-JDB"></use></svg>
+                                           <span data-v-a6a0c110="">JDB</span>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div> -->
+                           <!-- <div class="fun-tab-item funtab_item" style="" onclick="handleTabClick(event, this)">
+                               <div class="fun-tab-item__wrap">
+                                   <div class="fun-tab-item__label">
+                                       <div data-v-a6a0c110="" class="tab_item">
+                                        <svg data-v-a6a0c110="" class="svg-icon icon-slot">
+                                            <use xlink:href="#icon-slot"></use>
+                                        </svg>
+                                          
+                                           <span data-v-a6a0c110="">Slots</span>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="fun-tab-item funtab_item" style="" onclick="handleTabClick(event, this)">
+                               <div class="fun-tab-item__wrap">
+                                   <div class="fun-tab-item__label">
+                                       <div data-v-a6a0c110="" class="tab_item">
+                                        <svg data-v-a6a0c110="" class="svg-icon icon-sport">
+                                            <use xlink:href="#icon-sport"></use>
+                                        </svg>
+                                           <span data-v-a6a0c110="">Fishing</span>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="fun-tab-item funtab_item" style="" onclick="handleTabClick(event, this)">
+                            <div class="fun-tab-item__wrap">
+                                <div class="fun-tab-item__label">
+                                    <div data-v-a6a0c110="" class="tab_item">
+                                        <svg data-v-a6a0c110="" class="svg-icon icon-chess">
+                                            <use xlink:href="#icon-chess"></use>
+                                        </svg>
+                                        <span data-v-a6a0c110="">Casino</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                           <div class="fun-tabs__active-line" style="transition: 300ms; width: 0px; height: 3px; transform: translate3d(69px, 0px, 0px); background-color: rgb(22, 119, 255);"></div>
+                       </div>
+                       
+                       
+                      </div>
+                   </div>
+                </div>
+             </div>
+
+             <!-- <div data-v-0a9bf0c5="" class="tab-content allGames__container-list" id="lottery-All" style="">
+                <div data-v-e4c17073="" data-v-0a9bf0c5="" class="gamesList__container">
+                    <div data-v-e4c17073="" class="gamesList__container-title">Lottery</div>
+                    <div data-v-df3cc798="" data-v-e4c17073="" class="gameListGrid__container all_container">
+                      
+                        <div data-v-acaadf81="" data-v-df3cc798="" class="lottery_container">
+                            <div data-v-acaadf81="" class="lotterySlotItem" onclick="window.location.href='/win/';">
+                                <img
+                                    data-v-acaadf81=""
+                                    class=""
+                                    data-origin="/assets/png/lotterycategory_202307140102511fow.png"
+                                    src="/assets/png/lotterycategory_202307140102511fow.png"
+                                />
+                                <span data-v-acaadf81="">Win Go</span>
+                                <h4 data-v-acaadf81="">
+                                    <div data-v-acaadf81="">Guess Number</div>
+                                    <div data-v-acaadf81="">Green/Red/Violet to win</div>
+                                </h4>
+                            </div>
+                            <div data-v-acaadf81="" class="lotterySlotItem" onclick="window.location.href='/k3/';">
+                                <img
+                                    data-v-acaadf81=""
+                                    class=""
+                                    data-origin="/assets/png/lotterycategory_20230714010227swu2.png"
+                                    src="/assets/png/lotterycategory_20230714010227swu2.png"
+                                />
+                                <span data-v-acaadf81="">K3</span>
+                                <h4 data-v-acaadf81="">
+                                    <div data-v-acaadf81="">Guess Number</div>
+                                    <div data-v-acaadf81="">Big/Small/Odd/Even</div>
+                                </h4>
+                            </div>
+                            <div data-v-acaadf81="" class="lotterySlotItem" onclick="window.location.href='/5d/';">
+                                <img
+                                    data-v-acaadf81=""
+                                    class=""
+                                    data-origin="/assets/png/lotterycategory_2023071401023322dy.png"
+                                    src="/assets/png/lotterycategory_2023071401023322dy.png"
+                                />
+                                <span data-v-acaadf81="">5D</span>
+                                <h4 data-v-acaadf81="">
+                                    <div data-v-acaadf81="">Guess Number</div>
+                                    <div data-v-acaadf81="">Big/Small/Odd/Even</div>
+                                </h4>
+                            </div>
+                            <div data-v-acaadf81="" class="lotterySlotItem" onclick="window.location.href='/trx/';">
+                                <img
+                                    data-v-acaadf81=""
+                                    class=""
+                                    data-origin="/assets/png/lotterycategory_20230714010246lyuc.png"
+                                    src="/assets/png/lotterycategory_20230714010246lyuc.png"
+                                />
+                                <span data-v-acaadf81="">Trx Win</span>
+                                <h4 data-v-acaadf81="">
+                                    <div data-v-acaadf81="">Guess Number</div>
+                                    <div data-v-acaadf81="">Green/Red/Violet to win</div>
+                                </h4>
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div> -->
+            <div data-v-0ffc3892="" class="tab-content onlineGames__container-list" id="allJiliGames" style="
+                flex-wrap: wrap;
+                justify-content: space-around;
+                margin-top: 20px;
+                 width: 94%;
+                ">
+                <div data-v-0ffc3892="" class="onlineGames__container-list__item">
+                    <img data-v-0ffc3892="" class="" data-origin="https://ossimg.91admin123admin.com/91club/gamelogo/JILI/51.png" src="https://ossimg.91admin123admin.com/91club/gamelogo/JILI/51.png" />
+                    
+                </div>
+            </div>
+            <div id="allJDBGames" data-v-0ffc3892="" class="tab-content sonlineGames__container-list"  style="  
+                margin-top: 20px;
+                width: 94%;
+             margin-left: 3%;
+            flex-wrap: wrap;
+            justify-content: space-around;">
+                
+            </div>
+            
+   
+                    </div>
+                </div>
+            </div>
+            <!---->
+            <%- include('../nav') -%>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/client.js"></script>
+    <script src="/js/allJiliGames.js"></script>
+    <script src="/js/allJdbGames.js"></script>
+    <script>
+  document.querySelectorAll('.tab-content').forEach((content) => {
+        content.style.display = 'none'; // Hide all content by default
+    });
+    const defaultTab = document.getElementById('allJiliGames');
+    defaultTab.style.display = 'flex'; // Show the default tab
+
+    function handleTabClick(event, tabElement, contentId) {
+        // Prevent default action
+        event.preventDefault();
+
+        // Scroll the clicked tab into view
+        tabElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest', // Adjust for vertical scrolling
+            inline: 'center', // For horizontal centering
+        });
+
+        // Remove the 'tab_active' class from all tabs
+        document.querySelectorAll('.tab_item').forEach((tab) => {
+            tab.classList.remove('tab_active');
+        });
+
+        // Add the 'tab_active' class to the clicked tab
+        const tabLabel = tabElement.querySelector('.tab_item');
+        if (tabLabel) {
+            tabLabel.classList.add('tab_active');
+        }
+
+        // Hide all tab content
+        document.querySelectorAll('.tab-content').forEach((content) => {
+            content.style.display = 'none';
+        });
+
+        // Show the content corresponding to the clicked tab
+        const activeContent = document.getElementById(contentId);
+        if (activeContent) {
+            activeContent.style.display = contentId === 'lottery-All' ? 'block' : 'flex';
+        }
+    }
+    </script>
+</body>
+
+</html>

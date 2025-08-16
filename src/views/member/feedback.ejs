@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 48.16px" style="min-height: 100vh">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport" />
+    <title>Spinzo</title>
+    <link href="/css/member/main.css" rel="stylesheet" />
+    <link href="/css/member/chunk-1.css" rel="stylesheet" />
+    <link href="/css/member/chunk-2.css" rel="stylesheet" />
+    <link href="/css/member/chunk-3.css" rel="stylesheet" />
+    <link href="/css/member/chunk-4.css" rel="stylesheet" />
+    <link href="/css/member/chunk-5.css" rel="stylesheet" />
+    <link href="/css/member/chunk-6.css" rel="stylesheet" />
+    <link href="/css/member/chunk-7.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/fav.png" type="image/x-icon" />
+    <style>
+        :root {
+            --main-color: #46ff5c;
+            --main_gradient-color: linear-gradient(0deg, #0a7e17 0%, #6afa7b 100%);
+            --main_gradient-color2: linear-gradient(180deg, #10741b 0%, #6afa7b 100%);
+            --light-main_gradient-color: var(--main_gradient-color);
+            --text_white: #fff;
+            --light-bg_white: #fff;
+            --light-main-color: var(--main-color);
+            --norm_red-color: #FB5B5B;
+            --norm_green-color: #18B660;
+            --norm_secondary-color: #FEAA57;
+            --norm_Purple-color: #C86EFF;
+            --norm_bule-color: #6EA8F4;
+            --button_dis_color: linear-gradient(90deg, #CCCEDC 15.38%, #CDCFDD 98.73%);
+            --text_color_L1: #fff;
+            --text_color_L2: #80849C;
+            --text_color_L3: #B6BCC8;
+            --text_color_L4: #000;
+            --bg_color_L1: #F2F2F1;
+            --bg_color_L2: #26252a;
+            --bg_color_L3: #F6F6F6;
+            --Dividing-line_color: #E1E1E1;
+            --sheet_nva_color: var(--main-color);
+            --sheet_detail_bg_color: #F6F6F6;
+            --pop_bg-color: linear-gradient(180deg, #46ff5c 0%, #ff9a8e 68.59%);
+            --iconSecondary: rgba(24, 182, 96, .3);
+            --van-sidebar-text-color: var(--main-color);
+            --van-picker-background: var(--bg_color_L2);
+            --van-picker-option-text-color: var(--text_color_L2);
+            --van-picker-confirm-action-color: var(--main-color);
+            --van-checkbox-checked-icon-color: var(--main-color);
+            --van-checkbox-label-color: var(--text_color_L2);
+            --van-field-input-text-color: var(--text_color_L1);
+            --van-radio-checked-icon-color: var(--main-color);
+            --van-grid-item-content-background: var(--bg_color_L1) --van-text-color: var(--text_color_L1);
+            --van-dialog-background: var(--bg_color_L2);
+            --van-circle-color: var(--main-color);
+            --van-circle-layer-color: var(--bg_color_L3);
+            --van-calendar-range-edge-background: var(--main-color);
+            --van-button-primary-background: var(--main-color);
+            --van-button-primary-border-color: var(--main-color);
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #090909;
+            padding: 0;
+            margin: 0;
+        }
+
+        .block-click {
+            pointer-events: none;
+        }
+
+        .mian[data-v-51f72da1] {
+            min-height: 100vh;
+            background-color: #000
+        }
+
+        .mian .audio[data-v-51f72da1] {
+            width: .66667rem;
+            height: .66667rem
+        }
+
+        .mian.login[data-v-51f72da1] {
+            padding-top: 0
+        }
+
+        .mian .login-banner[data-v-51f72da1] {
+            position: relative;
+            background: url(../img/login_banner.34f15f30.png) no-repeat top;
+            background-size: 100% 100%;
+            min-height: 6.4rem;
+            max-height: 6.66667rem
+        }
+
+        .mian .login-banner .bankPage[data-v-51f72da1] {
+            height: 1.33333rem;
+            width: 1.33333rem
+        }
+
+        .mian .login-banner .bankPage .bank[data-v-51f72da1] {
+            border: .05333rem solid #fff;
+            width: .69333rem;
+            height: .69333rem;
+            border-radius: .69333rem
+        }
+
+        .mian .login-banner .logo[data-v-51f72da1] {
+            position: absolute;
+            top: 50%;
+            margin-top: -.53333rem;
+            right: .4rem;
+            width: 3.2rem;
+            height: 1.06667rem
+        }
+
+        .mian .login-box[data-v-51f72da1] {
+            position: relative;
+            z-index: 9;
+            padding: .66667rem .8rem;
+            border-radius: .53333rem .53333rem 0 0;
+            margin-top: -.53333rem;
+            background-color: #fff
+        }
+
+        .mian .login-box .tit[data-v-51f72da1] {
+            text-align: center;
+            font-size: .8rem;
+            color: #670001
+        }
+
+        .mian .forgot-box[data-v-51f72da1] {
+            width: 100%;
+            padding: .13333rem .8rem .8rem;
+            border-top-left-radius: .66667rem;
+            border-top-right-radius: .66667rem;
+            position: relative
+        }
+
+        .mian-from[data-v-51f72da1] {
+            margin-top: .4rem
+        }
+
+        .mian-from .lab[data-v-51f72da1] {
+            font-size: .37333rem;
+            color: #959595
+        }
+
+        .mian-from .tip[data-v-51f72da1] {
+            margin: -.53333rem 0 .26667rem;
+            font-size: .34667rem;
+            color: #333
+        }
+
+        .mian-from .item[data-v-51f72da1] {
+            position: relative;
+            height: 1.06667rem;
+            line-height: .96rem;
+            margin: .4rem 0 .8rem;
+            border: .05333rem solid #ecedf7;
+            border-radius: .21333rem;
+            overflow: hidden;
+            padding-left: .88rem
+        }
+
+        .mian-from .item .pwd[data-v-51f72da1] {
+            font-size: .32rem
+        }
+
+        .mian-from .item.first[data-v-51f72da1] {
+            padding-left: 1.6rem
+        }
+
+        .mian-from .item .img[data-v-51f72da1] {
+            position: absolute;
+            left: .26667rem;
+            top: 50%;
+            transform: translateY(-50%)
+        }
+
+        .mian-from .item .mobile[data-v-51f72da1] {
+            height: .53333rem;
+            width: .37333rem
+        }
+
+        .mian-from .item .password[data-v-51f72da1] {
+            height: .48rem;
+            width: .42667rem
+        }
+
+        .mian-from .item .code[data-v-51f72da1] {
+            height: .4rem;
+            width: .48rem
+        }
+
+        .mian-from .item .number[data-v-51f72da1] {
+            position: absolute;
+            left: .26667rem;
+            font-style: normal;
+            font-size: .4rem;
+            line-height: .96rem;
+            padding-right: .08rem;
+            color: #f4453f
+        }
+
+        .mian-from .item input[data-v-51f72da1] {
+            background: transparent;
+            color: #1f1f1f;
+            border: none;
+            width: 100%;
+            height: .96rem;
+            font-size: .4rem
+        }
+
+        .mian-from .item .otp[data-v-51f72da1] {
+            border: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: .37333rem;
+            height: .96rem;
+            border-radius: .13333rem;
+            width: 1.86667rem;
+            text-align: center;
+            line-height: .96rem;
+            background-color: #ffebeb;
+            border-color: #ffebeb !important;
+            color: #000
+        }
+
+        .mian-from .agree[data-v-51f72da1] {
+            line-height: .53333rem;
+            height: .53333rem;
+            color: #000;
+            font-size: .4rem
+        }
+
+        .mian-from .txt[data-v-51f72da1] {
+            font-size: .4rem;
+            color: #f4453e
+        }
+
+        .mian-from .mian-btn .gradient[data-v-51f72da1] {
+            width: 50%;
+            height: 1.06667rem;
+            margin: 0 auto;
+            border: none;
+            border-radius: 1.06667rem;
+            color: #ffffff;
+            background: -webkit-linear-gradient(top, #46ff5c 0%, #46ff5c 100%);
+            background: linear-gradient(180deg, #46ff5c 0%, #46ff5c 100%)
+        }
+
+        .mian-from .mian-btn .gradient span[data-v-51f72da1] {
+            font-size: .53333rem
+        }
+
+        .mian-from .mian-btn .text[data-v-51f72da1] {
+            height: .53333rem;
+            line-height: .53333rem;
+            font-size: .4rem;
+            color: #f4453f
+        }
+
+        .mian .AreaCode-box[data-v-51f72da1] {
+            padding: .26667rem .4rem;
+            border-bottom: .02667rem solid #eee
+        }
+
+        .mian .AreaCode-box .item .img[data-v-51f72da1] {
+            display: block
+        }
+
+        .mian .AreaCode-box .item .right .chek[data-v-51f72da1] {
+            height: .53333rem;
+            width: .53333rem;
+            line-height: .53333rem;
+            text-align: center;
+            border-radius: .53333rem;
+            border: .05333rem solid #eee
+        }
+
+        .mian .AreaCode-box .item .right .chek.action[data-v-51f72da1] {
+            background-color: #f2413b;
+            border: .05333rem solid #f2413b
+        }
+
+
+        .feedback-container-content[data-v-00fab4aa] {
+            padding: 0 .32rem;
+            margin-top: 20px;
+        }
+
+        .feedback-container-content-text[data-v-00fab4aa] {
+            height: 9.13333rem;
+            background: var(--bg_color_L2);
+            border-radius: .26667rem;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            padding: .53333rem;
+        }
+
+        .feedback-container-content-text-wrapper[data-v-00fab4aa] {
+            width: 100%;
+            height: 5.33333rem;
+        }
+
+        .feedback-container-content-text textarea[data-v-00fab4aa] {
+            border: none;
+            font-size: .32rem;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            color: var(--text_color_L1);
+        }
+
+        .feedback-container-content-describe[data-v-00fab4aa] {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            padding: .97333rem 0 1.12rem;
+        }
+
+        .feedback-container-content-describe h5[data-v-00fab4aa] {
+            font-size: .37333rem;
+            color: var(--darkTextW, var(--text_color_L1));
+            margin-bottom: .2rem;
+        }
+
+        .feedback-container-content-describe h5[data-v-00fab4aa] {
+            font-size: .37333rem;
+            color: var(--darkTextW, var(--text_color_L1));
+            margin-bottom: .2rem;
+        }
+
+
+        .feedback-container-content-describe img[data-v-00fab4aa] {
+            width: 5.86667rem;
+            margin-top: .49333rem;
+        }
+
+        .feedback-container-footer[data-v-00fab4aa] {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            bottom: 1.06667rem;
+            width: 100%;
+            padding-bottom: .66667rem;
+        }
+
+        .feedback-container-footer button[data-v-00fab4aa] {
+            width: 8.98667rem;
+            height: 1.06667rem;
+            font-size: .4rem;
+            background: var(--main_gradient-color);
+            border-radius: 1.06667rem;
+            color: var(--text_color_L4);
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div data-v-51f72da1="" class="mian forgot">
+            <div data-v-106b99c8="" data-v-51f72da1="" class="navbar" style="background: #000;">
+                <div data-v-106b99c8="" class="navbar-left" onclick="location.href='/mian'">
+                    <div data-v-106b99c8="" class="bank c-row c-row-middle-center">
+                        <img data-v-106b99c8="" src="/images/back.c3244ab0.png" class="navbar-back" />
+                    </div>
+                </div>
+                <div data-v-106b99c8="" class="navbar-title"> Feedback</div>
+                <div data-v-106b99c8="" class="navbar-right">
+                    <div data-v-51f72da1="" data-v-106b99c8="" class="c-row">
+                        <img data-v-51f72da1="" data-v-106b99c8="" src="/images/audio.webp" class="audio" />
+                    </div>
+                </div>
+            </div>
+            <div data-v-00fab4aa="" class="feedback-container-content">
+                <div data-v-00fab4aa="" class="feedback-container-content-text">
+                    <div data-v-00fab4aa="" class="feedback-container-content-text-wrapper"><textarea data-v-00fab4aa=""
+                            name="feedback" id="feedback" id="" cols="30" rows="10"
+                            placeholder="Welcome to feedback, please give feedback-please describe the problem in detail when providing feedback, preferably attach a screenshot of the problem you encountered, we will immediately process your feedback!"
+                            required></textarea></div>
+                </div>
+                <div data-v-00fab4aa="" class="feedback-container-content-describe">
+                    <h5 data-v-00fab4aa="">Send helpful feedback</h5>
+                    <h5 data-v-00fab4aa="">Chance to win Mystery Rewards</h5>
+                    <div data-v-00fab4aa=""><img data-v-00fab4aa="" src="/assets/png/feedbackImg-b7a3bd03.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div data-v-00fab4aa="" class="feedback-container-footer" id="Submit">
+                <button data-v-00fab4aa="" fdprocessedid="4bsa9v">Submit</button>
+            </div>
+            <!---->
+            <div data-v-7692a079="" data-v-51f72da1="" class="Loading c-row c-row-middle-center" style="display: none">
+                <div data-v-7692a079="" class="van-loading van-loading--circular">
+                    <span data-v-7692a079="" class="van-loading__spinner van-loading__spinner--circular"
+                        style="width: auto; height: auto; -webkit-animation-duration: 1s; animation-duration: 1s;">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 200 200" width="200" height="200" preserveAspectRatio="xMidYMid meet"
+                            style="width: 100%;height: 100%;transform: translate3d(0px, 0px, 0px);content-visibility: visible;">
+                            <g transform="matrix(-0.5984085202217102,0.8011911511421204,-0.8011911511421204,-0.5984085202217102,239.9599609375,79.72173309326172)"
+                                style="display: block;">
+                                <image width="200px" height="200px" preserveAspectRatio="xMidYMid slice"
+                                    xlink:href="/assets/png/image.png"></image>
+                            </g>
+                            <g transform="matrix(0.9408400058746338,0,0,0.9408400058746338,20.969436645507812,79.30152130126953)"
+                                style="display: block;">
+                                <image width="168px" height="44px" preserveAspectRatio="xMidYMid slice"
+                                    xlink:href="/logo.png"></image>
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/client.js"></script>
+    <script>
+        function alertMess(text, sic) {
+            $('body').append(
+                `
+                <div data-v-1dcba851="" class="msg">
+                    <div data-v-1dcba851="" class="msg-content v-enter-active v-enter-to" style=""> ${text} </div>
+                </div>
+                `
+            );
+            setTimeout(() => {
+                $('.msg .msg-content').removeClass('v-enter-active v-enter-to');
+                $('.msg .msg-content').addClass('v-leave-active v-leave-to');
+                setTimeout(() => {
+                    $('.msg').remove();
+                }, 100);
+                sic.removeClass('block-click');
+            }, 1000);
+        }
+
+        $("#Submit").click(async (e) => {
+            e.preventDefault();
+            let content = $("#feedback").val();
+
+            {
+                $(".van-overlay").fadeIn(10);
+                $.ajax({
+                    type: "POST",
+                    url: "/api/webapi/feedback-details",
+                    data: {
+                        content: content,
+                    },
+
+                    dataType: "json",
+
+                    success: function (response) {
+                        if (response.status === true) {
+                            $("#feedback").val('');
+                            alertMess(response.message);
+                            setTimeout(() => {
+                                location.href = "/mian";
+                            }, 1000);
+                        } else {
+                            $(".van-overlay").fadeOut(300);
+                            alertMess(response.message);
+                        }
+                    },
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

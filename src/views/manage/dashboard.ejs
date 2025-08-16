@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" data-change="1" data-game="win">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>30 sec | Management page</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/css/pages__parity.css">
+  <link rel="stylesheet" href="/css/vantjs.css">
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"
+    integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/admin.css">
+
+  <style>
+    .active {
+      background-color: #007bff !important;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    #list-orders .item {
+      padding: 5px 0;
+      text-align: center;
+    }
+
+    .box .li[data-v-a9660e98] {
+      display: block;
+      height: 13px;
+      width: 13px;
+      border-radius: 50%;
+      margin: 0 0.13333rem;
+    }
+
+    .van-col .goItem .c-tc .green {
+      background-color: #5cba47;
+    }
+
+    .van-col .goItem .c-tc .red {
+      background-color: #fb4e4e;
+    }
+
+    .van-col .goItem .c-tc .violet {
+      background-color: #eb43dd;
+    }
+
+    .van-col .c-tc .green {
+      color: #5cba47;
+    }
+
+    .van-col .c-tc .red {
+      color: #fb4e4e;
+    }
+
+    .van-col .c-tc .violet {
+      color: #eb43dd;
+    }
+
+    .goItem .c-row-center {
+      display: flex;
+      justify-content: center;
+    }
+
+    .game {
+      background-color: #e67e22 !important;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+  <div class="wrapper">
+    <%- include('nav') %>
+      <div class="content-wrapper">
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">Dashboard</h1>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        
+         <section class="content">
+          <div class="d-flex flex-wrap">
+          
+            <div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-primary elevation-1"><i class="nav-icon fa fa-user-circle"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">Total No of Users</span>
+        <span class=""><%= stats.totalUsers %></span>
+      </div>
+    </div>
+</div>
+
+<div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-primary elevation-1"><i class="nav-icon fa fa-user-circle"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">Today Joining</span>
+        <span class=""><%= stats.todayJoining %></span>
+      </div>
+    </div>
+</div>
+
+<div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-primary elevation-1"><i class="nav-icon fa fa-user-circle"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">Yesterday Joining</span>
+        <span class=""><%= stats.yesterdayJoining %></span>
+      </div>
+    </div>
+</div>
+
+<div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-primary elevation-1"><i class="nav-icon fa fa-user-circle"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">Total Deposits</span>
+        <span class=""><%= stats.totalDeposits %></span>
+      </div>
+    </div>
+</div>
+
+<% // Today Deposits by Type %>
+<!----<div class="col-12 col-sm-6 col-md-3">
+  <div class="info-box">
+    <span class="info-box-icon bg-primary elevation-1"><i class="fa fa-bank"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">Today deposits (INR)</span>
+      <span class=""><%= stats.todayDepositsINR %></span>
+    </div>
+  </div>
+</div>
+<div class="col-12 col-sm-6 col-md-3">
+  <div class="info-box">
+    <span class="info-box-icon bg-primary elevation-1"><i class="fa fa-bitcoin"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">Today deposits (Crypto)</span>
+      <span class=""><%= stats.todayDepositsCrypto %></span>
+    </div>
+  </div>
+</div>
+<div class="col-12 col-sm-6 col-md-3">
+  <div class="info-box">
+    <span class="info-box-icon bg-primary elevation-1"><i class="fa fa-usd"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">Today deposits (USDT)</span>
+      <span class=""><%= stats.todayDepositsUSDT %></span>
+    </div>
+  </div>
+</div> --->
+
+<div class="col-12 col-sm-6 col-md-3">
+  <div class="info-box">
+    <span class="info-box-icon bg-primary elevation-1"><i class="fa fa-user-plus"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">Today’s New Player Deposits</span>
+      <span class=""><%= stats.todaysNewPlayerDeposits %></span>
+    </div>
+  </div>
+</div>
+
+<!-----
+<% // Yesterday Deposits by Type %>
+<div class="col-12 col-sm-6 col-md-3">
+  <div class="info-box">
+    <span class="info-box-icon bg-primary elevation-1"><i class="fa fa-bank"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">Yesterday deposits (INR)</span>
+      <span class=""><%= stats.yesterdayDepositsINR %></span>
+    </div>
+  </div>
+</div>
+<div class="col-12 col-sm-6 col-md-3">
+  <div class="info-box">
+    <span class="info-box-icon bg-primary elevation-1"><i class="fa fa-bitcoin"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">Yesterday deposits (Crypto)</span>
+      <span class=""><%= stats.yesterdayDepositsCrypto %></span>
+    </div>
+  </div>
+</div>
+<div class="col-12 col-sm-6 col-md-3">
+  <div class="info-box">
+    <span class="info-box-icon bg-primary elevation-1"><i class="fa fa-usd"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">Yesterday deposits (USDT)</span>
+      <span class=""><%= stats.yesterdayDepositsUSDT %></span>
+    </div>
+  </div>
+</div> ---->
+
+<% // Withdrawals %>
+<div class="col-12 col-sm-6 col-md-3">
+  <div class="info-box">
+    <span class="info-box-icon bg-primary elevation-1"><i class="fa fa-credit-card"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">Total Withdrawal</span>
+      <span class=""><%= stats.totalWithdrawals %></span>
+    </div>
+  </div>
+</div>
+
+<!-----
+<div class="col-12 col-sm-6 col-md-3">
+  <div class="info-box">
+    <span class="info-box-icon bg-primary elevation-1"><i class="fa fa-bank"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">Today Withdrawal (INR)</span>
+      <span class=""><%= stats.todayWithdrawalsINR %></span>
+    </div>
+  </div>
+</div>
+<div class="col-12 col-sm-6 col-md-3">
+  <div class="info-box">
+    <span class="info-box-icon bg-primary elevation-1"><i class="fa fa-bitcoin"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">Today Withdrawal (Crypto)</span>
+      <span class=""><%= stats.todayWithdrawalsCrypto %></span>
+    </div>
+  </div>
+</div>
+<div class="col-12 col-sm-6 col-md-3">
+  <div class="info-box">
+    <span class="info-box-icon bg-primary elevation-1"><i class="fa fa-usd"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">Today Withdrawal (USDT)</span>
+      <span class=""><%= stats.todayWithdrawalsUSDT %></span>
+    </div>
+  </div>
+</div> --->
+
+<div class="col-12 col-sm-6 col-md-3">
+  <div class="info-box">
+    <span class="info-box-icon bg-primary elevation-1"><i class="fa fa-user-plus"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">Today’s New Player Withdrawals</span>
+      <span class=""><%= stats.todaysNewPlayerWithdrawals %></span>
+    </div>
+  </div>
+</div>
+
+<% // Profit %>
+<div class="col-12 col-sm-6 col-md-3">
+  <div class="info-box">
+    <span class="info-box-icon bg-primary elevation-1"><i class="fa fa-line-chart"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">Total Profit</span>
+      <span class=""><%= stats.totalProfit %></span>
+    </div>
+  </div>
+</div>
+
+<div class="col-12 col-sm-6 col-md-3">
+  <div class="info-box">
+    <span class="info-box-icon bg-primary elevation-1"><i class="fa fa-line-chart"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">Today Profit</span>
+      <span class=""><%= stats.todayProfit %></span>
+    </div>
+  </div>
+</div>
+
+<div class="col-12 col-sm-6 col-md-3">
+  <div class="info-box">
+    <span class="info-box-icon bg-primary elevation-1"><i class="fa fa-line-chart"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">Yesterday Profit</span>
+      <span class=""><%= stats.yesterdayProfit %></span>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Total Agents -->
+  <div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-primary"><i class="fa fa-user"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">Total Agents</span>
+        <span class=""><%= stats.totalAgents || 0 %></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Today's New Agents -->
+  <div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-success"><i class="fa fa-user-plus"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">Today's New Agents</span>
+        <span class=""><%= stats.todayNewAgents || 0 %></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GGR (Casino) -->
+  <div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-warning"><i class="fa fa-bar-chart"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">GGR (Casino)</span>
+        <span class=""><%= stats.ggrCasino || 0 %></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cashable INR -->
+  <div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-info"><i class="fa fa-inr"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">Cashable (INR)</span>
+        <span class=""><%= stats.currentCashableINR || 0 %></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bonuses -->
+  <div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-secondary"><i class="fa fa-gift"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">Bonuses</span>
+        <span class=""><%= stats.bonuses || 0 %></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Salary (Cash + Coins) -->
+  <div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-dark"><i class="fa fa-briefcase"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">Salary (Today)</span>
+        <span class="">
+          ₹<%= (stats.todaySalaryCash || 0) + (stats.todaySalaryCoins || 0) %>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gross Profit -->
+  <div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-danger"><i class="fa fa-line-chart"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">Gross Profit</span>
+        <span class=""><%= stats.totalProfit || 0 %></span>
+      </div>
+    </div>
+  </div>
+               
+          </div>
+         <section>
+        
+      </div>
+      <a id="back-to-tops" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+      </a>
+  </div>
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script src="/dist/js/adminlte.js"></script>
+  <script src="/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="/plugins/raphael/raphael.min.js"></script>
+  <script src="/js/admin/admin.js"></script>
+  <script src="/js/admin/index.js"></script>
+</body>
+ 
+</html>
+<script>
+    const dashboardStats = <%- JSON.stringify(stats) %>;
+    console.log("Dashboard Stats:", dashboardStats);
+    
+    const errorData = <%- JSON.stringify(errorData) %>;
+    console.log("Dashboard errorData:", errorData);
+</script>
